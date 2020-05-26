@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AgendaCheck.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +44,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590491594987</updated>
-      <workItem from="1590491599074" duration="406000" />
+      <workItem from="1590491599074" duration="968000" />
     </task>
+    <task id="LOCAL-00001" summary="creation of project">
+      <created>1590492160838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590492160838</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creation of project" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation of project" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2" timestamp="1590492129361">
+    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2" timestamp="1590492160739">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590492129361" />
+    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590492160739" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom" timestamp="1590492129384">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
