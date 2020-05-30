@@ -19,7 +19,7 @@ It takes data from to .xlsx files and creates new report.
 #To do
 
 ~~- naucz się importu danych z wyzej wymienionych :)~~
-- suma godzin na sklep do nowego pliku
+~~- suma godzin na sklep do nowego pliku~~
 - obrót na sklep dzień dzień i na sektory
 - symulacja godzin wg obrotu
 - 
