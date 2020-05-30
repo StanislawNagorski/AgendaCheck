@@ -1,35 +1,47 @@
 package org.AgendaCheck;
 
+
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ScheduleReader {
-    private XSSFWorkbook schedule;
     private XSSFSheet scheduleSheet;
-    private XSSFWorkbook report;
-    private XSSFSheet reportSheet;
     private List<Float> hoursSumByDay;
     private int scheduleRowsNumber;
+    private float monthlyHoursSum;
+    private List<String> firstColumn;
 
-    public ScheduleReader(XSSFWorkbook schedule, XSSFWorkbook report) {
-        this.schedule = schedule;
+    public ScheduleReader(XSSFWorkbook schedule) {
         this.scheduleSheet = schedule.getSheetAt(0);
-        this.report = report;
-        this.reportSheet = report.getSheetAt(0);
         this.hoursSumByDay = new ArrayList<>();
         this.scheduleRowsNumber = scheduleSheet.getLastRowNum();
+        firstColumn = new ArrayList<>();
+    }
+
+    public List<String> getFirstColumn(){
+        return firstColumn;
+    }
+
+    public List<Float> getHoursSumByDay(){
+        return hoursSumByDay;
+    }
+
+    public int getScheduleRowsNumber(){
+        return scheduleRowsNumber;
+    }
+
+    public float getMonthlyHoursSum(){
+        return monthlyHoursSum;
     }
 
     public void copyFirstRow() {
-
         for (int i = 0; i < scheduleRowsNumber; i++) {
-            reportSheet.createRow(i).createCell(0).setCellValue(String.valueOf(scheduleSheet.getRow(i).getCell(0)));
+            firstColumn.add(String.valueOf(scheduleSheet.getRow(i).getCell(0)));
         }
-
-        reportSheet.autoSizeColumn(0);
     }
 
     public void sumDepartmentsHours() {
@@ -40,19 +52,21 @@ public class ScheduleReader {
                 daySum += scheduleSheet.getRow(i).getCell(j).getNumericCellValue();
             }
             hoursSumByDay.add(daySum);
+            monthlyHoursSum += daySum;
         }
     }
 
-    public void writeSumHours() {
+    public List<Float> calculatePercentagesOfHoursByDay() {
+        List<Float> percentagesOfHoursByDay = new LinkedList<>();
 
-        for (int i = 3; i < scheduleRowsNumber; i++) {
-            reportSheet.getRow(i).createCell(1).setCellValue(hoursSumByDay.get(i - 3));
+        for (Float hoursInDay : hoursSumByDay) {
+            float tempPerc = hoursInDay/monthlyHoursSum;
+            percentagesOfHoursByDay.add(tempPerc);
         }
-
-        reportSheet.getRow(1).createCell(1).setCellValue("Suma godzin");
-        reportSheet.autoSizeColumn(1);
-
+        return percentagesOfHoursByDay;
     }
+
+
 
 
 }

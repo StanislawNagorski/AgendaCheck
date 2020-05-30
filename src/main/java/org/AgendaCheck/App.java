@@ -1,6 +1,5 @@
 package org.AgendaCheck;
 
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
@@ -18,12 +17,11 @@ public class App
 
         XSSFWorkbook schedule = new XSSFWorkbook(new FileInputStream("godzinyMaj.xlsx"));
         XSSFWorkbook report = new XSSFWorkbook();
-        XSSFSheet reportSheet = report.createSheet("Raport");
 
-        ScheduleReader scheduleReader = new ScheduleReader(schedule, report);
-        scheduleReader.copyFirstRow();
-        scheduleReader.sumDepartmentsHours();
-        scheduleReader.writeSumHours();
+        ScheduleReader scheduleReader = new ScheduleReader(schedule);
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader);
+        reportWriter.writeFirstRowFromCopy();
+        reportWriter.writeSumHours();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
