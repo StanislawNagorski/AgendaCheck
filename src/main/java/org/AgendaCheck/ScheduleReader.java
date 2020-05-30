@@ -5,6 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ScheduleReader {
@@ -53,6 +54,16 @@ public class ScheduleReader {
             hoursSumByDay.add(daySum);
             monthlyHoursSum += daySum;
         }
+    }
+
+    public List<Float> calculatePercentagesOfHoursByDay() {
+        List<Float> percentagesOfHoursByDay = new LinkedList<>();
+
+        for (Float hoursInDay : hoursSumByDay) {
+            float tempPerc = hoursInDay/monthlyHoursSum;
+            percentagesOfHoursByDay.add(tempPerc);
+        }
+        return percentagesOfHoursByDay;
     }
 
 
