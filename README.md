@@ -1,5 +1,9 @@
 # AgendaCheck
 Project to help me, and my team better adjust work schedule of teammates to customer in-store traffic.
+It takes data from to .xlsx files and creates new report.
+
+#Technology stack
+- Apache POI
 
 # Główne założenia
 
@@ -11,6 +15,11 @@ Project to help me, and my team better adjust work schedule of teammates to cust
 - sugeruje zmianę ilości godzin
 - sugeruje zmianę obłożenia godzinowego (jeśli trafik lub parametry)
 
+
 #To do
 
-- naucz się importu danych z wyzej wymienionych :)
+~~- naucz się importu danych z wyzej wymienionych :)~~
+- suma godzin na sklep do nowego pliku
+- obrót na sklep dzień dzień i na sektory
+- symulacja godzin wg obrotu
+- 
