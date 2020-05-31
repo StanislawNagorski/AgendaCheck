@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.~lock.RaportGrafików.xlsx#" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RaportGrafików.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/RaportGrafików.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +170,7 @@
       <workItem from="1590781269275" duration="3033000" />
       <workItem from="1590835419743" duration="1247000" />
       <workItem from="1590837183016" duration="18836000" />
+      <workItem from="1590923713894" duration="2425000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -211,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590863371828</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added percentage format">
+      <created>1590924929079</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590924929079</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +227,8 @@
     <MESSAGE value="to do" />
     <MESSAGE value="styles added" />
     <MESSAGE value="wydzielenie z klasy ScheduleReader funkcji związanych z zapisem do ReportWriter" />
-    <option name="LAST_COMMIT_MESSAGE" value="wydzielenie z klasy ScheduleReader funkcji związanych z zapisem do ReportWriter" />
+    <MESSAGE value="added percentage format" />
+    <option name="LAST_COMMIT_MESSAGE" value="added percentage format" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -235,30 +239,30 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590842198825" />
-    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2" timestamp="1590865518156">
+    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2" timestamp="1590927789029">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590865518156" />
+    <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590927789029" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl" timestamp="1590840864084">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1807" height="278" key="GridCell.Tab.0.bottom" timestamp="1590865165096">
+    <state width="1807" height="154" key="GridCell.Tab.0.bottom" timestamp="1590924580058">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590865165096" />
-    <state width="1807" height="278" key="GridCell.Tab.0.center" timestamp="1590865165096">
+    <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590924580058" />
+    <state width="1807" height="154" key="GridCell.Tab.0.center" timestamp="1590924580057">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590865165096" />
-    <state width="1807" height="278" key="GridCell.Tab.0.left" timestamp="1590865165096">
+    <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590924580057" />
+    <state width="1807" height="154" key="GridCell.Tab.0.left" timestamp="1590924580057">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590865165096" />
-    <state width="1807" height="278" key="GridCell.Tab.0.right" timestamp="1590865165096">
+    <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590924580057" />
+    <state width="1807" height="154" key="GridCell.Tab.0.right" timestamp="1590924580058">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590865165096" />
+    <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590924580058" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -267,14 +271,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="290" y="105" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1590841244815" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590846290202">
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590865591646">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590846290202" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1590835419971">
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590865591646" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1590923713888">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590835419971" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590923713888" />
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590492012204">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
