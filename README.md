@@ -21,6 +21,6 @@ It takes data from to .xlsx files and creates new report.
 - ~~naucz się importu danych z wyzej wymienionych :)~~
 - ~~suma godzin na sklep do nowego pliku~~
 - ~~obrót na sklep dzień dzień~~ i na sektory
-- obrób format kolumny z procentami (czy w ogóle jej potrzebujesz?)
+- ~~obrób format kolumny z procentami (czy w ogóle jej potrzebujesz?)~~
 - symulacja godzin wg obrotu
 - 

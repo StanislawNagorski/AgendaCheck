@@ -13,20 +13,26 @@ public class ReportWriter {
     private XSSFSheet reportSheet;
     private CellStyle defaultFloatCellStyle;
     private CellStyle boldedFloatWithTopBorder;
+    private CellStyle percentageStyle;
 
     public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader) {
         this.scheduleReader = scheduleReader;
         this.reportSheet = report.createSheet("Raport");
         DataFormat dataFormat = report.createDataFormat();
+
         this.defaultFloatCellStyle = report.createCellStyle();
-        defaultFloatCellStyle.setDataFormat(dataFormat.getFormat("#.##"));
-        XSSFFont boldFont = report.createFont();
-        boldFont.setBold(true);
+        defaultFloatCellStyle.setDataFormat(dataFormat.getFormat("#.###"));
+
         this.boldedFloatWithTopBorder = report.createCellStyle();
         boldedFloatWithTopBorder.setDataFormat(dataFormat.getFormat("#.##"));
+        XSSFFont boldFont = report.createFont();
+        boldFont.setBold(true);
         boldedFloatWithTopBorder.setFont(boldFont);
         boldedFloatWithTopBorder.setBorderTop(BorderStyle.MEDIUM);
         boldedFloatWithTopBorder.setAlignment(HorizontalAlignment.CENTER);
+
+        this.percentageStyle = report.createCellStyle();
+        percentageStyle.setDataFormat(dataFormat.getFormat("0.00%"));
     }
 
     public void writeFirstRowFromCopy() {
@@ -46,7 +52,7 @@ public class ReportWriter {
             reportSheet.getRow(i).getCell(1).setCellStyle(defaultFloatCellStyle);
 
             reportSheet.getRow(i).createCell(2).setCellValue(scheduleReader.calculatePercentagesOfHoursByDay().get(i - 3));
-            reportSheet.getRow(i).getCell(2).setCellStyle(defaultFloatCellStyle);
+            reportSheet.getRow(i).getCell(2).setCellStyle(percentageStyle);
 
         }
 
