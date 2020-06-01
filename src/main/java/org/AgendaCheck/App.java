@@ -24,10 +24,10 @@ public class App
         ForecastReader forecastReader = new ForecastReader(forecast);
         ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
-
-        reportWriter.writeFirstRowFromCopy();
-        reportWriter.writeSumHours();
-        reportWriter.writeTOForecast();
+        reportWriter.writeFirstColumnDays();
+        reportWriter.writeSecondAndThirdColumnHoursAndShare();
+        reportWriter.writeFourthColumnTurnOverForecast();
+        reportWriter.writeFifthColumnShareOfTurnOver();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));

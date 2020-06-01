@@ -19,14 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.~lock.godzinyMaj.xlsx#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.643_Gessef 2020.xlsx#" beforeDir="false" afterPath="$PROJECT_DIR$/.~lock.643_Gessef 2020.xlsx#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.RaportGrafików.xlsx#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RaportGrafików.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/RaportGrafików.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +93,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/../../External Libs" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -151,15 +147,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadingFromExelTraining" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ReadingFromExelTraining" />
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.ForecastReader" />
         <item itemvalue="Java Scratch.Solution" />
         <item itemvalue="Application.PlayTime" />
-        <item itemvalue="Application.ReadingFromExelTraining" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +191,7 @@
       <workItem from="1591010288576" duration="201000" />
       <workItem from="1591010924600" duration="2820000" />
       <workItem from="1591014329460" duration="580000" />
-      <workItem from="1591015503872" duration="3286000" />
+      <workItem from="1591015503872" duration="16695000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -273,7 +263,35 @@
       <option name="project" value="LOCAL" />
       <updated>1590935440997</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="nullPointer Ex in ForecastReader was taken care of.">
+      <created>1591018858670</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591018858670</updated>
+    </task>
+    <task id="LOCAL-00012" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.">
+      <created>1591029250605</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591029250605</updated>
+    </task>
+    <task id="LOCAL-00013" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver">
+      <created>1591030460037</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1591030460037</updated>
+    </task>
+    <task id="LOCAL-00014" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added">
+      <created>1591032399400</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591032399400</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +318,11 @@
     <MESSAGE value="added percentage format" />
     <MESSAGE value=".gitignore creation" />
     <MESSAGE value="added ForecastReader, and method to write it to report.&#10;It is bugged." />
-    <option name="LAST_COMMIT_MESSAGE" value="added ForecastReader, and method to write it to report.&#10;It is bugged." />
+    <MESSAGE value="nullPointer Ex in ForecastReader was taken care of." />
+    <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month." />
+    <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver" />
+    <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added" />
+    <option name="LAST_COMMIT_MESSAGE" value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -320,25 +342,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591014313675" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591018703624">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591032258901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591018703624" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591032258901" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591018703624">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591032258901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591018703624" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591032258901" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591018703624">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591032258901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591018703624" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591032258901" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591018703624">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591032258901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591018703624" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591032258901" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
@@ -349,9 +371,10 @@
     </state>
     <state x="413" y="169" width="1062" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591014593728" />
     <state x="290" y="105" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1590841244815" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590935460425">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591018874555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="540" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591018874555" />
     <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590935460425" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1590923713888">
       <screen x="67" y="27" width="1853" height="1053" />
@@ -373,9 +396,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591014287151" />
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1591030763809">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591030763809" />
     <state x="657" y="253" key="run.anything.popup" timestamp="1590836988408">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1590836988408" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591030974277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591030974277" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

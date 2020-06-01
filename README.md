@@ -16,6 +16,7 @@ It takes data from to .xlsx files and creates new report.
 - zestawia je ze sobą alertując niedoinwestowane i przeinwestowane dni
 - sugeruje zmianę ilości godzin
 - sugeruje zmianę obłożenia godzinowego (jeśli trafik lub parametry)
+- a może zrobnimy z niego bota podbiętego pod gmaila? eStah po otrzymaniu plików w załaczniku odsyłałby raport.
 
 
 #To do
@@ -24,6 +25,8 @@ It takes data from to .xlsx files and creates new report.
 - ~~suma godzin na sklep do nowego pliku~~
 - ~~obrót na sklep dzień dzień~~ i na sektory
 - ~~obrób format kolumny z procentami (czy w ogóle jej potrzebujesz?)~~
-- styl dla obrotu w złotówkach
+- klasa która wykrywa miesiac/rok a nastepnie daje przedział dni od 01.01.1900 +2
+- ~~styl dla obrotu w złotówkach~~
+- STOP NAPISZ TESTY!!!!!!!
 - symulacja godzin wg obrotu
 - 
