@@ -77,16 +77,19 @@ public class ReportWriter {
 
     }
 
+
     public void writeTOForecast() {
-        List<String> forecast = forecastReader.forecastTOList();
+        int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
+        int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
+
+        List<String> forecast = forecastReader.forecastTOList(range);
 
         reportSheet.getRow(1).createCell(3).setCellValue("Pilotaż obrotu");
-        //!!!!!!
 
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < forecast.size(); i++) {
 
             XSSFCell cell = reportSheet.getRow(i + 3).createCell(3);
-            cell.setCellValue(forecastReader.forecastTOList().get(i));
+            cell.setCellValue(forecast.get(i));
             cell.setCellStyle(defaultFloatCellStyle);
 
         }

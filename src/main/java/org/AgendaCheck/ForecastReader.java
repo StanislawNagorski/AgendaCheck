@@ -10,35 +10,35 @@ import java.util.List;
 public class ForecastReader {
 
     private XSSFWorkbook forecast;
-    private int FORECAST_SHEET_SIZE = 450;
+    private final int FORECAST_SHEET_SIZE = 450;
 
     public ForecastReader(XSSFWorkbook forecast) {
         this.forecast = forecast;
     }
 
-    public List<String> forecastTOList() {
+    public List<String> forecastTOList(int[] range) {
 
         List<String> foreList = new ArrayList<>();
-        List<Double> dateTestList = new ArrayList<>();
         XSSFSheet forecastSheet = forecast.getSheet("DZIEN DZIEN 2020");
 
-        System.out.println(forecastSheet.getLastRowNum());
+        for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
 
-        for (int i = 0; i < FORECAST_SHEET_SIZE-5; i++) {
-            System.out.println(i);
+            if ((forecastSheet.getRow(i + 4).getCell(3).getCellType() == CellType.NUMERIC) ||
+                    (forecastSheet.getRow(i + 4).getCell(3).getCellType() == CellType.FORMULA)) {
 
+                int numericValueOfDate = (int) forecastSheet.getRow(i + 4).getCell(3).getNumericCellValue();
 
-            if (forecastSheet.getRow(i+4).getCell(3).getCellType()== CellType.NUMERIC ||
-                    forecastSheet.getRow(i+4).getCell(3).getCellType()== CellType.FORMULA){
-                foreList.add(forecastSheet.getRow(i+4).getCell(5).getRawValue());
+                if (numericValueOfDate >= range[0] && numericValueOfDate <= range[1]) {
+                    foreList.add(forecastSheet.getRow(i + 4).getCell(5).getRawValue());
+                }
+
+                if (numericValueOfDate > range[1]){
+                    break;
+                }
             }
 
-
         }
-        System.out.println(foreList);
-             return foreList;
+        return foreList;
     }
-
-
 
 }
