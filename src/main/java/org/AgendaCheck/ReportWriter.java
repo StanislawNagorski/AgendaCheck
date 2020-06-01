@@ -82,6 +82,7 @@ public class ReportWriter {
 
         reportSheet.getRow(1).createCell(3).setCellValue("Pilotaż obrotu");
         //!!!!!!
+
         for (int i = 0; i < 31; i++) {
 
             XSSFCell cell = reportSheet.getRow(i + 3).createCell(3);
