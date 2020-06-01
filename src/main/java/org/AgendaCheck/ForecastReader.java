@@ -16,9 +16,10 @@ public class ForecastReader {
         this.forecast = forecast;
     }
 
-    public List<String> forecastTOList(int[] range) {
+    public List<Double> forecastTOList(int[] range) {
 
-        List<String> foreList = new ArrayList<>();
+        List<Double> foreList = new ArrayList<>();
+        double monthlyTurnOver = 0;
         XSSFSheet forecastSheet = forecast.getSheet("DZIEN DZIEN 2020");
 
         for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
@@ -29,15 +30,17 @@ public class ForecastReader {
                 int numericValueOfDate = (int) forecastSheet.getRow(i + 4).getCell(3).getNumericCellValue();
 
                 if (numericValueOfDate >= range[0] && numericValueOfDate <= range[1]) {
-                    foreList.add(forecastSheet.getRow(i + 4).getCell(5).getRawValue());
+                    double dayTO = forecastSheet.getRow(i + 4).getCell(5).getNumericCellValue();
+                    monthlyTurnOver += dayTO;
+                    foreList.add(dayTO);
                 }
 
                 if (numericValueOfDate > range[1]){
                     break;
                 }
             }
-
         }
+        foreList.add(monthlyTurnOver);
         return foreList;
     }
 

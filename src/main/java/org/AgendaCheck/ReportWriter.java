@@ -82,7 +82,7 @@ public class ReportWriter {
         int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
         int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
 
-        List<String> forecast = forecastReader.forecastTOList(range);
+        List<Double> forecast = forecastReader.forecastTOList(range);
 
         reportSheet.getRow(1).createCell(3).setCellValue("Pilotaż obrotu");
 

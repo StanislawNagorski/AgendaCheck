@@ -16,6 +16,7 @@ It takes data from to .xlsx files and creates new report.
 - zestawia je ze sobą alertując niedoinwestowane i przeinwestowane dni
 - sugeruje zmianę ilości godzin
 - sugeruje zmianę obłożenia godzinowego (jeśli trafik lub parametry)
+- a może zrobnimy z niego bota podbiętego pod gmaila? eStah po otrzymaniu plików w załaczniku odsyłałby raport.
 
 
 #To do
