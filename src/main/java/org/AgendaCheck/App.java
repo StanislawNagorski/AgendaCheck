@@ -16,12 +16,18 @@ public class App
     public static void main( String[] args ) throws IOException {
 
         XSSFWorkbook schedule = new XSSFWorkbook(new FileInputStream("godzinyMaj.xlsx"));
+        XSSFWorkbook forecast = new XSSFWorkbook(new FileInputStream("643_Gessef 2020.xlsx"));
+
         XSSFWorkbook report = new XSSFWorkbook();
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader);
+        ForecastReader forecastReader = new ForecastReader(forecast);
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+
+
         reportWriter.writeFirstRowFromCopy();
         reportWriter.writeSumHours();
+        reportWriter.writeTOForecast();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
