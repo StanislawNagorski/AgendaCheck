@@ -26,6 +26,7 @@ It takes data from to .xlsx files and creates new report.
 - ~~obrót na sklep dzień dzień~~ i na sektory
 - ~~obrób format kolumny z procentami (czy w ogóle jej potrzebujesz?)~~
 - klasa która wykrywa miesiac/rok a nastepnie daje przedział dni od 01.01.1900 +2
-- styl dla obrotu w złotówkach
+- ~~styl dla obrotu w złotówkach~~
+- STOP NAPISZ TESTY!!!!!!!
 - symulacja godzin wg obrotu
 - 

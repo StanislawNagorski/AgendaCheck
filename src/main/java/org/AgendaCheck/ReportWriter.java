@@ -62,7 +62,7 @@ public class ReportWriter {
         polishZlotyStyleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
     }
 
-    public void writeFirstRowFromCopy() {
+    public void writeFirstColumnDays() {
         scheduleReader.copyFirstRow();
 
         for (int i = 0; i < scheduleReader.getFirstColumn().size(); i++) {
@@ -76,7 +76,7 @@ public class ReportWriter {
         reportSheet.autoSizeColumn(0);
     }
 
-    public void writeSumHours() {
+    public void writeSecondAndThirdColumnHoursAndShare() {
         scheduleReader.sumDepartmentsHours();
 
         for (int i = 3; i < scheduleReader.getScheduleRowsNumber(); i++) {
@@ -111,7 +111,7 @@ public class ReportWriter {
     }
 
 
-    public void writeTOForecast() {
+    public void writeFourthColumnTurnOverForecast() {
         int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
         int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
 
@@ -132,6 +132,30 @@ public class ReportWriter {
                 .getCell(3).setCellStyle(polishZlotyStyleBoldedWithBotBorder);
 
         reportSheet.autoSizeColumn(3);
+    }
+
+    public void writeFifthColumnShareOfTurnOver() {
+        int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
+        int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
+
+        List<Double> forecast = forecastReader.forecastTOList(range);
+
+        XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(4);
+        titleOfTurnOverColumn.setCellValue("Udział dnia w TO");
+        titleOfTurnOverColumn.setCellStyle(titleBoldedWithBotBorder);
+
+        for (int i = 0; i < forecast.size(); i++) {
+
+            XSSFCell cell = reportSheet.getRow(i + 3).createCell(4);
+            double dailyShareOfMonthlyTurnOver = forecast.get(i) / forecast.get(forecast.size() - 1);
+            cell.setCellValue(dailyShareOfMonthlyTurnOver);
+            cell.setCellStyle(percentageStyle);
+        }
+
+        reportSheet.getRow(forecast.size()+2)
+                .getCell(4).setCellStyle(boldedFloatWithTopBorder);
+
+        reportSheet.autoSizeColumn(4);
 
     }
 
