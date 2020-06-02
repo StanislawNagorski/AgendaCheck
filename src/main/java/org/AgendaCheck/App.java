@@ -6,31 +6,28 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args ) throws IOException {
 
         long start = System.nanoTime();
 
-        XSSFWorkbook schedule = new XSSFWorkbook(new FileInputStream("godzinyMaj.xlsx"));
+        XSSFWorkbook schedule = new XSSFWorkbook(new FileInputStream("godzinyCzerwiec.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(new FileInputStream("643_Gessef 2020.xlsx"));
 
         XSSFWorkbook report = new XSSFWorkbook();
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
 
         reportWriter.writeFirstColumnDays();
-        reportWriter.writeSecondColumnHours();
-        reportWriter.writeThirdColumnHoursShare();
-        reportWriter.writeFourthColumnTurnOverForecast();
-        reportWriter.writeFifthColumnShareOfTurnOver();
+        reportWriter.writeForthColumnHours();
+        reportWriter.writeFifthColumnHoursShare();
+        reportWriter.writeSecondColumnTurnOverForecast();
+        reportWriter.writeThirdColumnShareOfTurnOver();
+        reportWriter.writeSixthColumnPerfectHours();
+        reportWriter.writeSeventhColumnDifferenceInHours();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));

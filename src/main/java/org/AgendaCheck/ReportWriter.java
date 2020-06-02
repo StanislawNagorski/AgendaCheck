@@ -22,21 +22,20 @@ public class ReportWriter {
     private final CellStyle polishZlotyStyleBoldedWithBotBorder;
 
 
-    public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader) {
+    public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader, String sheetName) {
         this.scheduleReader = scheduleReader;
         this.forecastReader = forecastReader;
-
-        this.reportSheet = report.createSheet("Raport");
+        this.reportSheet = report.createSheet(sheetName);
 
         DataFormat dataFormat = report.createDataFormat();
         XSSFFont boldFont = report.createFont();
         this.defaultCellStyle = report.createCellStyle();
 
         this.defaultDoubleCellStyle = report.createCellStyle();
-        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.###"));
+        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.#"));
 
         this.boldedDoubleWithTopBorder = report.createCellStyle();
-        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#.##"));
+        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#"));
         boldFont.setBold(true);
         boldedDoubleWithTopBorder.setFont(boldFont);
         boldedDoubleWithTopBorder.setBorderTop(BorderStyle.MEDIUM);
@@ -63,7 +62,6 @@ public class ReportWriter {
     }
 
     private void createRows() {
-
         int reportLenght = 50;
 
         for (int i = 0; i < reportLenght; i++) {
@@ -75,21 +73,15 @@ public class ReportWriter {
         createRows();
 
         List<String> dates = scheduleReader.getFirstColumn();
-        int writeColumnNr = 0;
-        writeColumn("Dzień", writeColumnNr, dates, defaultCellStyle);
+        int columnNrToWrite = 0;
+        writeColumn("Dzień", columnNrToWrite, dates, defaultCellStyle);
     }
 
-    public void writeSecondColumnHours() {
-        List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
-        int writeColumnNr = 1;
-        writeColumn("Suma godzin", writeColumnNr, hoursByDay, defaultDoubleCellStyle);
-    }
+    public void writeSecondColumnTurnOverForecast() {
+        List<Double> forecast = foreCastListCreation();
+        int columnNrToWrite = 1;
 
-    public void writeThirdColumnHoursShare() {
-        List<Double> shareOfHours = scheduleReader.calculatePercentagesOfHoursByDay();
-        int writeColumnNr = 2;
-        writeColumn("Udział w godzinach", writeColumnNr, shareOfHours, percentageStyle);
-
+        writeColumn("Pilotaż obrotu", columnNrToWrite, forecast, polishZlotyStyle);
     }
 
     private List<Double> foreCastListCreation() {
@@ -100,24 +92,54 @@ public class ReportWriter {
         return forecastReader.forecastTOList(range);
     }
 
-
-    public void writeFourthColumnTurnOverForecast() {
-        List<Double> forecast = foreCastListCreation();
-        int writeColumnNr = 3;
-
-        writeColumn("Pilotaż obrotu", writeColumnNr, forecast, polishZlotyStyle);
-    }
-
-    public void writeFifthColumnShareOfTurnOver() {
+    public void writeThirdColumnShareOfTurnOver() {
 
         List<Double> forecast = foreCastListCreation();
         List<Double> dailyShare = forecastReader.dailyTurnOverShare(forecast);
 
-        int writeToColumnNr = 4;
+        int columnNrToWrite = 2;
 
-        writeColumn("Udział dnia w TO", writeToColumnNr, dailyShare, percentageStyle);
+        writeColumn("Udział dnia w TO", columnNrToWrite, dailyShare, percentageStyle);
 
     }
+
+    public void writeForthColumnHours() {
+        List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
+        int columnNrToWrite = 3;
+        writeColumn("Suma godzin", columnNrToWrite, hoursByDay, defaultDoubleCellStyle);
+    }
+
+    public void writeFifthColumnHoursShare() {
+        List<Double> shareOfHours = scheduleReader.calculatePercentagesOfHoursByDay();
+        int columnNrToWrite = 4;
+        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, percentageStyle);
+    }
+
+    public void writeSixthColumnPerfectHours(){
+        List<Double> forecast = foreCastListCreation();
+        List<Double> dailyShare = forecastReader.dailyTurnOverShare(forecast);
+        List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
+
+        PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
+        List<Double> perfectHours = potentialHoursCalculator.perfectHoursCalculation(dailyShare,hoursByDay);
+
+        int columnNrToWrite = 5;
+        writeColumn("\"Idealne\" godziny",columnNrToWrite, perfectHours, defaultDoubleCellStyle);
+    }
+
+    public void writeSeventhColumnDifferenceInHours(){
+        PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
+        List<Double> forecast = foreCastListCreation();
+        List<Double> dailyShare = forecastReader.dailyTurnOverShare(forecast);
+        List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
+        List<Double> perfectHours = potentialHoursCalculator.perfectHoursCalculation(dailyShare,hoursByDay);
+
+
+        List<Double> dailyDifferenceInHours = potentialHoursCalculator.differenceInHours(perfectHours, hoursByDay);
+        int columnNrToWrite = 6;
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHours, defaultDoubleCellStyle);
+    }
+
 
     private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle) {
 
@@ -144,8 +166,5 @@ public class ReportWriter {
                 .getCell(columnNr).setCellStyle(boldedDoubleWithTopBorder);
 
         reportSheet.autoSizeColumn(columnNr);
-
     }
-
-
 }

@@ -50,8 +50,8 @@ public class ScheduleReader {
         List<Double> percentagesOfHoursByDay = new LinkedList<>();
 
         for (Double hoursInDay : hoursSumByDay) {
-            double tempPerc = hoursInDay / monthlyHoursSum;
-            percentagesOfHoursByDay.add(tempPerc);
+            double dailyShare = hoursInDay / monthlyHoursSum;
+            percentagesOfHoursByDay.add(dailyShare);
         }
         return percentagesOfHoursByDay;
     }
