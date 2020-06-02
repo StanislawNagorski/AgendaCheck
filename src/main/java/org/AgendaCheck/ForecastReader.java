@@ -24,21 +24,28 @@ public class ForecastReader {
 
         int dateColumnNr = 3;
         int readiedColumnNr = 5;
+        int dataStartRow = 4;
+
+        int monthStartsAt = range[0];
+        int monthEndsAt = range[1];
 
         for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
 
-            if ((forecastSheet.getRow(i + 4).getCell(dateColumnNr).getCellType() == CellType.NUMERIC) ||
-                    (forecastSheet.getRow(i + 4).getCell(dateColumnNr).getCellType() == CellType.FORMULA)) {
+            if ((forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr).getCellType() == CellType.NUMERIC) ||
+                    (forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr).getCellType() == CellType.FORMULA)) {
 
-                int numericValueOfDate = (int) forecastSheet.getRow(i + 4).getCell(dateColumnNr).getNumericCellValue();
+                int numericValueOfDate = (int) forecastSheet.getRow(i + dataStartRow)
+                        .getCell(dateColumnNr).getNumericCellValue();
 
-                if (numericValueOfDate >= range[0] && numericValueOfDate <= range[1]) {
-                    double dayTO = forecastSheet.getRow(i + 4).getCell(readiedColumnNr).getNumericCellValue();
+                if (numericValueOfDate >= monthStartsAt && numericValueOfDate <= monthEndsAt) {
+                    double dayTO = forecastSheet.getRow(i + dataStartRow)
+                            .getCell(readiedColumnNr).getNumericCellValue();
+
                     monthlyTurnOver += dayTO;
                     foreList.add(dayTO);
                 }
 
-                if (numericValueOfDate > range[1]){
+                if (numericValueOfDate > monthEndsAt){
                     break;
                 }
             }
