@@ -27,6 +27,7 @@ public class App
         reportWriter.writeSecondColumnTurnOverForecast();
         reportWriter.writeThirdColumnShareOfTurnOver();
         reportWriter.writeSixthColumnPerfectHours();
+        reportWriter.writeSeventhColumnDifferenceInHours();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));

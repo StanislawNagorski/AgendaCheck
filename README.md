@@ -28,6 +28,7 @@ It takes data from to .xlsx files and creates new report.
 - ~~klasa która wykrywa miesiac/rok a nastepnie daje przedział dni od 01.01.1900 +2~~
 - ~~styl dla obrotu w złotówkach~~
 - STOP NAPISZ TESTY!!!!!!!
-- symulacja godzin wg obrotu
+- ~~symulacja godzin wg obrotu~~
 - czy mogę wydzielić style?
 - listy w readerach warto zapisać zeby funkacja nie wykonywała się za każdym razem
+- zakładki dla konsolidacji - wykrywanie - tworzenie&zapełnianie

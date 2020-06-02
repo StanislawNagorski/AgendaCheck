@@ -36,7 +36,7 @@ public class PotentialHoursCalculator {
         List<Double> shareWithCloseDays = shareConsideringCloseDays(dayTurnOverShare, hoursInMonth);
 
 
-        for (int i = 0; i < shareWithCloseDays.size()-1; i++) {
+        for (int i = 0; i < shareWithCloseDays.size() -1; i++) {
             double dailyPerfectHours = shareWithCloseDays.get(i) * monthlyHours;
             perfectHours.add(dailyPerfectHours);
             monthlyHoursCheck += dailyPerfectHours;
@@ -46,11 +46,16 @@ public class PotentialHoursCalculator {
     }
 
 
-    public List<Double> differenceInHours() {
+    public List<Double> differenceInHours(List<Double> perfectHours, List<Double> hoursInMonth) {
         List<Double> differenceHours = new ArrayList<>();
+
+        for (int i = 0; i < perfectHours.size(); i++) {
+            double dailyDiff =hoursInMonth.get(i) - perfectHours.get(i);
+            differenceHours.add(dailyDiff);
+        }
+        differenceHours.set(perfectHours.size()-1, 0.0);
 
         return differenceHours;
     }
-
 
 }

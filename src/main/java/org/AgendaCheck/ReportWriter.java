@@ -32,10 +32,10 @@ public class ReportWriter {
         this.defaultCellStyle = report.createCellStyle();
 
         this.defaultDoubleCellStyle = report.createCellStyle();
-        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.###"));
+        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.#"));
 
         this.boldedDoubleWithTopBorder = report.createCellStyle();
-        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#.##"));
+        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#"));
         boldFont.setBold(true);
         boldedDoubleWithTopBorder.setFont(boldFont);
         boldedDoubleWithTopBorder.setBorderTop(BorderStyle.MEDIUM);
@@ -122,8 +122,22 @@ public class ReportWriter {
 
         PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
         List<Double> perfectHours = potentialHoursCalculator.perfectHoursCalculation(dailyShare,hoursByDay);
+
         int columnNrToWrite = 5;
         writeColumn("\"Idealne\" godziny",columnNrToWrite, perfectHours, defaultDoubleCellStyle);
+    }
+
+    public void writeSeventhColumnDifferenceInHours(){
+        PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
+        List<Double> forecast = foreCastListCreation();
+        List<Double> dailyShare = forecastReader.dailyTurnOverShare(forecast);
+        List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
+        List<Double> perfectHours = potentialHoursCalculator.perfectHoursCalculation(dailyShare,hoursByDay);
+
+
+        List<Double> dailyDifferenceInHours = potentialHoursCalculator.differenceInHours(perfectHours, hoursByDay);
+        int columnNrToWrite = 6;
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHours, defaultDoubleCellStyle);
     }
 
 
