@@ -15,6 +15,8 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
 
+        long start = System.nanoTime();
+
         XSSFWorkbook schedule = new XSSFWorkbook(new FileInputStream("godzinyMaj.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(new FileInputStream("643_Gessef 2020.xlsx"));
 
@@ -25,13 +27,19 @@ public class App
         ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
-        reportWriter.writeSecondAndThirdColumnHoursAndShare();
+        reportWriter.writeSecondColumnHours();
+        reportWriter.writeThirdColumnHoursShare();
         reportWriter.writeFourthColumnTurnOverForecast();
         reportWriter.writeFifthColumnShareOfTurnOver();
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
         report.close();
+
+        long end = System.nanoTime();
+        long duration = (end-start);
+        double durationInSec = (double) duration/1000000000;
+        System.out.printf("Program ended in: %.4f seconds", durationInSec);
 
 
     }
