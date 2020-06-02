@@ -22,15 +22,18 @@ public class ForecastReader {
         double monthlyTurnOver = 0;
         XSSFSheet forecastSheet = forecast.getSheet("DZIEN DZIEN 2020");
 
+        int dateColumnNr = 3;
+        int readiedColumnNr = 5;
+
         for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
 
-            if ((forecastSheet.getRow(i + 4).getCell(3).getCellType() == CellType.NUMERIC) ||
-                    (forecastSheet.getRow(i + 4).getCell(3).getCellType() == CellType.FORMULA)) {
+            if ((forecastSheet.getRow(i + 4).getCell(dateColumnNr).getCellType() == CellType.NUMERIC) ||
+                    (forecastSheet.getRow(i + 4).getCell(dateColumnNr).getCellType() == CellType.FORMULA)) {
 
-                int numericValueOfDate = (int) forecastSheet.getRow(i + 4).getCell(3).getNumericCellValue();
+                int numericValueOfDate = (int) forecastSheet.getRow(i + 4).getCell(dateColumnNr).getNumericCellValue();
 
                 if (numericValueOfDate >= range[0] && numericValueOfDate <= range[1]) {
-                    double dayTO = forecastSheet.getRow(i + 4).getCell(5).getNumericCellValue();
+                    double dayTO = forecastSheet.getRow(i + 4).getCell(readiedColumnNr).getNumericCellValue();
                     monthlyTurnOver += dayTO;
                     foreList.add(dayTO);
                 }
@@ -42,6 +45,17 @@ public class ForecastReader {
         }
         foreList.add(monthlyTurnOver);
         return foreList;
+    }
+
+    public List<Double> dailyTurnOverShare (List<Double> forecastTO) {
+        List<Double> dailyShareToList = new ArrayList<>();
+
+        for (int i = 0; i < forecastTO.size(); i++) {
+            double shareValue = forecastTO.get(i)/forecastTO.get(forecastTO.size()-1);
+            dailyShareToList.add(shareValue);
+        }
+
+        return dailyShareToList;
     }
 
 }

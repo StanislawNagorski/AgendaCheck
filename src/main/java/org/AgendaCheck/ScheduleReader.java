@@ -9,64 +9,55 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ScheduleReader {
-    private XSSFSheet scheduleSheet;
-    private List<Float> hoursSumByDay;
-    private int scheduleRowsNumber;
-    private float monthlyHoursSum;
-    private List<String> firstColumn;
-
+    private final XSSFSheet scheduleSheet;
+    //private int scheduleRowsNumber;
+    private double monthlyHoursSum;
     public ScheduleReader(XSSFWorkbook schedule) {
         this.scheduleSheet = schedule.getSheetAt(0);
-        this.hoursSumByDay = new ArrayList<>();
-        this.scheduleRowsNumber = scheduleSheet.getLastRowNum();
-        firstColumn = new ArrayList<>();
+        //this.scheduleRowsNumber = scheduleSheet.getLastRowNum();
     }
 
-    public List<String> getFirstColumn(){
+    //public int getScheduleRowsNumber(){        return scheduleRowsNumber;    }
+
+
+
+
+    public List<String> getFirstColumn() {
+
+     List<String> firstColumn = new ArrayList<>();
+
+        for (int i = 0; i < scheduleSheet.getLastRowNum(); i++) {
+            firstColumn.add(String.valueOf(scheduleSheet.getRow(i).getCell(0)));
+        }
         return firstColumn;
     }
 
-    public List<Float> getHoursSumByDay(){
-        return hoursSumByDay;
-    }
+    public List<Double> sumDepartmentsHours() {
+        List<Double> hoursSumByDay = new ArrayList<>();
+        monthlyHoursSum = 0;
 
-    public int getScheduleRowsNumber(){
-        return scheduleRowsNumber;
-    }
-
-    public float getMonthlyHoursSum(){
-        return monthlyHoursSum;
-    }
-
-    public void copyFirstRow() {
-        for (int i = 0; i < scheduleRowsNumber; i++) {
-            firstColumn.add(String.valueOf(scheduleSheet.getRow(i).getCell(0)));
-        }
-    }
-
-    public void sumDepartmentsHours() {
-
-        for (int i = 3; i < scheduleRowsNumber; i++) {
-            float daySum = 0;
+        for (int i = 3; i < scheduleSheet.getLastRowNum(); i++) {
+            double daySum = 0;
             for (int j = 1; j < scheduleSheet.getRow(i).getLastCellNum(); j++) {
                 daySum += scheduleSheet.getRow(i).getCell(j).getNumericCellValue();
             }
             hoursSumByDay.add(daySum);
             monthlyHoursSum += daySum;
         }
+        hoursSumByDay.add(monthlyHoursSum);
+
+        return hoursSumByDay;
     }
 
-    public List<Float> calculatePercentagesOfHoursByDay() {
-        List<Float> percentagesOfHoursByDay = new LinkedList<>();
+    public List<Double> calculatePercentagesOfHoursByDay() {
+        List<Double> hoursSumByDay = sumDepartmentsHours();
+        List<Double> percentagesOfHoursByDay = new LinkedList<>();
 
-        for (Float hoursInDay : hoursSumByDay) {
-            float tempPerc = hoursInDay/monthlyHoursSum;
+        for (Double hoursInDay : hoursSumByDay) {
+            double tempPerc = hoursInDay/monthlyHoursSum;
             percentagesOfHoursByDay.add(tempPerc);
         }
         return percentagesOfHoursByDay;
     }
-
-
-
 
 }

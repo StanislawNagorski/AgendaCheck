@@ -25,7 +25,8 @@ public class App
         ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
-        reportWriter.writeSecondAndThirdColumnHoursAndShare();
+        reportWriter.writeSecondColumnHours();
+        reportWriter.writeThirdColumnHoursShare();
         reportWriter.writeFourthColumnTurnOverForecast();
         reportWriter.writeFifthColumnShareOfTurnOver();
 
