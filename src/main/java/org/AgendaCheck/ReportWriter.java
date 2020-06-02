@@ -62,33 +62,30 @@ public class ReportWriter {
         polishZlotyStyleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
     }
 
-    public void writeFirstColumnDays() {
-        List<String> dates = scheduleReader.getFirstColumn();
-        int writeColumnNr = 0;
+    private void createRows() {
 
-        for (int i = 0; i < 100; i++) {
+        int reportLenght = 50;
+
+        for (int i = 0; i < reportLenght; i++) {
             reportSheet.createRow(i);
         }
+    }
 
-        for (int i = 0; i < dates.size(); i++) {
-            reportSheet.getRow(i).createCell(writeColumnNr)
-                    .setCellValue(dates.get(i));
-        }
+    public void writeFirstColumnDays() {
+        createRows();
 
-        XSSFCell titleOfDateColumn = reportSheet.getRow(1).getCell(writeColumnNr);
-        titleOfDateColumn.setCellStyle(titleBoldedWithBotBorder);
-
-        reportSheet.autoSizeColumn(writeColumnNr);
-
+        List<String> dates = scheduleReader.getFirstColumn();
+        int writeColumnNr = 0;
+        writeColumn("Dzień", writeColumnNr, dates, defaultCellStyle);
     }
 
     public void writeSecondColumnHours() {
         List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
         int writeColumnNr = 1;
-        writeColumn("Suma godzin",writeColumnNr,hoursByDay,defaultDoubleCellStyle);
+        writeColumn("Suma godzin", writeColumnNr, hoursByDay, defaultDoubleCellStyle);
     }
 
-    public void writeThirdColumnHoursShare(){
+    public void writeThirdColumnHoursShare() {
         List<Double> shareOfHours = scheduleReader.calculatePercentagesOfHoursByDay();
         int writeColumnNr = 2;
         writeColumn("Udział w godzinach", writeColumnNr, shareOfHours, percentageStyle);
@@ -100,7 +97,7 @@ public class ReportWriter {
         int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
         int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
 
-       return forecastReader.forecastTOList(range);
+        return forecastReader.forecastTOList(range);
     }
 
 
@@ -122,28 +119,28 @@ public class ReportWriter {
 
     }
 
-    private <T> void writeColumn(String columnName,int columnNr, List<T> dataList, CellStyle mainStyle){
+    private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle) {
 
         XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
         titleOfTurnOverColumn.setCellValue(columnName);
         titleOfTurnOverColumn.setCellStyle(titleBoldedWithBotBorder);
 
-
+        int rowToStartData = 3;
         for (int i = 0; i < dataList.size(); i++) {
 
-            XSSFCell cell = reportSheet.getRow(i + 3).createCell(columnNr);
+            XSSFCell cell = reportSheet.getRow(i + rowToStartData).createCell(columnNr);
 
-           Object o = dataList.get(0);
-           if (o instanceof String){
-               cell.setCellValue((String) dataList.get(i));
-           } else {
-               cell.setCellValue((Double) dataList.get(i));
-           }
+            Object o = dataList.get(0);
+            if (o instanceof String) {
+                cell.setCellValue((String) dataList.get(i));
+            } else {
+                cell.setCellValue((Double) dataList.get(i));
+            }
 
             cell.setCellStyle(mainStyle);
         }
 
-        reportSheet.getRow(dataList.size()+2)
+        reportSheet.getRow(dataList.size() + 2)
                 .getCell(columnNr).setCellStyle(boldedDoubleWithTopBorder);
 
         reportSheet.autoSizeColumn(columnNr);

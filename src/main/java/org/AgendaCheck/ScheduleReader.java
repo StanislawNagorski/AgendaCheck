@@ -10,25 +10,21 @@ import java.util.List;
 
 public class ScheduleReader {
     private final XSSFSheet scheduleSheet;
-    //private int scheduleRowsNumber;
     private double monthlyHoursSum;
+
     public ScheduleReader(XSSFWorkbook schedule) {
         this.scheduleSheet = schedule.getSheetAt(0);
-        //this.scheduleRowsNumber = scheduleSheet.getLastRowNum();
     }
-
-    //public int getScheduleRowsNumber(){        return scheduleRowsNumber;    }
-
-
-
 
     public List<String> getFirstColumn() {
 
-     List<String> firstColumn = new ArrayList<>();
+        List<String> firstColumn = new ArrayList<>();
 
-        for (int i = 0; i < scheduleSheet.getLastRowNum(); i++) {
+        for (int i = 3; i < scheduleSheet.getLastRowNum(); i++) {
             firstColumn.add(String.valueOf(scheduleSheet.getRow(i).getCell(0)));
         }
+
+        firstColumn.add("Sumy:");
         return firstColumn;
     }
 
@@ -54,7 +50,7 @@ public class ScheduleReader {
         List<Double> percentagesOfHoursByDay = new LinkedList<>();
 
         for (Double hoursInDay : hoursSumByDay) {
-            double tempPerc = hoursInDay/monthlyHoursSum;
+            double tempPerc = hoursInDay / monthlyHoursSum;
             percentagesOfHoursByDay.add(tempPerc);
         }
         return percentagesOfHoursByDay;
