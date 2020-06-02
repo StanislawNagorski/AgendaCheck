@@ -7,6 +7,11 @@ It takes data from to .xlsx files and creates new report.
 - Maven
 - Apache POI
 
+#What I have learn so far, in this project
+- Apache POI
+- That dates are counted as days since 01.01.1900
+
+
 # Główne założenia
 
 - program pobiera rozkładu godzin na dni miesiąca i konsolidajce z pliku xlsx (pilotaż),

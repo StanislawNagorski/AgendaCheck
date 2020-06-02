@@ -22,7 +22,13 @@ public class App
 
         sheetCreation(report, scheduleReader, forecastReader, "Sklep");
 
-        System.out.println(scheduleReader.getListOfDepartmentNames());
+
+
+        for (int i = 0; i < scheduleReader.getListOfDailyHoursByDepartment().size(); i++) {
+
+            System.out.println("godziny działu: " + scheduleReader.getListOfDepartmentNames().get(i));
+            System.out.println(scheduleReader.getListOfDailyHoursByDepartment().get(i));
+        }
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));

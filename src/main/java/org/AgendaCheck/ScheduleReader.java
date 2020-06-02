@@ -56,8 +56,8 @@ public class ScheduleReader {
         }
         return percentagesOfHoursByDay;
     }
-    
-    public List<String> getListOfDepartmentNames(){
+
+    public List<String> getListOfDepartmentNames() {
         List<String> listOfDepartmentNames = new ArrayList<>();
         int rowOnWhichDataStarts = 1;
         XSSFRow startRow = scheduleSheet.getRow(rowOnWhichDataStarts);
@@ -65,17 +65,28 @@ public class ScheduleReader {
         int columnOnWhichDataStarts = 1;
 
         for (int i = columnOnWhichDataStarts; i < startRow.getLastCellNum(); i++) {
-            if(!startRow.getCell(i).getStringCellValue().isBlank()) {
+            if (!startRow.getCell(i).getStringCellValue().isBlank()) {
                 listOfDepartmentNames.add(startRow.getCell(i).getStringCellValue());
             }
         }
         return listOfDepartmentNames;
     }
 
-    public List<List<Double>> getListOfDailyHoursByDepartment(){
+    public List<List<Double>> getListOfDailyHoursByDepartment() {
         List<List<Double>> dailyHoursByDepartment = new ArrayList<>();
 
+        int rowOnWhichDataStarts = 3;
+        int columnOnWhichDataStarts = 1;
+        int rowLenght = scheduleSheet.getRow(1).getLastCellNum()-1;
 
+        for (int i = columnOnWhichDataStarts; i < rowLenght; i++) {
+
+            List<Double> departmentHoursByDay = new ArrayList<>();
+            for (int j = rowOnWhichDataStarts; j < scheduleSheet.getLastRowNum(); j++) {
+                departmentHoursByDay.add(scheduleSheet.getRow(j).getCell(i).getNumericCellValue());
+            }
+            dailyHoursByDepartment.add(departmentHoursByDay);
+        }
 
         return dailyHoursByDepartment;
     }
