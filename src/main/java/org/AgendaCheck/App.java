@@ -19,15 +19,10 @@ public class App
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
 
-        reportWriter.writeFirstColumnDays();
-        reportWriter.writeForthColumnHours();
-        reportWriter.writeFifthColumnHoursShare();
-        reportWriter.writeSecondColumnTurnOverForecast();
-        reportWriter.writeThirdColumnShareOfTurnOver();
-        reportWriter.writeSixthColumnPerfectHours();
-        reportWriter.writeSeventhColumnDifferenceInHours();
+        sheetCreation(report, scheduleReader, forecastReader, "Sklep");
+
+        System.out.println(scheduleReader.getListOfDepartmentNames());
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
@@ -37,7 +32,20 @@ public class App
         long duration = (end-start);
         double durationInSec = (double) duration/1000000000;
         System.out.printf("Program ended in: %.4f seconds", durationInSec);
+    }
 
+    public static void sheetCreation(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader, String sheetName){
+
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, sheetName);
+        reportWriter.writeFirstColumnDays();
+        reportWriter.writeForthColumnHours();
+        reportWriter.writeFifthColumnHoursShare();
+        reportWriter.writeSecondColumnTurnOverForecast();
+        reportWriter.writeThirdColumnShareOfTurnOver();
+        reportWriter.writeSixthColumnPerfectHours();
+        reportWriter.writeSeventhColumnDifferenceInHours();
 
     }
+
+
 }

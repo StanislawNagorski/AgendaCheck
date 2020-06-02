@@ -1,6 +1,7 @@
 package org.AgendaCheck;
 
 
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -55,5 +56,29 @@ public class ScheduleReader {
         }
         return percentagesOfHoursByDay;
     }
+    
+    public List<String> getListOfDepartmentNames(){
+        List<String> listOfDepartmentNames = new ArrayList<>();
+        int rowOnWhichDataStarts = 1;
+        XSSFRow startRow = scheduleSheet.getRow(rowOnWhichDataStarts);
+
+        int columnOnWhichDataStarts = 1;
+
+        for (int i = columnOnWhichDataStarts; i < startRow.getLastCellNum(); i++) {
+            if(!startRow.getCell(i).getStringCellValue().isBlank()) {
+                listOfDepartmentNames.add(startRow.getCell(i).getStringCellValue());
+            }
+        }
+        return listOfDepartmentNames;
+    }
+
+    public List<List<Double>> getListOfDailyHoursByDepartment(){
+        List<List<Double>> dailyHoursByDepartment = new ArrayList<>();
+
+
+
+        return dailyHoursByDepartment;
+    }
+
 
 }
