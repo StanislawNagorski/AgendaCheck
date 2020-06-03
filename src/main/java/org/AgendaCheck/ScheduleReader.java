@@ -5,9 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ScheduleReader {
     private final XSSFSheet scheduleSheet;
@@ -57,7 +55,7 @@ public class ScheduleReader {
         return percentagesOfHoursByDay;
     }
 
-    public List<String> getListOfDepartmentNames() {
+    private List<String> getListOfDepartmentNames() {
         List<String> listOfDepartmentNames = new ArrayList<>();
         int rowOnWhichDataStarts = 1;
         XSSFRow startRow = scheduleSheet.getRow(rowOnWhichDataStarts);
@@ -72,7 +70,7 @@ public class ScheduleReader {
         return listOfDepartmentNames;
     }
 
-    public List<List<Double>> getListOfDailyHoursByDepartment() {
+    private List<List<Double>> getListOfDailyHoursByDepartment() {
         List<List<Double>> dailyHoursByDepartment = new ArrayList<>();
 
         int rowOnWhichDataStarts = 3;
@@ -89,6 +87,21 @@ public class ScheduleReader {
         }
 
         return dailyHoursByDepartment;
+    }
+
+    public Map<String, List<Double>> getMapOfScheduleDailyHoursByDepartment(){
+        Map<String, List<Double>> dailyHoursMap = new HashMap<>();
+
+        List<String> departmentNames = getListOfDepartmentNames();
+        List<List<Double>> dailyScheduledHours = getListOfDailyHoursByDepartment();
+
+        int departmentsCount = departmentNames.size();
+
+        for (int i = 0; i < departmentsCount; i++) {
+            dailyHoursMap.put(departmentNames.get(i), dailyScheduledHours.get(i));
+        }
+
+        return dailyHoursMap;
     }
 
 

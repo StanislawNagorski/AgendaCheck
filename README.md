@@ -24,11 +24,12 @@ It takes data from to .xlsx files and creates new report.
 
 #To do
 
-- czy mogę wydzielić style?
+- ~~czy mogę wydzielić style?~~
+- ~~mapa: godzin dziennych i nazw z grafiku~~
+- ~~mapa: miesiecznego obtoru i nazwy z pilotażu.~~
+- Testy do MAP!
 - listy w readerach warto zapisać zeby funkacja nie wykonywała się za każdym razem
 - zakładki dla konsolidacji - wykrywanie - tworzenie&zapełnianie
 - suma godzin na konsolidacje
-- znaleźć w gessefie zakładkę tej konsoliidacji i:
-- pobrać z niej godziny a następnie:
 - wypisać godziny i idealne godziny
 - dodać godziny wg potencjału eko - oderwane od godzin sektora (pamiętaj o odjęciu administracji i kas)

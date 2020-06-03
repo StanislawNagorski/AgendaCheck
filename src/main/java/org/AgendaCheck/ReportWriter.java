@@ -1,65 +1,26 @@
 package org.AgendaCheck;
 
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.util.List;
+import java.util.Map;
 
 public class ReportWriter {
     private final ScheduleReader scheduleReader;
     private final ForecastReader forecastReader;
     private final XSSFSheet reportSheet;
-
-    private final CellStyle defaultCellStyle;
-    private final CellStyle defaultDoubleCellStyle;
-    private final CellStyle boldedDoubleWithTopBorder;
-    private final CellStyle titleBoldedWithBotBorder;
-    private final CellStyle percentageStyle;
-    private final CellStyle polishZlotyStyle;
-    private final CellStyle polishZlotyStyleBoldedWithBotBorder;
-
+    private Map<String, CellStyle> stylesForCell;
 
     public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader, String sheetName) {
         this.scheduleReader = scheduleReader;
         this.forecastReader = forecastReader;
         this.reportSheet = report.createSheet(sheetName);
-
-        DataFormat dataFormat = report.createDataFormat();
-        XSSFFont boldFont = report.createFont();
-        this.defaultCellStyle = report.createCellStyle();
-
-        this.defaultDoubleCellStyle = report.createCellStyle();
-        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.#"));
-
-        this.boldedDoubleWithTopBorder = report.createCellStyle();
-        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#"));
-        boldFont.setBold(true);
-        boldedDoubleWithTopBorder.setFont(boldFont);
-        boldedDoubleWithTopBorder.setBorderTop(BorderStyle.MEDIUM);
-        boldedDoubleWithTopBorder.setAlignment(HorizontalAlignment.CENTER);
-
-        this.titleBoldedWithBotBorder = report.createCellStyle();
-        boldFont.setBold(true);
-        titleBoldedWithBotBorder.setFont(boldFont);
-        titleBoldedWithBotBorder.setBorderBottom(BorderStyle.MEDIUM);
-        titleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
-
-        this.percentageStyle = report.createCellStyle();
-        percentageStyle.setDataFormat(dataFormat.getFormat("0.00%"));
-
-        this.polishZlotyStyle = report.createCellStyle();
-        polishZlotyStyle.setDataFormat(dataFormat.getFormat("###0,00\\ \"zł\";-###0,00\\ \"zł\""));
-
-        this.polishZlotyStyleBoldedWithBotBorder = report.createCellStyle();
-        polishZlotyStyleBoldedWithBotBorder.setDataFormat(dataFormat.getFormat("###0,00\\ \"zł\";-###0,00\\ \"zł\""));
-        boldFont.setBold(true);
-        polishZlotyStyleBoldedWithBotBorder.setFont(boldFont);
-        polishZlotyStyleBoldedWithBotBorder.setBorderTop(BorderStyle.MEDIUM);
-        polishZlotyStyleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
+        stylesForCell = StylesForCell.createCellStyles(report);
     }
+
 
     private void createRows() {
         int reportLenght = 50;
@@ -74,19 +35,25 @@ public class ReportWriter {
 
         List<String> dates = scheduleReader.getFirstColumn();
         int columnNrToWrite = 0;
-        writeColumn("Dzień", columnNrToWrite, dates, defaultCellStyle);
+        writeColumn("Dzień",
+                columnNrToWrite,
+                dates,
+                stylesForCell.get("defaultCellStyle"));
     }
 
     public void writeSecondColumnTurnOverForecast() {
         List<Double> forecast = foreCastListCreation();
         int columnNrToWrite = 1;
 
-        writeColumn("Pilotaż obrotu", columnNrToWrite, forecast, polishZlotyStyle);
+        writeColumn("Pilotaż obrotu", columnNrToWrite, forecast, stylesForCell.get("polishZlotyStyle"));
+    }
+
+    public int[] getYearMonth(){
+        return MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
     }
 
     private List<Double> foreCastListCreation() {
-
-        int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
+        int[] yearMonth = getYearMonth();
         int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
 
         return forecastReader.forecastTOList(range);
@@ -99,20 +66,20 @@ public class ReportWriter {
 
         int columnNrToWrite = 2;
 
-        writeColumn("Udział dnia w TO", columnNrToWrite, dailyShare, percentageStyle);
+        writeColumn("Udział dnia w TO", columnNrToWrite, dailyShare, stylesForCell.get("percentageStyle"));
 
     }
 
     public void writeForthColumnHours() {
         List<Double> hoursByDay = scheduleReader.sumDepartmentsHours();
         int columnNrToWrite = 3;
-        writeColumn("Suma godzin", columnNrToWrite, hoursByDay, defaultDoubleCellStyle);
+        writeColumn("Suma godzin", columnNrToWrite, hoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
     public void writeFifthColumnHoursShare() {
         List<Double> shareOfHours = scheduleReader.calculatePercentagesOfHoursByDay();
         int columnNrToWrite = 4;
-        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, percentageStyle);
+        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle"));
     }
 
     public void writeSixthColumnPerfectHours(){
@@ -124,7 +91,7 @@ public class ReportWriter {
         List<Double> perfectHours = potentialHoursCalculator.perfectHoursCalculation(dailyShare,hoursByDay);
 
         int columnNrToWrite = 5;
-        writeColumn("\"Idealne\" godziny",columnNrToWrite, perfectHours, defaultDoubleCellStyle);
+        writeColumn("\"Idealne\" godziny",columnNrToWrite, perfectHours, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
     public void writeSeventhColumnDifferenceInHours(){
@@ -137,7 +104,7 @@ public class ReportWriter {
 
         List<Double> dailyDifferenceInHours = potentialHoursCalculator.differenceInHours(perfectHours, hoursByDay);
         int columnNrToWrite = 6;
-        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHours, defaultDoubleCellStyle);
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHours, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
 
@@ -145,7 +112,7 @@ public class ReportWriter {
 
         XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
         titleOfTurnOverColumn.setCellValue(columnName);
-        titleOfTurnOverColumn.setCellStyle(titleBoldedWithBotBorder);
+        titleOfTurnOverColumn.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
 
         int rowToStartData = 3;
         for (int i = 0; i < dataList.size(); i++) {
@@ -163,7 +130,7 @@ public class ReportWriter {
         }
 
         reportSheet.getRow(dataList.size() + 2)
-                .getCell(columnNr).setCellStyle(boldedDoubleWithTopBorder);
+                .getCell(columnNr).setCellStyle(stylesForCell.get("boldedDoubleWithTopBorder"));
 
         reportSheet.autoSizeColumn(columnNr);
     }
