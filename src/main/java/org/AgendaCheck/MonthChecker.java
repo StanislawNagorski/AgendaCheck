@@ -11,8 +11,10 @@ public class MonthChecker {
     public static int[] checkMonthAndYear(List<String> firstColumn){
         String firstDay = firstColumn.get(3);
         String[] spited = firstDay.split("-");
+        int year = Integer.parseInt(spited[0]);
+        int month = Integer.parseInt(spited[1]);
 
-        return new int[]{Integer.parseInt(spited[0]), Integer.parseInt(spited[1])};
+        return new int[]{year, month};
     }
 
     public static int[] rangeOfDaysSince1900ForThisMonthAndMonthLength(int year, int month){

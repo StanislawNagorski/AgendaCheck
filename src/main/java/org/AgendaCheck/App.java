@@ -19,16 +19,11 @@ public class App
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
+        sheetCreation(reportWriter);
 
-        sheetCreation(report, scheduleReader, forecastReader, "Sklep");
-
-
-
-        for (int i = 0; i < scheduleReader.getListOfDailyHoursByDepartment().size(); i++) {
-
-            System.out.println("godziny działu: " + scheduleReader.getListOfDepartmentNames().get(i));
-            System.out.println(scheduleReader.getListOfDailyHoursByDepartment().get(i));
-        }
+        int[] yearMonth = reportWriter.getYearMonth();
+        System.out.println(forecastReader.getDepartmentsMonthlyTurnOver(yearMonth[1]));
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
@@ -40,9 +35,8 @@ public class App
         System.out.printf("Program ended in: %.4f seconds", durationInSec);
     }
 
-    public static void sheetCreation(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader, String sheetName){
+    public static void sheetCreation(ReportWriter reportWriter){
 
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, sheetName);
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
         reportWriter.writeFifthColumnHoursShare();

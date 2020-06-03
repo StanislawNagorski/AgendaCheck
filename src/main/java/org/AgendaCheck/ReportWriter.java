@@ -14,55 +14,13 @@ public class ReportWriter {
     private final XSSFSheet reportSheet;
     private Map<String, CellStyle> stylesForCell;
 
-//    private final CellStyle defaultCellStyle;
-//    private final CellStyle defaultDoubleCellStyle;
-//    private final CellStyle boldedDoubleWithTopBorder;
-//    private final CellStyle titleBoldedWithBotBorder;
-//    private final CellStyle percentageStyle;
-//    private final CellStyle polishZlotyStyle;
-//    private final CellStyle polishZlotyStyleBoldedWithBotBorder;
-
-
     public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader, String sheetName) {
         this.scheduleReader = scheduleReader;
         this.forecastReader = forecastReader;
         this.reportSheet = report.createSheet(sheetName);
         stylesForCell = StylesForCell.createCellStyles(report);
-
-
-//        DataFormat dataFormat = report.createDataFormat();
-//        XSSFFont boldFont = report.createFont();
-//        this.defaultCellStyle = report.createCellStyle();
-//
-//        this.defaultDoubleCellStyle = report.createCellStyle();
-//        defaultDoubleCellStyle.setDataFormat(dataFormat.getFormat("#.#"));
-//
-//        this.boldedDoubleWithTopBorder = report.createCellStyle();
-//        boldedDoubleWithTopBorder.setDataFormat(dataFormat.getFormat("#"));
-//        boldFont.setBold(true);
-//        boldedDoubleWithTopBorder.setFont(boldFont);
-//        boldedDoubleWithTopBorder.setBorderTop(BorderStyle.MEDIUM);
-//        boldedDoubleWithTopBorder.setAlignment(HorizontalAlignment.CENTER);
-//
-//        this.titleBoldedWithBotBorder = report.createCellStyle();
-//        boldFont.setBold(true);
-//        titleBoldedWithBotBorder.setFont(boldFont);
-//        titleBoldedWithBotBorder.setBorderBottom(BorderStyle.MEDIUM);
-//        titleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
-//
-//        this.percentageStyle = report.createCellStyle();
-//        percentageStyle.setDataFormat(dataFormat.getFormat("0.00%"));
-//
-//        this.polishZlotyStyle = report.createCellStyle();
-//        polishZlotyStyle.setDataFormat(dataFormat.getFormat("###0,00\\ \"zł\";-###0,00\\ \"zł\""));
-//
-//        this.polishZlotyStyleBoldedWithBotBorder = report.createCellStyle();
-//        polishZlotyStyleBoldedWithBotBorder.setDataFormat(dataFormat.getFormat("###0,00\\ \"zł\";-###0,00\\ \"zł\""));
-//        boldFont.setBold(true);
-//        polishZlotyStyleBoldedWithBotBorder.setFont(boldFont);
-//        polishZlotyStyleBoldedWithBotBorder.setBorderTop(BorderStyle.MEDIUM);
-//        polishZlotyStyleBoldedWithBotBorder.setAlignment(HorizontalAlignment.CENTER);
     }
+
 
     private void createRows() {
         int reportLenght = 50;
@@ -90,9 +48,12 @@ public class ReportWriter {
         writeColumn("Pilotaż obrotu", columnNrToWrite, forecast, stylesForCell.get("polishZlotyStyle"));
     }
 
-    private List<Double> foreCastListCreation() {
+    public int[] getYearMonth(){
+        return MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
+    }
 
-        int[] yearMonth = MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
+    private List<Double> foreCastListCreation() {
+        int[] yearMonth = getYearMonth();
         int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonth[0], yearMonth[1]);
 
         return forecastReader.forecastTOList(range);
