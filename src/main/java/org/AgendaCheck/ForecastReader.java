@@ -5,10 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ForecastReader {
 
@@ -104,7 +101,7 @@ public class ForecastReader {
     }
 
     public Map<String, Double> getDepartmentsMonthlyTurnOver(int monthNumber) {
-        Map<String, Double> monthlyTurnOverByDepartment = new HashMap<>();
+        Map<String, Double> monthlyTurnOverByDepartment = new LinkedHashMap<>();
 
         int numberOfSheets = forecast.getNumberOfSheets();
         int monthColumnNr = calculateMonthColumnNr(monthNumber);
@@ -127,12 +124,8 @@ public class ForecastReader {
                 monthlyTurnOverByDepartment.put(departmentName, departmentForecastedTurnOver);
                 numberOFDepartmentSheets++;
             }
-            else {
-                System.out.println("Odrzucono: "+ forecastSheet.getSheetName());
-            }
 
         }
-
         return monthlyTurnOverByDepartment;
     }
 

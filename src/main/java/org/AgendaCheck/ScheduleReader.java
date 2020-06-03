@@ -90,7 +90,7 @@ public class ScheduleReader {
     }
 
     public Map<String, List<Double>> getMapOfScheduleDailyHoursByDepartment(){
-        Map<String, List<Double>> dailyHoursMap = new HashMap<>();
+        Map<String, List<Double>> dailyHoursMap = new LinkedHashMap<>();
 
         List<String> departmentNames = getListOfDepartmentNames();
         List<List<Double>> dailyScheduledHours = getListOfDailyHoursByDepartment();
@@ -100,6 +100,7 @@ public class ScheduleReader {
         for (int i = 0; i < departmentsCount; i++) {
             dailyHoursMap.put(departmentNames.get(i), dailyScheduledHours.get(i));
         }
+
 
         return dailyHoursMap;
     }
