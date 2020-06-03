@@ -26,12 +26,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added tests for ForecastReader hours mapping">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/DepartmentNameChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/DepartmentNameCheckerTest.java" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added new class DepartmentNameChecker, which will compare names from forecast and schedule">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/DataKeeper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RaportGrafików.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/RaportGrafików.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/PotentialHoursCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/PotentialHoursCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +52,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,7 +121,36 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DepartmentNameCheckerTest">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.App" />
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DepartmentNameCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
@@ -133,7 +167,7 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentNameCheckerTest.shouldReturnTrueIfNamesAreSimilar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ForecastReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -142,26 +176,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="shouldReturnTrueIfNamesAreSimilar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentNameCheckerTest.shouldReturnTrueIfNamesHaveSameElement729" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="shouldReturnTrueIfNamesHaveSameElement729" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ForecastReaderTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
@@ -190,20 +206,13 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
-        <item itemvalue="Java Scratch.Scratch" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.shouldReturnTrueIfNamesHaveSameElement729" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.shouldReturnTrueIfNamesAreSimilar" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.ForecastReaderTest" />
         <item itemvalue="JUnit.ScheduleReaderTest" />
+        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
+        <item itemvalue="JUnit.AppTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +245,7 @@
       <workItem from="1591183354129" duration="2213000" />
       <workItem from="1591185586079" duration="4700000" />
       <workItem from="1591191848886" duration="2982000" />
-      <workItem from="1591195290430" duration="4218000" />
+      <workItem from="1591195290430" duration="13435000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -434,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591196473945</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added new class DepartmentNameChecker, which will compare names from forecast and schedule">
+      <created>1591200070188</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591200070188</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +506,8 @@
     <MESSAGE value="added method to map department name and monthly forecast in ForecastReader" />
     <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
     <MESSAGE value="added tests for ForecastReader hours mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests for ForecastReader hours mapping" />
+    <MESSAGE value="added new class DepartmentNameChecker, which will compare names from forecast and schedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new class DepartmentNameChecker, which will compare names from forecast and schedule" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -505,6 +522,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591119033458" />
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591205001836">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591205001836" />
     <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1591171940139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -527,25 +548,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591185770415" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591199636416">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591212575095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591199636416" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591212575095" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591199636416">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591212575094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591199636416" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591212575094" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591199636416">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591212575094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591199636416" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591212575094" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591199636416">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591212575095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591199636416" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591212575095" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />

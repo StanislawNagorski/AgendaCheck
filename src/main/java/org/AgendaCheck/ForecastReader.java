@@ -59,7 +59,7 @@ public class ForecastReader {
         return foreList;
     }
 
-    public List<Double> dailyTurnOverShare(List<Double> forecastTO) {
+    public List<Double> createDailyTurnOverShareList(List<Double> forecastTO) {
         List<Double> dailyShareToList = new ArrayList<>();
 
         for (int i = 0; i < forecastTO.size(); i++) {
@@ -100,7 +100,7 @@ public class ForecastReader {
         return condition1 && condition2;
     }
 
-    public Map<String, Double> getDepartmentsMonthlyTurnOver(int monthNumber) {
+    public Map<String, Double> createDepartmentsMonthlyTurnOverMap(int monthNumber) {
         Map<String, Double> monthlyTurnOverByDepartment = new LinkedHashMap<>();
 
         int numberOfSheets = forecast.getNumberOfSheets();
@@ -128,5 +128,4 @@ public class ForecastReader {
         }
         return monthlyTurnOverByDepartment;
     }
-
 }
