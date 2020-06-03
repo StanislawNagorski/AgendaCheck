@@ -26,10 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added method to map department name and monthly forecast in ForecastReader">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added unitTests for ScheduleReader hours mapping">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScheduleReaderTest">
+  <component name="RunManager" selected="JUnit.ForecastReaderTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.App" />
       <module name="AgendaCheck" />
@@ -128,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ForecastReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -137,14 +139,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.AppTest" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ForecastReaderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.shouldCreateReportForJune" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ForecastReaderTest.shouldReturnTrueForMayFor643" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -153,8 +155,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.AppTest" />
-      <option name="METHOD_NAME" value="shouldCreateReportForJune" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ForecastReaderTest" />
+      <option name="METHOD_NAME" value="shouldReturnTrueForMayFor643" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ForecastReaderTest" />
+        <item itemvalue="JUnit.ForecastReaderTest.shouldReturnTrueForMayFor643" />
         <item itemvalue="JUnit.ScheduleReaderTest" />
         <item itemvalue="JUnit.ScheduleReaderTest.shouldReturnTrueForGivenValue" />
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.AppTest" />
-        <item itemvalue="JUnit.AppTest.shouldCreateReportForJune" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +241,8 @@
       <workItem from="1591170270050" duration="11432000" />
       <workItem from="1591183354129" duration="2213000" />
       <workItem from="1591185586079" duration="4700000" />
-      <workItem from="1591191848886" duration="2743000" />
+      <workItem from="1591191848886" duration="2982000" />
+      <workItem from="1591195290430" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -423,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591190126373</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added unitTests for ScheduleReader hours mapping">
+      <created>1591194729557</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1591194729557</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +487,8 @@
     <MESSAGE value="added method to create LList of Department names and daily hours by department" />
     <MESSAGE value="StylesForCell class separated from ReportWriter class.&#10;Styles are kept in HashMap" />
     <MESSAGE value="added method to map department name and monthly forecast in ForecastReader" />
-    <option name="LAST_COMMIT_MESSAGE" value="added method to map department name and monthly forecast in ForecastReader" />
+    <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="added unitTests for ScheduleReader hours mapping" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -514,25 +525,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591185770415" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591194335882">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591196352602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591194335882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591196352602" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591194335882">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591196352601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591194335882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591196352601" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591194335882">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591196352601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591194335882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591196352601" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591194335882">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591196352602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591194335882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591196352602" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
@@ -556,10 +567,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590492012204" />
-    <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591191945702">
+    <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591195358421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591191945702" />
+    <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591195358421" />
     <state x="690" y="281" key="extract.method.dialog" timestamp="1591095449371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

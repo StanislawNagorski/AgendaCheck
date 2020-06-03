@@ -127,12 +127,8 @@ public class ForecastReader {
                 monthlyTurnOverByDepartment.put(departmentName, departmentForecastedTurnOver);
                 numberOFDepartmentSheets++;
             }
-            else {
-                System.out.println("Odrzucono: "+ forecastSheet.getSheetName());
-            }
 
         }
-
         return monthlyTurnOverByDepartment;
     }
 
