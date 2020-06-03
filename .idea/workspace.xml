@@ -26,12 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added method to create list of department names for ScheduleReader">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added method to create LList of Department names and daily hours by department">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/StylesForCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RaportGrafików.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/RaportGrafików.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ScheduleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,25 +43,11 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -241,7 +226,8 @@
       <workItem from="1591086428921" duration="16284000" />
       <workItem from="1591108136852" duration="11109000" />
       <workItem from="1591122486009" duration="2399000" />
-      <workItem from="1591128256922" duration="1139000" />
+      <workItem from="1591128256922" duration="1538000" />
+      <workItem from="1591170270050" duration="5832000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -397,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591124868509</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added method to create LList of Department names and daily hours by department">
+      <created>1591129517489</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591129517489</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +441,8 @@
     <MESSAGE value="Difference in hours column added, considering close days" />
     <MESSAGE value="Tests end-to-end added" />
     <MESSAGE value="added method to create list of department names for ScheduleReader" />
-    <option name="LAST_COMMIT_MESSAGE" value="added method to create list of department names for ScheduleReader" />
+    <MESSAGE value="added method to create LList of Department names and daily hours by department" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method to create LList of Department names and daily hours by department" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -459,9 +453,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591119033458" />
-    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1590932115421">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1591171940139">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591171940139" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
     <state x="707" y="364" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1591122588493">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -476,25 +471,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591014313675" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591124887588">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591175031371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591124887588" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591175031371" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591124887588">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591175031371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591124887588" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591175031371" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591124887588">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591175031371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591124887588" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591175031371" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591124887588">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591175031371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591124887588" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591175031371" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
@@ -546,9 +541,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1590836988408" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591030974277">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591129493067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591030974277" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591129493067" />
   </component>
 </project>
