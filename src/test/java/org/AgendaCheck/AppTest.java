@@ -27,7 +27,7 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -52,7 +52,7 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -77,7 +77,7 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -102,7 +102,7 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();

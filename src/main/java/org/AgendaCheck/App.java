@@ -19,11 +19,11 @@ public class App
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader, "Sklep");
-        sheetCreation(reportWriter);
+        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        sheetStoreCreation(reportWriter, "Sklep");
 
-        int[] yearMonth = reportWriter.getYearMonth();
-        System.out.println(forecastReader.getDepartmentsMonthlyTurnOver(yearMonth[1]));
+        //to do pętli z mapą
+        sheetDepartmentCreation(new ReportWriter(report, scheduleReader, forecastReader), "BieganieOXELO", 895000);
 
 
         report.write(new FileOutputStream("RaportGrafików.xlsx"));
@@ -35,8 +35,9 @@ public class App
         System.out.printf("Program ended in: %.4f seconds", durationInSec);
     }
 
-    public static void sheetCreation(ReportWriter reportWriter){
+    public static void sheetStoreCreation(ReportWriter reportWriter, String sheetName){
 
+        reportWriter.setSheetName(sheetName);
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
         reportWriter.writeFifthColumnHoursShare();
@@ -44,7 +45,10 @@ public class App
         reportWriter.writeThirdColumnShareOfTurnOver();
         reportWriter.writeSixthColumnPerfectHours();
         reportWriter.writeSeventhColumnDifferenceInHours();
+    }
 
+    public static void sheetDepartmentCreation(ReportWriter reportWriter, String sheetName, double departmentTurnOver){
+        reportWriter.writeDepartmentSheet(sheetName, departmentTurnOver);
     }
 
 

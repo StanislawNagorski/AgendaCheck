@@ -13,6 +13,7 @@ It takes data from to .xlsx files and creates new report.
 - Apache POI,
 - that dates are counted as days since 01.01.1900,
 - testing by printing ends while project grows,
+- proper naming matters, or You will lose it,
 
 # Główne założenia
 

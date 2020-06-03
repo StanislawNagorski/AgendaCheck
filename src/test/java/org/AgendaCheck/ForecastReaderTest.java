@@ -9,8 +9,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
 public class ForecastReaderTest {
 
     private ForecastReader forecastReader643;
@@ -33,7 +31,7 @@ public class ForecastReaderTest {
         int testedMonth = 5;
 
         //When
-        Map<String, Double> resultMap = forecastReader643.getDepartmentsMonthlyTurnOver(testedMonth);
+        Map<String, Double> resultMap = forecastReader643.createDepartmentsMonthlyTurnOverMap(testedMonth);
 
         //Then
 
@@ -50,7 +48,7 @@ public class ForecastReaderTest {
         int testedMonth = 6;
 
         //When
-        Map<String, Double> resultMap = forecastReader643.getDepartmentsMonthlyTurnOver(testedMonth);
+        Map<String, Double> resultMap = forecastReader643.createDepartmentsMonthlyTurnOverMap(testedMonth);
 
         //Then
 
@@ -67,7 +65,7 @@ public class ForecastReaderTest {
         int testedMonth = 5;
 
         //When
-        Map<String, Double> resultMap = forecastReader729.getDepartmentsMonthlyTurnOver(testedMonth);
+        Map<String, Double> resultMap = forecastReader729.createDepartmentsMonthlyTurnOverMap(testedMonth);
 
         //Then
 
@@ -84,7 +82,7 @@ public class ForecastReaderTest {
         int testedMonth = 6;
 
         //When
-        Map<String, Double> resultMap = forecastReader729.getDepartmentsMonthlyTurnOver(testedMonth);
+        Map<String, Double> resultMap = forecastReader729.createDepartmentsMonthlyTurnOverMap(testedMonth);
 
         //Then
 
@@ -101,7 +99,7 @@ public class ForecastReaderTest {
         int testedMonth = 7;
 
         //When
-        Map<String, Double> resultMap = forecastReader729.getDepartmentsMonthlyTurnOver(testedMonth);
+        Map<String, Double> resultMap = forecastReader729.createDepartmentsMonthlyTurnOverMap(testedMonth);
 
         //Then
 
