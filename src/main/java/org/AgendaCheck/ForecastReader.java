@@ -21,7 +21,7 @@ public class ForecastReader {
         return numberOFDepartmentSheets;
     }
 
-    public List<Double> forecastTOList(int[] range) {
+    public List<Double> createStoreForecastedTurnOverList(int[] range) {
 
         List<Double> foreList = new ArrayList<>();
         double monthlyTurnOver = 0;

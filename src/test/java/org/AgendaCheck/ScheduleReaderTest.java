@@ -29,7 +29,7 @@ public class ScheduleReaderTest {
         String givenString = "(643.1) Rowery";
 
         //When
-        Map<String, List<Double>> testedMap = scheduleReaderJune.getMapOfScheduleDailyHoursByDepartment();
+        Map<String, List<Double>> testedMap = scheduleReaderJune.createMapOfScheduleDailyHoursByDepartment();
 
         //Then
         Assert.assertTrue(testedMap.containsKey(givenString));
@@ -41,7 +41,7 @@ public class ScheduleReaderTest {
         String givenString = "(643.1) Rowery";
 
         //When
-        Map<String, List<Double>> testedMap = scheduleReaderMay.getMapOfScheduleDailyHoursByDepartment();
+        Map<String, List<Double>> testedMap = scheduleReaderMay.createMapOfScheduleDailyHoursByDepartment();
 
         //Then
         Assert.assertTrue(testedMap.containsKey(givenString));
@@ -58,7 +58,7 @@ public class ScheduleReaderTest {
                 0.0, 43.0, 40.0, 29.0, 35.8, 60.5, 66.0, 52.0, 25.0, 48.9);
 
         //When
-        Map<String, List<Double>> testedMap = scheduleReaderJune.getMapOfScheduleDailyHoursByDepartment();
+        Map<String, List<Double>> testedMap = scheduleReaderJune.createMapOfScheduleDailyHoursByDepartment();
 
         //Then
         Assert.assertEquals(givenList, testedMap.get(givenString));
@@ -75,7 +75,7 @@ public class ScheduleReaderTest {
                 0.0, 39.0, 42.0, 38.0, 54.5, 65.0, 67.0, 0.0);
 
         //When
-        Map<String, List<Double>> testedMap = scheduleReaderMay.getMapOfScheduleDailyHoursByDepartment();
+        Map<String, List<Double>> testedMap = scheduleReaderMay.createMapOfScheduleDailyHoursByDepartment();
 
         //Then
         Assert.assertEquals(givenList, testedMap.get(givenString));

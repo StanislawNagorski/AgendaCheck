@@ -14,6 +14,8 @@ It takes data from to .xlsx files and creates new report.
 - that dates are counted as days since 01.01.1900,
 - testing by printing ends while project grows,
 - proper naming matters, or You will lose it,
+- class should be dedicated to specyfic actions
+- mind-mapping helps to keep track of classes connections, 
 
 # Główne założenia
 

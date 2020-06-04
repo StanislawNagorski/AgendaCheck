@@ -27,7 +27,8 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -52,7 +53,8 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -77,7 +79,8 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
@@ -102,7 +105,8 @@ public class AppTest {
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeFirstColumnDays();
         reportWriter.writeForthColumnHours();
