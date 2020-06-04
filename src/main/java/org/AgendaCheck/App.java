@@ -19,14 +19,15 @@ public class App
 
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        ReportWriter reportWriter = new ReportWriter(report, scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        ReportWriter reportWriter = new ReportWriter(report, dataBank);
         sheetStoreCreation(reportWriter, "Sklep");
 
         //to do pętli z mapą
-        sheetDepartmentCreation(new ReportWriter(report, scheduleReader, forecastReader), "BieganieOXELO", 895000);
+        sheetDepartmentCreation(new ReportWriter(report, dataBank), "BieganieOXELO", 895000);
 
 
-        report.write(new FileOutputStream("RaportGrafików.xlsx"));
+        report.write(new FileOutputStream("SampleOutputReport.xlsx"));
         report.close();
 
         long end = System.nanoTime();

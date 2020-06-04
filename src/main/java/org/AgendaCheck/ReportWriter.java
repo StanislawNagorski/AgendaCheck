@@ -11,25 +11,16 @@ import java.util.Map;
 
 public class ReportWriter {
     private XSSFWorkbook report;
-    private final ScheduleReader scheduleReader;
-    private final ForecastReader forecastReader;
+    private final DataBank dataBank;
     private final XSSFSheet reportSheet;
-    private Map<String, CellStyle> stylesForCell;
-    private List<Double> dailyStoreTurnOverList;
-    private List<Double> dailyStoreTurnOverShare;
-    private List<Double> storeHoursByDay;
-    private Map<String, Double> departmentsMonthlyTurnOverMap;
+    private final Map<String, CellStyle> stylesForCell;
 
 
-    public ReportWriter(XSSFWorkbook report, ScheduleReader scheduleReader, ForecastReader forecastReader) {
+    public ReportWriter(XSSFWorkbook report, DataBank dataBank) {
         this.report = report;
-        this.scheduleReader = scheduleReader;
-        this.forecastReader = forecastReader;
-        this.reportSheet = report.createSheet();
+        this.dataBank = dataBank;
+        reportSheet = report.createSheet();
         stylesForCell = StylesForCell.createCellStyles(report);
-        dailyStoreTurnOverList = createDailyStoreTurnOverList();
-        dailyStoreTurnOverShare = forecastReader.createDailyTurnOverShareList(dailyStoreTurnOverList);
-        storeHoursByDay = scheduleReader.sumDepartmentsHours();
     }
 
     public void setSheetName(String sheetName) {
@@ -38,7 +29,6 @@ public class ReportWriter {
 
     private void createRows() {
         int reportLenght = 50;
-
         for (int i = 0; i < reportLenght; i++) {
             reportSheet.createRow(i);
         }
@@ -46,62 +36,46 @@ public class ReportWriter {
 
     public void writeFirstColumnDays() {
         createRows();
-
-        List<String> dates = scheduleReader.getFirstColumn();
+        List<String> dates = dataBank.getDatesColumn();
         int columnNrToWrite = 0;
         writeColumn("Dzień", columnNrToWrite, dates, stylesForCell.get("defaultCellStyle"));
     }
 
-    private int[] createYearMonthToBeReported(){
-        return  MonthChecker.checkMonthAndYear(scheduleReader.getFirstColumn());
-
-    }
-
-    private List<Double> createDailyStoreTurnOverList() {
-        int[] yearMonthToBeReported = createYearMonthToBeReported();
-        int[] range = MonthChecker.rangeOfDaysSince1900ForThisMonthAndMonthLength(yearMonthToBeReported[0], yearMonthToBeReported[1]);
-
-        return forecastReader.forecastTOList(range);
-    }
 
     public void writeSecondColumnTurnOverForecast() {
+        List<Double> dailyStoreTurnOverList = dataBank.getDailyStoreTurnOver();
         int columnNrToWrite = 1;
         writeColumn("Pilotaż obrotu", columnNrToWrite, dailyStoreTurnOverList, stylesForCell.get("polishZlotyStyle"));
     }
 
     public void writeThirdColumnShareOfTurnOver() {
+        List<Double> dailyStoreTurnOverShare = dataBank.getDailyStoreTurnOverShare();
         int columnNrToWrite = 2;
         writeColumn("Udział dnia w TO", columnNrToWrite, dailyStoreTurnOverShare, stylesForCell.get("percentageStyle"));
     }
 
     public void writeForthColumnHours() {
+        List<Double> storeHoursByDay = dataBank.getDailyStoreHours();
         int columnNrToWrite = 3;
         writeColumn("Suma godzin", columnNrToWrite, storeHoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
     public void writeFifthColumnHoursShare() {
-        List<Double> shareOfHours = scheduleReader.calculatePercentagesOfHoursByDay();
+        List<Double> shareOfHours = dataBank.getDailyStoreHoursShare();
         int columnNrToWrite = 4;
         writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle"));
     }
 
     public void writeSixthColumnPerfectHours() {
-
-        PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
-        List<Double> perfectHours = potentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, storeHoursByDay);
-
+        List<Double> perfectStoreHoursByDay = dataBank.getPerfectStoreHoursByDay();
         int columnNrToWrite = 5;
-        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectHours, stylesForCell.get("defaultDoubleCellStyle"));
+        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
     public void writeSeventhColumnDifferenceInHours() {
-        PotentialHoursCalculator potentialHoursCalculator = new PotentialHoursCalculator();
-
-        List<Double> perfectHours = potentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, storeHoursByDay);
-        List<Double> dailyDifferenceInHours = potentialHoursCalculator.createDifferenceInHoursList(perfectHours, storeHoursByDay);
-
+        List<Double> dailyDifferenceInHoursToPerfectOnes = dataBank.getDifferenceBetweenPerfectAndActualHours();
         int columnNrToWrite = 6;
-        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHours, stylesForCell.get("defaultDoubleCellStyle"));
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"));
     }
 
 
@@ -143,19 +117,20 @@ public class ReportWriter {
         //różnica
     }
 
-    private List<Double> createDailyDepartmentTurnOverList(double departmentMonthTurnOver){
+    //?? gdzie to wrzucić ??
+    //jako privete i wygenerować listę wszystkich?
+    private List<Double> createDailyDepartmentTurnOverList(double departmentMonthTurnOver) {
         List<Double> dailyDepartmentTurnOver = new ArrayList<>();
+        List<Double> dailyStoreTurnOverShare = dataBank.getDailyStoreTurnOverShare();
 
         for (int i = 0; i < dailyStoreTurnOverShare.size(); i++) {
             double dayDepartmentTurnOver = dailyStoreTurnOverShare.get(i) * departmentMonthTurnOver;
             dailyDepartmentTurnOver.add(dayDepartmentTurnOver);
         }
-
         return dailyDepartmentTurnOver;
     }
 
-
-    private void writeSecondDepartmentColumn(double departmentMonthTurnOver){
+    private void writeSecondDepartmentColumn(double departmentMonthTurnOver) {
 
         List<Double> dailyDepartmentTurnOverList = createDailyDepartmentTurnOverList(departmentMonthTurnOver);
         int columnNrToWrite = 1;

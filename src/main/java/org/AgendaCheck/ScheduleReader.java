@@ -15,7 +15,7 @@ public class ScheduleReader {
         this.scheduleSheet = schedule.getSheetAt(0);
     }
 
-    public List<String> getFirstColumn() {
+    public List<String> copyDatesToList() {
 
         List<String> firstColumn = new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class ScheduleReader {
         return firstColumn;
     }
 
-    public List<Double> sumDepartmentsHours() {
+    public List<Double> createStoreDailyHoursList() {
         List<Double> hoursSumByDay = new ArrayList<>();
         monthlyHoursSum = 0;
 
@@ -44,8 +44,8 @@ public class ScheduleReader {
         return hoursSumByDay;
     }
 
-    public List<Double> calculatePercentagesOfHoursByDay() {
-        List<Double> hoursSumByDay = sumDepartmentsHours();
+    public List<Double> createStoreShareOfHoursByDayList() {
+        List<Double> hoursSumByDay = createStoreDailyHoursList();
         List<Double> percentagesOfHoursByDay = new LinkedList<>();
 
         for (Double hoursInDay : hoursSumByDay) {
@@ -55,7 +55,7 @@ public class ScheduleReader {
         return percentagesOfHoursByDay;
     }
 
-    private List<String> getListOfDepartmentNames() {
+    private List<String> createListOfDepartmentNames() {
         List<String> listOfDepartmentNames = new ArrayList<>();
         int rowOnWhichDataStarts = 1;
         XSSFRow startRow = scheduleSheet.getRow(rowOnWhichDataStarts);
@@ -70,7 +70,7 @@ public class ScheduleReader {
         return listOfDepartmentNames;
     }
 
-    private List<List<Double>> getListOfDailyHoursByDepartment() {
+    private List<List<Double>> createListOfDailyHoursByDepartment() {
         List<List<Double>> dailyHoursByDepartment = new ArrayList<>();
 
         int rowOnWhichDataStarts = 3;
@@ -89,11 +89,11 @@ public class ScheduleReader {
         return dailyHoursByDepartment;
     }
 
-    public Map<String, List<Double>> getMapOfScheduleDailyHoursByDepartment(){
+    public Map<String, List<Double>> createMapOfScheduleDailyHoursByDepartment(){
         Map<String, List<Double>> dailyHoursMap = new LinkedHashMap<>();
 
-        List<String> departmentNames = getListOfDepartmentNames();
-        List<List<Double>> dailyScheduledHours = getListOfDailyHoursByDepartment();
+        List<String> departmentNames = createListOfDepartmentNames();
+        List<List<Double>> dailyScheduledHours = createListOfDailyHoursByDepartment();
 
         int departmentsCount = departmentNames.size();
 

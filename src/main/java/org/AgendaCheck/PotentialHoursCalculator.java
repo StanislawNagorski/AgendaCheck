@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PotentialHoursCalculator {
 
-    private List<Double> createShareConsideringCloseDaysList(List<Double> dayTurnOverShare, List<Double> hoursInMonth) {
+    private static List<Double> createShareConsideringCloseDaysList(List<Double> dayTurnOverShare, List<Double> hoursInMonth) {
         List<Double> shareWithCloseDays = new ArrayList<>();
 
         double closeDaysTotalShare = 0;
@@ -28,12 +28,12 @@ public class PotentialHoursCalculator {
         return shareWithCloseDays;
     }
 
-    public List<Double> createPerfectHoursList(List<Double> dayTurnOverShare, List<Double> hoursInMonth) {
+    public static List<Double> createPerfectHoursList(List<Double> turnOverShareByDay, List<Double> hoursByDay) {
         List<Double> perfectHours = new ArrayList<>();
-        double monthlyHours = hoursInMonth.get(hoursInMonth.size() - 1);
+        double monthlyHours = hoursByDay.get(hoursByDay.size() - 1);
         double monthlyHoursCheck = 0;
 
-        List<Double> shareWithCloseDays = createShareConsideringCloseDaysList(dayTurnOverShare, hoursInMonth);
+        List<Double> shareWithCloseDays = createShareConsideringCloseDaysList(turnOverShareByDay, hoursByDay);
 
 
         for (int i = 0; i < shareWithCloseDays.size() -1; i++) {
@@ -46,7 +46,7 @@ public class PotentialHoursCalculator {
     }
 
 
-    public List<Double> createDifferenceInHoursList(List<Double> perfectHours, List<Double> hoursInMonth) {
+    public static List<Double> createDifferenceInHoursList(List<Double> perfectHours, List<Double> hoursInMonth) {
         List<Double> differenceHours = new ArrayList<>();
 
         for (int i = 0; i < perfectHours.size(); i++) {
