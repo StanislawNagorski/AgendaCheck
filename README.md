@@ -16,6 +16,7 @@ It takes data from to .xlsx files and creates new report.
 - proper naming matters, or You will lose it,
 - class should be dedicated to specyfic actions
 - mind-mapping helps to keep track of classes connections, 
+- I get my first ever out of memory Java heap space error with 10M+ objetcs
 
 # Główne założenia
 

@@ -9,8 +9,7 @@ import java.util.*;
 
 public class ForecastReader {
 
-    private XSSFWorkbook forecast;
-    private final int FORECAST_SHEET_SIZE = 450;
+    private final XSSFWorkbook forecast;
     private int numberOFDepartmentSheets = 0;
 
     public ForecastReader(XSSFWorkbook forecast) {
@@ -34,6 +33,7 @@ public class ForecastReader {
         int monthStartsAt = range[0];
         int monthEndsAt = range[1];
 
+        int FORECAST_SHEET_SIZE = 450;
         for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
 
             if ((forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr).getCellType() == CellType.NUMERIC) ||

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ReportWriter {
-    private XSSFWorkbook report;
+    private final XSSFWorkbook report;
     private final DataBank dataBank;
     private final XSSFSheet reportSheet;
     private final Map<String, CellStyle> stylesForCell;

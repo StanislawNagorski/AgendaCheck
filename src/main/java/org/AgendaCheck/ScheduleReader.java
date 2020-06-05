@@ -104,5 +104,4 @@ public class ScheduleReader {
         return dailyHoursMap;
     }
 
-
 }
