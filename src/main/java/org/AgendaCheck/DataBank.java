@@ -16,7 +16,7 @@ public class DataBank {
    private final Map<String, Double> monthlyDepartmentTurnOver;
    private final List<Double> dailyStoreHours;
    private final List<Double> dailyStoreHoursShare;
-   private final Map<String, List<Double>> departmentNameAndHoursByDay;
+   private final Map<String, List<Double>> dailyDepartmentHoursByName;
    private final List<Double> perfectStoreHoursByDay;
    private final List<Double> differenceBetweenPerfectAndActualHours;
 
@@ -33,17 +33,9 @@ public class DataBank {
         monthlyDepartmentTurnOver = forecastReader.createDepartmentsMonthlyTurnOverMap(yearMonthOfReport[1]);
         dailyStoreHours = scheduleReader.createStoreDailyHoursList();
         dailyStoreHoursShare = scheduleReader.createStoreShareOfHoursByDayList();
-        departmentNameAndHoursByDay = scheduleReader.createMapOfScheduleDailyHoursByDepartment();
+        dailyDepartmentHoursByName = scheduleReader.createMapOfScheduleDailyHoursByDepartment();
         perfectStoreHoursByDay = PotentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, dailyStoreHours);
         differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.createDifferenceInHoursList(perfectStoreHoursByDay, dailyStoreHours);
-    }
-
-    public ScheduleReader getScheduleReader() {
-        return scheduleReader;
-    }
-
-    public ForecastReader getForecastReader() {
-        return forecastReader;
     }
 
     public int getNumberOFDepartmentSheets() {
@@ -82,8 +74,8 @@ public class DataBank {
         return dailyStoreHoursShare;
     }
 
-    public Map<String, List<Double>> getDepartmentNameAndHoursByDay() {
-        return departmentNameAndHoursByDay;
+    public Map<String, List<Double>> getDailyDepartmentHoursByName() {
+        return dailyDepartmentHoursByName;
     }
 
     public List<Double> getPerfectStoreHoursByDay() {

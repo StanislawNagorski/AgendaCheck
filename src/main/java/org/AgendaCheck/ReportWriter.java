@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -106,35 +105,41 @@ public class ReportWriter {
         reportSheet.autoSizeColumn(columnNr);
     }
 
-    public void writeDepartmentSheet(String sheetName, double monthlyTurnOver) {
-        setSheetName(sheetName);
+    public void writeDepartmentSheet(String departmentNameFromForeCast, String departmentNameFromSchedule) {
+
+        //tutaj musi być już pętla - zmienić nazwy w listach na wspólną?
+        setSheetName(departmentNameFromForeCast);
         writeFirstColumnDays();
-        writeSecondDepartmentColumn(monthlyTurnOver);
+        writeSecondDepartmentColumn(departmentNameFromForeCast);
         writeThirdColumnShareOfTurnOver();
-        //czwarta to suma godzin działu
-        //udział tych godzin
+        writeForthDepartmentColumnHours(departmentNameFromSchedule);
+        //writeFifthDepartmentColumnHoursShare(departmentNameFromSchedule);
         //idealne godziny
         //różnica
+        //ilość godzin wg udziału w obrocie sklepu
     }
 
-    //?? gdzie to wrzucić ??
-    //jako privete i wygenerować listę wszystkich?
-    private List<Double> createDailyDepartmentTurnOverList(double departmentMonthTurnOver) {
-        List<Double> dailyDepartmentTurnOver = new ArrayList<>();
-        List<Double> dailyStoreTurnOverShare = dataBank.getDailyStoreTurnOverShare();
 
-        for (int i = 0; i < dailyStoreTurnOverShare.size(); i++) {
-            double dayDepartmentTurnOver = dailyStoreTurnOverShare.get(i) * departmentMonthTurnOver;
-            dailyDepartmentTurnOver.add(dayDepartmentTurnOver);
-        }
-        return dailyDepartmentTurnOver;
-    }
+    private void writeSecondDepartmentColumn(String departmentNameFromTurnOver) {
+        double departmentMonthTurnOver = dataBank.getMonthlyDepartmentTurnOver().get(departmentNameFromTurnOver);
 
-    private void writeSecondDepartmentColumn(double departmentMonthTurnOver) {
-
-        List<Double> dailyDepartmentTurnOverList = createDailyDepartmentTurnOverList(departmentMonthTurnOver);
+        List<Double> dailyDepartmentTurnOverList =
+                DepartmentCalculator.createDailyDepartmentTurnOverList(departmentMonthTurnOver, dataBank.getDailyStoreTurnOverShare());
         int columnNrToWrite = 1;
         writeColumn("Pilotaż obrotu", columnNrToWrite, dailyDepartmentTurnOverList, stylesForCell.get("polishZlotyStyle"));
+    }
+
+    private void writeForthDepartmentColumnHours(String departmentNameFromSchedule) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+        int columnNrToWrite = 3;
+        writeColumn("Suma godzin", columnNrToWrite, departmentHoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
+    }
+
+    private void writeFifthDepartmentColumnHoursShare(String departmentNameFromSchedule) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+        List<Double> shareOfHours = DepartmentCalculator.createDailyDepartmentHoursShareList(departmentHoursByDay);
+        int columnNrToWrite = 4;
+        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle"));
     }
 
 

@@ -20,11 +20,12 @@ public class App
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
         sheetStoreCreation(reportWriter, "Sklep");
 
         //to do pętli z mapą
-        sheetDepartmentCreation(new ReportWriter(report, dataBank), "BieganieOXELO", 895000);
+        sheetDepartmentCreation(new ReportWriter(report, dataBank), "BieganieOXELO", "(643.8) Bieganie");
 
 
         report.write(new FileOutputStream("SampleOutputReport.xlsx"));
@@ -48,8 +49,8 @@ public class App
         reportWriter.writeSeventhColumnDifferenceInHours();
     }
 
-    public static void sheetDepartmentCreation(ReportWriter reportWriter, String sheetName, double departmentTurnOver){
-        reportWriter.writeDepartmentSheet(sheetName, departmentTurnOver);
+    public static void sheetDepartmentCreation(ReportWriter reportWriter, String sheetName, String nameFromSchedule){
+        reportWriter.writeDepartmentSheet(sheetName, nameFromSchedule);
     }
 
 
