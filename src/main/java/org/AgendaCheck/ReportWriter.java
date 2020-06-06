@@ -114,15 +114,14 @@ public class ReportWriter {
 
     public void writeDepartmentSheet(String departmentNameFromForeCast, String departmentNameFromSchedule, XSSFSheet reportSheet) {
 
-        //tutaj musi być już pętla - zmienić nazwy w listach na wspólną?
         writeFirstColumnDays( reportSheet);
         writeSecondDepartmentColumn(departmentNameFromForeCast, reportSheet);
         writeThirdColumnShareOfTurnOver(reportSheet);
         writeForthDepartmentColumnHours(departmentNameFromSchedule, reportSheet);
         writeFifthDepartmentColumnHoursShare(departmentNameFromSchedule, reportSheet);
-        //idealne godziny
-        //różnica
-        //ilość godzin wg udziału w obrocie sklepu
+        writeSixthDepartmentColumnPerfectHours(departmentNameFromSchedule, reportSheet);
+        writeSeventhDepartmentColumnDifferenceInHours(departmentNameFromSchedule, reportSheet);
+
     }
 
 
@@ -149,5 +148,24 @@ public class ReportWriter {
         writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle") ,reportSheet);
     }
 
+    private void writeSixthDepartmentColumnPerfectHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+
+        List<Double> perfectStoreHoursByDay =
+                PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
+        int columnNrToWrite = 5;
+        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+    }
+
+    private void writeSeventhDepartmentColumnDifferenceInHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+        List<Double> perfectDepartmentHoursByDay =
+                PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
+
+
+        List<Double> dailyDifferenceInHoursToPerfectOnes = PotentialHoursCalculator.createDifferenceInHoursList(perfectDepartmentHoursByDay, departmentHoursByDay);
+        int columnNrToWrite = 6;
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+    }
 
 }
