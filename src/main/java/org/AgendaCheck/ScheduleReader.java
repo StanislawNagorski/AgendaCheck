@@ -9,7 +9,7 @@ import java.util.*;
 
 public class ScheduleReader {
     private final XSSFSheet scheduleSheet;
-    private double monthlyHoursSum;
+    private double monthlyStoreHoursSum;
 
     public ScheduleReader(XSSFWorkbook schedule) {
         this.scheduleSheet = schedule.getSheetAt(0);
@@ -29,7 +29,7 @@ public class ScheduleReader {
 
     public List<Double> createStoreDailyHoursList() {
         List<Double> hoursSumByDay = new ArrayList<>();
-        monthlyHoursSum = 0;
+        monthlyStoreHoursSum = 0;
 
         for (int i = 3; i < scheduleSheet.getLastRowNum(); i++) {
             double daySum = 0;
@@ -37,9 +37,9 @@ public class ScheduleReader {
                 daySum += scheduleSheet.getRow(i).getCell(j).getNumericCellValue();
             }
             hoursSumByDay.add(daySum);
-            monthlyHoursSum += daySum;
+            monthlyStoreHoursSum += daySum;
         }
-        hoursSumByDay.add(monthlyHoursSum);
+        hoursSumByDay.add(monthlyStoreHoursSum);
 
         return hoursSumByDay;
     }
@@ -49,7 +49,7 @@ public class ScheduleReader {
         List<Double> percentagesOfHoursByDay = new LinkedList<>();
 
         for (Double hoursInDay : hoursSumByDay) {
-            double dailyShare = hoursInDay / monthlyHoursSum;
+            double dailyShare = hoursInDay / monthlyStoreHoursSum;
             percentagesOfHoursByDay.add(dailyShare);
         }
         return percentagesOfHoursByDay;
@@ -75,12 +75,12 @@ public class ScheduleReader {
 
         int rowOnWhichDataStarts = 3;
         int columnOnWhichDataStarts = 1;
-        int rowLenght = scheduleSheet.getRow(1).getLastCellNum()-1;
+        int rowLenght = scheduleSheet.getRow(1).getLastCellNum();
 
         for (int i = columnOnWhichDataStarts; i < rowLenght; i++) {
 
             List<Double> departmentHoursByDay = new ArrayList<>();
-            for (int j = rowOnWhichDataStarts; j < scheduleSheet.getLastRowNum(); j++) {
+            for (int j = rowOnWhichDataStarts; j < scheduleSheet.getLastRowNum()+1; j++) {
                 departmentHoursByDay.add(scheduleSheet.getRow(j).getCell(i).getNumericCellValue());
             }
             dailyHoursByDepartment.add(departmentHoursByDay);
@@ -101,9 +101,9 @@ public class ScheduleReader {
             dailyHoursMap.put(departmentNames.get(i), dailyScheduledHours.get(i));
         }
 
-
         return dailyHoursMap;
     }
+
 
 
 }

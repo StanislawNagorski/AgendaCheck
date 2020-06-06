@@ -5,81 +5,87 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class ReportWriter {
-    private XSSFWorkbook report;
+    private final XSSFWorkbook report;
     private final DataBank dataBank;
-    private final XSSFSheet reportSheet;
     private final Map<String, CellStyle> stylesForCell;
 
 
     public ReportWriter(XSSFWorkbook report, DataBank dataBank) {
         this.report = report;
         this.dataBank = dataBank;
-        reportSheet = report.createSheet();
         stylesForCell = StylesForCell.createCellStyles(report);
     }
 
-    public void setSheetName(String sheetName) {
-        report.setSheetName(report.getSheetIndex(reportSheet), sheetName);
+    public XSSFSheet createReportSheet(String sheetName) {
+        return report.createSheet(sheetName);
     }
 
-    private void createRows() {
+    private void createRows(XSSFSheet reportSheet) {
         int reportLenght = 50;
         for (int i = 0; i < reportLenght; i++) {
             reportSheet.createRow(i);
         }
     }
 
-    public void writeFirstColumnDays() {
-        createRows();
+    private void writeFirstColumnDays(XSSFSheet reportSheet) {
+        createRows(reportSheet);
         List<String> dates = dataBank.getDatesColumn();
         int columnNrToWrite = 0;
-        writeColumn("Dzień", columnNrToWrite, dates, stylesForCell.get("defaultCellStyle"));
+        writeColumn("Dzień", columnNrToWrite, dates, stylesForCell.get("defaultCellStyle"), reportSheet);
     }
 
 
-    public void writeSecondColumnTurnOverForecast() {
+    private void writeSecondColumnTurnOverForecast(XSSFSheet reportSheet) {
         List<Double> dailyStoreTurnOverList = dataBank.getDailyStoreTurnOver();
         int columnNrToWrite = 1;
-        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyStoreTurnOverList, stylesForCell.get("polishZlotyStyle"));
+        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyStoreTurnOverList, stylesForCell.get("polishZlotyStyle"), reportSheet);
     }
 
-    public void writeThirdColumnShareOfTurnOver() {
+    private void writeThirdColumnShareOfTurnOver(XSSFSheet reportSheet) {
         List<Double> dailyStoreTurnOverShare = dataBank.getDailyStoreTurnOverShare();
         int columnNrToWrite = 2;
-        writeColumn("Udział dnia w TO", columnNrToWrite, dailyStoreTurnOverShare, stylesForCell.get("percentageStyle"));
+        writeColumn("Udział dnia w TO", columnNrToWrite, dailyStoreTurnOverShare, stylesForCell.get("percentageStyle"), reportSheet);
     }
 
-    public void writeForthColumnHours() {
+    private void writeForthColumnHours(XSSFSheet reportSheet) {
         List<Double> storeHoursByDay = dataBank.getDailyStoreHours();
         int columnNrToWrite = 3;
-        writeColumn("Suma godzin", columnNrToWrite, storeHoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
+        writeColumn("Suma godzin", columnNrToWrite, storeHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
-    public void writeFifthColumnHoursShare() {
+    private void writeFifthColumnHoursShare(XSSFSheet reportSheet) {
         List<Double> shareOfHours = dataBank.getDailyStoreHoursShare();
         int columnNrToWrite = 4;
-        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle"));
+        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle"), reportSheet);
     }
 
-    public void writeSixthColumnPerfectHours() {
+    private void writeSixthColumnPerfectHours(XSSFSheet reportSheet) {
         List<Double> perfectStoreHoursByDay = dataBank.getPerfectStoreHoursByDay();
         int columnNrToWrite = 5;
-        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"));
+        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
-    public void writeSeventhColumnDifferenceInHours() {
+    private void writeSeventhColumnDifferenceInHours(XSSFSheet reportSheet) {
         List<Double> dailyDifferenceInHoursToPerfectOnes = dataBank.getDifferenceBetweenPerfectAndActualHours();
         int columnNrToWrite = 6;
-        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"));
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
+    public void writeStoreSheet(XSSFSheet reportSheet) {
+        writeFirstColumnDays(reportSheet);
+        writeForthColumnHours(reportSheet);
+        writeFifthColumnHoursShare(reportSheet);
+        writeSecondColumnTurnOverForecast(reportSheet);
+        writeThirdColumnShareOfTurnOver(reportSheet);
+        writeSixthColumnPerfectHours(reportSheet);
+        writeSeventhColumnDifferenceInHours(reportSheet);
+    }
 
-    private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle) {
+    private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle, XSSFSheet reportSheet) {
 
         XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
         titleOfTurnOverColumn.setCellValue(columnName);
@@ -106,35 +112,41 @@ public class ReportWriter {
         reportSheet.autoSizeColumn(columnNr);
     }
 
-    public void writeDepartmentSheet(String sheetName, double monthlyTurnOver) {
-        setSheetName(sheetName);
-        writeFirstColumnDays();
-        writeSecondDepartmentColumn(monthlyTurnOver);
-        writeThirdColumnShareOfTurnOver();
-        //czwarta to suma godzin działu
-        //udział tych godzin
+    public void writeDepartmentSheet(String departmentNameFromForeCast, String departmentNameFromSchedule, XSSFSheet reportSheet) {
+
+        //tutaj musi być już pętla - zmienić nazwy w listach na wspólną?
+        writeFirstColumnDays( reportSheet);
+        writeSecondDepartmentColumn(departmentNameFromForeCast, reportSheet);
+        writeThirdColumnShareOfTurnOver(reportSheet);
+        writeForthDepartmentColumnHours(departmentNameFromSchedule, reportSheet);
+        writeFifthDepartmentColumnHoursShare(departmentNameFromSchedule, reportSheet);
         //idealne godziny
         //różnica
+        //ilość godzin wg udziału w obrocie sklepu
     }
 
-    //?? gdzie to wrzucić ??
-    //jako privete i wygenerować listę wszystkich?
-    private List<Double> createDailyDepartmentTurnOverList(double departmentMonthTurnOver) {
-        List<Double> dailyDepartmentTurnOver = new ArrayList<>();
-        List<Double> dailyStoreTurnOverShare = dataBank.getDailyStoreTurnOverShare();
 
-        for (int i = 0; i < dailyStoreTurnOverShare.size(); i++) {
-            double dayDepartmentTurnOver = dailyStoreTurnOverShare.get(i) * departmentMonthTurnOver;
-            dailyDepartmentTurnOver.add(dayDepartmentTurnOver);
-        }
-        return dailyDepartmentTurnOver;
-    }
+    private void writeSecondDepartmentColumn(String departmentNameFromTurnOver, XSSFSheet reportSheet) {
+        double departmentMonthTurnOver = dataBank.getMonthlyDepartmentTurnOver().get(departmentNameFromTurnOver);
 
-    private void writeSecondDepartmentColumn(double departmentMonthTurnOver) {
-
-        List<Double> dailyDepartmentTurnOverList = createDailyDepartmentTurnOverList(departmentMonthTurnOver);
+        List<Double> dailyDepartmentTurnOverList =
+                DepartmentCalculator.createDailyDepartmentTurnOverList(departmentMonthTurnOver, dataBank.getDailyStoreTurnOverShare());
         int columnNrToWrite = 1;
-        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyDepartmentTurnOverList, stylesForCell.get("polishZlotyStyle"));
+        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyDepartmentTurnOverList, stylesForCell.get("polishZlotyStyle"), reportSheet);
+    }
+
+    private void writeForthDepartmentColumnHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+        int columnNrToWrite = 3;
+        writeColumn("Suma godzin", columnNrToWrite, departmentHoursByDay, stylesForCell.get("defaultDoubleCellStyle") , reportSheet);
+    }
+
+    private void writeFifthDepartmentColumnHoursShare(String departmentNameFromSchedule, XSSFSheet reportSheet) {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
+        List<Double> shareOfHours = DepartmentCalculator.createDailyDepartmentHoursShareList(departmentHoursByDay);
+
+        int columnNrToWrite = 4;
+        writeColumn("Udział w godzinach", columnNrToWrite, shareOfHours, stylesForCell.get("percentageStyle") ,reportSheet);
     }
 
 
