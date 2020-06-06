@@ -55,7 +55,7 @@ public class ScheduleReaderTest {
                 0.0, 41.0, 32.0, 42.0,
                 0.0, 67.2, 62.0,
                 0.0, 48.0, 33.0, 29.0, 44.0, 75.9, 52.0,
-                0.0, 43.0, 40.0, 29.0, 35.8, 60.5, 66.0, 52.0, 25.0, 48.9);
+                0.0, 43.0, 40.0, 29.0, 35.8, 60.5, 66.0, 52.0, 25.0, 48.9, 1211.9);
 
         //When
         Map<String, List<Double>> testedMap = scheduleReaderJune.createMapOfScheduleDailyHoursByDepartment();
@@ -72,7 +72,7 @@ public class ScheduleReaderTest {
                 29.0, 13.0, 31.0, 31.0, 27.0, 23.0,
                 0.0, 25.0, 26.0, 30.0, 40.0, 47.0, 47.0,
                 0.0, 57.0, 34.0, 35.0, 31.5, 56.0, 49.0,
-                0.0, 39.0, 42.0, 38.0, 54.5, 65.0, 67.0, 0.0);
+                0.0, 39.0, 42.0, 38.0, 54.5, 65.0, 67.0, 0.0, 969.0);
 
         //When
         Map<String, List<Double>> testedMap = scheduleReaderMay.createMapOfScheduleDailyHoursByDepartment();

@@ -30,13 +30,6 @@ public class AppTest {
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
-        reportWriter.writeFirstColumnDays();
-        reportWriter.writeForthColumnHours();
-        reportWriter.writeFifthColumnHoursShare();
-        reportWriter.writeSecondColumnTurnOverForecast();
-        reportWriter.writeThirdColumnShareOfTurnOver();
-        reportWriter.writeSixthColumnPerfectHours();
-        reportWriter.writeSeventhColumnDifferenceInHours();
 
 
         report.write(new FileOutputStream("TestResults/Czerwiec643.xlsx"));
@@ -56,13 +49,7 @@ public class AppTest {
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
-        reportWriter.writeFirstColumnDays();
-        reportWriter.writeForthColumnHours();
-        reportWriter.writeFifthColumnHoursShare();
-        reportWriter.writeSecondColumnTurnOverForecast();
-        reportWriter.writeThirdColumnShareOfTurnOver();
-        reportWriter.writeSixthColumnPerfectHours();
-        reportWriter.writeSeventhColumnDifferenceInHours();
+
 
 
         report.write(new FileOutputStream("TestResults/Maj643.xlsx"));
@@ -82,13 +69,6 @@ public class AppTest {
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
-        reportWriter.writeFirstColumnDays();
-        reportWriter.writeForthColumnHours();
-        reportWriter.writeFifthColumnHoursShare();
-        reportWriter.writeSecondColumnTurnOverForecast();
-        reportWriter.writeThirdColumnShareOfTurnOver();
-        reportWriter.writeSixthColumnPerfectHours();
-        reportWriter.writeSeventhColumnDifferenceInHours();
 
 
         report.write(new FileOutputStream("TestResults/Maj729.xlsx"));
@@ -108,13 +88,7 @@ public class AppTest {
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
-        reportWriter.writeFirstColumnDays();
-        reportWriter.writeForthColumnHours();
-        reportWriter.writeFifthColumnHoursShare();
-        reportWriter.writeSecondColumnTurnOverForecast();
-        reportWriter.writeThirdColumnShareOfTurnOver();
-        reportWriter.writeSixthColumnPerfectHours();
-        reportWriter.writeSeventhColumnDifferenceInHours();
+
 
 
         report.write(new FileOutputStream("TestResults/Czerwiec729.xlsx"));
