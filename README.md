@@ -20,14 +20,13 @@ It takes data from to .xlsx files and creates new report.
 
 # Główne założenia
 
-- program pobiera rozkładu godzin na dni miesiąca i konsolidajce z pliku xlsx (pilotaż),
-- program pobiera dane z pilotowanego dzinnego obrotu z pliku xlsx,
-- dzieli dane na konsolidacje i sklep
-- zestawia je ze sobą alertując niedoinwestowane i przeinwestowane dni pod względem godzin,
-- sugeruje zmianę ilości godzin,
-- a może zrobnimy z niego bota podbiętego pod gmaila? eStah po otrzymaniu plików w załaczniku odsyłałby raport.
+- program creates report for whole store and every retail department,
+- program takes schedule hours and forcasted turnover from two .xlsx files,
+- names of department often vary in files (for exemple "Mountains" in one file can be "hiking" in another), program matches them.
+- program sugest changes in schedule to better fit forecasted turnover,
 
 # To do
 
 - stworzyć reguły pod zakłądki dla POK i administracji
+- zmienić klasę cellStyle z mapy na getery
 - dodać godziny wg potencjału eko - oderwane od godzin sektora (pamiętaj o odjęciu administracji i kas)

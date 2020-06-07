@@ -2,7 +2,6 @@ package org.AgendaCheck;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -28,13 +27,8 @@ public class App {
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
-
-        XSSFSheet store = reportWriter.createReportSheet("Sklep");
-        reportWriter.writeStoreSheet(store);
-
-        XSSFSheet department = reportWriter.createReportSheet("BieganieOXELO");
-        reportWriter.writeDepartmentSheet("BieganieOXELO", "(643.8) Bieganie", department);
-
+        reportWriter.writeStoreSheet();
+        reportWriter.writeAllDepartmentsSheets();
 
         report.write(new FileOutputStream("SampleOutputReport.xlsx"));
         report.close();
