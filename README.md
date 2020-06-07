@@ -29,10 +29,5 @@ It takes data from to .xlsx files and creates new report.
 
 # To do
 
-- ~~GDZIE ZAPYCHAM PAMIĘĆ!!??~~
-- ~~listy w readerach warto zapisać zeby funkacja nie wykonywała się za każdym razem~~
-- zakładki dla konsolidacji - wykrywanie - tworzenie&zapełnianie
-- ~~suma godzin na konsolidacje~~
-- ~~wypisać godziny~~ i idealne godziny
+- stworzyć reguły pod zakłądki dla POK i administracji
 - dodać godziny wg potencjału eko - oderwane od godzin sektora (pamiętaj o odjęciu administracji i kas)
-- posprzątaj reportWritera (sklep vs department)

@@ -112,18 +112,6 @@ public class ReportWriter {
         reportSheet.autoSizeColumn(columnNr);
     }
 
-    public void writeDepartmentSheet(String departmentNameFromForeCast, String departmentNameFromSchedule, XSSFSheet reportSheet) {
-
-        writeFirstColumnDays( reportSheet);
-        writeSecondDepartmentColumn(departmentNameFromForeCast, reportSheet);
-        writeThirdColumnShareOfTurnOver(reportSheet);
-        writeForthDepartmentColumnHours(departmentNameFromSchedule, reportSheet);
-        writeFifthDepartmentColumnHoursShare(departmentNameFromSchedule, reportSheet);
-        writeSixthDepartmentColumnPerfectHours(departmentNameFromSchedule, reportSheet);
-        writeSeventhDepartmentColumnDifferenceInHours(departmentNameFromSchedule, reportSheet);
-
-    }
-
 
     private void writeSecondDepartmentColumn(String departmentNameFromTurnOver, XSSFSheet reportSheet) {
         double departmentMonthTurnOver = dataBank.getMonthlyDepartmentTurnOver().get(departmentNameFromTurnOver);
@@ -167,5 +155,18 @@ public class ReportWriter {
         int columnNrToWrite = 6;
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
+
+    public void writeDepartmentSheet(String departmentNameFromForeCast, String departmentNameFromSchedule, XSSFSheet reportSheet) {
+
+        writeFirstColumnDays( reportSheet);
+        writeSecondDepartmentColumn(departmentNameFromForeCast, reportSheet);
+        writeThirdColumnShareOfTurnOver(reportSheet);
+        writeForthDepartmentColumnHours(departmentNameFromSchedule, reportSheet);
+        writeFifthDepartmentColumnHoursShare(departmentNameFromSchedule, reportSheet);
+        writeSixthDepartmentColumnPerfectHours(departmentNameFromSchedule, reportSheet);
+        writeSeventhDepartmentColumnDifferenceInHours(departmentNameFromSchedule, reportSheet);
+    }
+
+
 
 }
