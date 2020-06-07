@@ -18,9 +18,10 @@ It takes data from to .xlsx files and creates new report.
 - mind-mapping helps to keep track of classes connections, 
 - I get my first ever out of memory Java heap space error with 10M+ objects (infinity loop was to blame)
 
-# Główne założenia
+# Problems solved by program
 
-- program creates report for whole store and every retail department,
+- program creates report about how well-fitted schedule is forecasted turnover.
+- it gives sheet for whole store and every retail department,
 - program takes schedule hours and forcasted turnover from two .xlsx files,
 - names of department often vary in files (for exemple "Mountains" in one file can be "hiking" in another), program matches them.
 - program sugest changes in schedule to better fit forecasted turnover,
