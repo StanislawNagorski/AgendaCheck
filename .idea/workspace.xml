@@ -26,15 +26,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added department sheet creation method">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added method to rewirte schedule map to match keyNames with forecast">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Structure.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/Project Structure.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/godzinyMaj.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/DepartmentNameChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/DepartmentNameChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ForecastReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/DepartmentNameCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/DepartmentNameCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +120,36 @@
       <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck\SampleInputFiles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DepartmentNameCheckerTest">
+  <component name="RunManager" selected="JUnit.AppTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.App" />
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DepartmentNameCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
@@ -134,40 +161,6 @@
       <option name="PACKAGE_NAME" value="org.AgendaCheck" />
       <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.DepartmentNameCheckerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentNameCheckerTest.changeDepartmentNamesFromScheduleToThoseFromForecast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="changeDepartmentNamesFromScheduleToThoseFromForecast" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="hoursSetShouldContainAllSheetsFromForecast" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
@@ -216,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.DepartmentNameCheckerTest" />
         <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
         <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecast" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.changeDepartmentNamesFromScheduleToThoseFromForecast" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +253,8 @@
       <workItem from="1591386436459" duration="3410000" />
       <workItem from="1591390106992" duration="154000" />
       <workItem from="1591454980452" duration="7976000" />
-      <workItem from="1591526692031" duration="11084000" />
+      <workItem from="1591526692031" duration="14497000" />
+      <workItem from="1591549669665" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -514,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591464808927</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="added method to rewirte schedule map to match keyNames with forecast">
+      <created>1591541853122</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1591541853122</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value=".gitignore creation" />
     <MESSAGE value="added ForecastReader, and method to write it to report.&#10;It is bugged." />
     <MESSAGE value="nullPointer Ex in ForecastReader was taken care of." />
     <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month." />
@@ -571,7 +571,8 @@
     <MESSAGE value="change FileInput to new File, to win heap space... problem is elsewere" />
     <MESSAGE value="fixed out of memory -&gt; there was typo causing infinity loop" />
     <MESSAGE value="added department sheet creation method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added department sheet creation method" />
+    <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method to rewirte schedule map to match keyNames with forecast" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -616,25 +617,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591185770415" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591541419166">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591551640936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591541419166" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591551640936" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591541419165">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591551640936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591541419165" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591551640936" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591541419165">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591551640936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591541419165" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591551640936" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591541419165">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591551640936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591541419165" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591551640936" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
