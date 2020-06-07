@@ -14,22 +14,20 @@ public class App {
 
         long start = System.nanoTime();
 
-        OPCPackage scheduleInput = OPCPackage.open(new File("godzinyCzerwiec.xlsx"));
+        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInputFiles/godzinyCzerwiec.xlsx"));
         XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
         scheduleInput.close();
 
-        OPCPackage forecastInput = OPCPackage.open(new File("643_Gessef 2020.xlsx"));
+        OPCPackage forecastInput = OPCPackage.open(new File("SampleInputFiles/643_Gessef 2020.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
-
 
         XSSFWorkbook report = new XSSFWorkbook();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
         DataBank dataBank = new DataBank(scheduleReader, forecastReader);
-
-
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
+
 
         XSSFSheet store = reportWriter.createReportSheet("Sklep");
         reportWriter.writeStoreSheet(store);

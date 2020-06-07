@@ -74,30 +74,34 @@ public class ForecastReader {
         return monthNumber + (monthNumber - 1);
     }
 
-    private boolean isItRetailDepartmentSheetCheck(XSSFSheet sheet) {
-        String desiredString = "Obrót 2020 PILOTAŻ";
+    private boolean isItRetailDepartmentSheetCheck(XSSFSheet sheet, int monthToCheckIfThereIsTurnOver) {
+        int columnToCheck = calculateMonthColumnNr(monthToCheckIfThereIsTurnOver);
+        if (sheet.getRow(2).getLastCellNum() < columnToCheck){
+            return false;
+        }
 
-        boolean condition1;
+        String desiredString = "Obrót 2020 PILOTAŻ";
+        boolean isItForecastCell;
         XSSFCell cellShouldBeString = sheet.getRow(2).getCell(0);
         if (cellShouldBeString.getCellType().equals(CellType.STRING)) {
-            condition1 = cellShouldBeString.getStringCellValue().equalsIgnoreCase(desiredString);
+            isItForecastCell = cellShouldBeString.getStringCellValue().equalsIgnoreCase(desiredString);
         } else {
-            condition1 = false;
+            isItForecastCell = false;
         }
 
-        boolean condition2;
-        XSSFCell cellNumericValueShouldBeGreaterThen0 = sheet.getRow(2).getCell(1);
+        boolean isThereTurnover;
+        XSSFCell cellNumericValueShouldBeGreaterThen0 = sheet.getRow(2).getCell(columnToCheck);
         if (cellNumericValueShouldBeGreaterThen0.getCellType().equals(CellType.NUMERIC)) {
-            condition2 = cellNumericValueShouldBeGreaterThen0.getNumericCellValue() > 0;
+            isThereTurnover = cellNumericValueShouldBeGreaterThen0.getNumericCellValue() > 0;
         } else if (cellNumericValueShouldBeGreaterThen0.getCellType().equals(CellType.FORMULA)) {
             double rawValue = Double.parseDouble(cellNumericValueShouldBeGreaterThen0.getRawValue());
-            condition2 = rawValue > 0;
+            isThereTurnover = rawValue > 0;
         }
         else {
-            condition2 = false;
+            isThereTurnover = false;
         }
 
-        return condition1 && condition2;
+        return isItForecastCell && isThereTurnover;
     }
 
     public Map<String, Double> createDepartmentsMonthlyTurnOverMap(int monthNumber) {
@@ -110,7 +114,7 @@ public class ForecastReader {
         for (int i = 0; i < numberOfSheets; i++) {
             XSSFSheet forecastSheet = forecast.getSheetAt(i);
 
-            if (isItRetailDepartmentSheetCheck(forecastSheet)) {
+            if (isItRetailDepartmentSheetCheck(forecastSheet, monthNumber)) {
                 String departmentName = forecastSheet.getSheetName();
                 XSSFCell cell = forecastSheet.getRow(rowNr).getCell(monthColumnNr);
                 double departmentForecastedTurnOver;
