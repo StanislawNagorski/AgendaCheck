@@ -29,6 +29,6 @@ It takes data from to .xlsx files and creates new report.
 
 # To do
 
-- stworzyć reguły pod zakłądki dla POK i administracji
-- zmienić klasę cellStyle z mapy na getery
-- dodać godziny wg potencjału eko - oderwane od godzin sektora (pamiętaj o odjęciu administracji i kas)
+- FileInput check
+- cellStyles from map to geters
+- user interface 
