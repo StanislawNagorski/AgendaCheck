@@ -43,7 +43,7 @@ public class DepartmentNameChecker {
     }
 
 
-    private static boolean namesCheck(String forecastName, String scheduleName) {
+    protected static boolean namesCheck(String forecastName, String scheduleName) {
         if (forecastName.equalsIgnoreCase(scheduleName)) {
             return true;
         }

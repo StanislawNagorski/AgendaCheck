@@ -7,6 +7,15 @@ It takes data from to .xlsx files and creates new report.
 - Java
 - Maven
 - Apache POI
+- JFreeChart
+
+# Problems solved by program
+
+- program creates report about how well-fitted schedule is forecasted turnover.
+- it gives sheet for whole store and every retail department,
+- program takes schedule hours and forcasted turnover from two .xlsx files,
+- names of department often vary in files (for exemple "Mountains" in one file can be "hiking" in another), program matches them.
+- program sugest changes in schedule to better fit forecasted turnover,
 
 # What I have learn so far, in this project
 
@@ -17,13 +26,6 @@ It takes data from to .xlsx files and creates new report.
 - class should be dedicated to specific actions
 - mind-mapping helps to keep track of classes connections, 
 - I get my first ever out of memory Java heap space error with 10M+ objects (infinity loop was to blame)
-
-# Główne założenia
-
-- program creates report for whole store and every retail department,
-- program takes schedule hours and forcasted turnover from two .xlsx files,
-- names of department often vary in files (for exemple "Mountains" in one file can be "hiking" in another), program matches them.
-- program sugest changes in schedule to better fit forecasted turnover,
 
 # To do
 
