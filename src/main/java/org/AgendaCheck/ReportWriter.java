@@ -2,6 +2,7 @@ package org.AgendaCheck;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFShape;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jfree.chart.JFreeChart;
@@ -81,48 +82,22 @@ public class ReportWriter {
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
+    private void addStoreChart(XSSFSheet reportSheet) throws IOException {
+        createChartToSheet(reportSheet, dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
+    }
+
     public void writeStoreSheet() throws IOException {
         createReportSheet("Sklep");
         XSSFSheet reportSheet = report.getSheet("Sklep");
 
         writeFirstColumnDays(reportSheet);
-        writeForthColumnHours(reportSheet);
-        writeFifthColumnHoursShare(reportSheet);
         writeSecondColumnTurnOverForecast(reportSheet);
         writeThirdColumnShareOfTurnOver(reportSheet);
+        writeForthColumnHours(reportSheet);
+        writeFifthColumnHoursShare(reportSheet);
         writeSixthColumnPerfectHours(reportSheet);
         writeSeventhColumnDifferenceInHours(reportSheet);
-        addChartToSheet(reportSheet);
-    }
-
-    private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle, XSSFSheet reportSheet) {
-        if (dataList.isEmpty()){
-            return;
-        }
-
-        XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
-        titleOfTurnOverColumn.setCellValue(columnName);
-        titleOfTurnOverColumn.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
-
-        int rowToStartData = 3;
-        for (int i = 0; i < dataList.size(); i++) {
-
-            XSSFCell cell = reportSheet.getRow(i + rowToStartData).createCell(columnNr);
-
-            Object o = dataList.get(0);
-            if (o instanceof String) {
-                cell.setCellValue((String) dataList.get(i));
-            } else {
-                cell.setCellValue((Double) dataList.get(i));
-            }
-
-            cell.setCellStyle(mainStyle);
-        }
-
-        reportSheet.getRow(dataList.size() + 2)
-                .getCell(columnNr).setCellStyle(stylesForCell.get("boldedDoubleWithTopBorder"));
-
-        reportSheet.autoSizeColumn(columnNr);
+        addStoreChart(reportSheet);
     }
 
 
@@ -169,6 +144,13 @@ public class ReportWriter {
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
+    private void addDepartmentChart(XSSFSheet reportSheet, String departmentName) throws IOException {
+        List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentName);
+        List<Double> shareOfHours = DepartmentCalculator.createDailyDepartmentHoursShareList(departmentHoursByDay);
+
+        createChartToSheet(reportSheet, shareOfHours, dataBank.getDailyStoreTurnOverShare());
+    }
+
     private void writeSingleDepartmentSheet(String departmentName, XSSFSheet reportSheet) throws IOException {
 
         writeFirstColumnDays( reportSheet);
@@ -178,9 +160,8 @@ public class ReportWriter {
         writeFifthDepartmentColumnHoursShare(departmentName, reportSheet);
         writeSixthDepartmentColumnPerfectHours(departmentName, reportSheet);
         writeSeventhDepartmentColumnDifferenceInHours(departmentName, reportSheet);
-        //add chart
+        addDepartmentChart(reportSheet, departmentName);
     }
-
     public void writeAllDepartmentsSheets() throws IOException {
         Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
         Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
@@ -200,43 +181,60 @@ public class ReportWriter {
         }
 
     }
-    private JFreeChart sheetChart() throws IOException {
-        JFreeChart chart = ChartCreator.createChart(dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
 
-        return chart;
+
+    private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle, XSSFSheet reportSheet) {
+        if (dataList.isEmpty()){
+            return;
+        }
+
+        XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
+        titleOfTurnOverColumn.setCellValue(columnName);
+        titleOfTurnOverColumn.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
+
+        int rowToStartData = 3;
+        for (int i = 0; i < dataList.size(); i++) {
+
+            XSSFCell cell = reportSheet.getRow(i + rowToStartData).createCell(columnNr);
+
+            Object o = dataList.get(0);
+            if (o instanceof String) {
+                cell.setCellValue((String) dataList.get(i));
+            } else {
+                cell.setCellValue((Double) dataList.get(i));
+            }
+
+            cell.setCellStyle(mainStyle);
+        }
+
+        reportSheet.getRow(dataList.size() + 2)
+                .getCell(columnNr).setCellStyle(stylesForCell.get("boldedDoubleWithTopBorder"));
+
+        reportSheet.autoSizeColumn(columnNr);
     }
 
+    private void createChartToSheet(XSSFSheet reportSheet, List<Double> hoursShare, List<Double> turnoverShare) throws IOException {
+        JFreeChart chart = ChartCreator.createChart(hoursShare, turnoverShare);
 
-    private void addChartToSheet(XSSFSheet reportSheet) throws IOException {
-        JFreeChart chart = ChartCreator.createChart(dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
-
-        //FileInputStream obtains input bytes from the image file
-        ByteArrayOutputStream chartOut = new ByteArrayOutputStream();
+        ByteArrayOutputStream chartOutputSteam = new ByteArrayOutputStream();
         BufferedImage chartImage = chart.createBufferedImage(800, 400);
-        ImageIO.write(chartImage, "png", chartOut);
-        chartOut.flush();
-        //Get the contents of an InputStream as a byte[].
-        byte[] bytes = chartOut.toByteArray();
-        //Adds a picture to the workbook
-        int pictureIdx = report.addPicture(bytes, Workbook.PICTURE_TYPE_PNG);
-        //close the input stream
-        chartOut.close();
+        ImageIO.write(chartImage, "png", chartOutputSteam);
+        chartOutputSteam.flush();
+
+        byte[] chartToBytes = chartOutputSteam.toByteArray();
+        int pictureIdx = report.addPicture(chartToBytes, Workbook.PICTURE_TYPE_PNG);
+        chartOutputSteam.close();
 
         //Returns an object that handles instantiating concrete classes
         CreationHelper helper = report.getCreationHelper();
 
-        //Creates the top-level drawing patriarch.
-        Drawing drawing = reportSheet.createDrawingPatriarch();
+        Drawing<XSSFShape> drawing = reportSheet.createDrawingPatriarch();
 
-        //Create an anchor that is attached to the worksheet
         ClientAnchor anchor = helper.createClientAnchor();
-        //set top-left corner for the image
         anchor.setCol1(8);
         anchor.setRow1(1);
 
-        //Creates a picture
         Picture pict = drawing.createPicture(anchor, pictureIdx);
-        //Reset the image to the original size
         pict.resize();
     }
 
