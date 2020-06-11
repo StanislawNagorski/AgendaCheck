@@ -1,10 +1,15 @@
 package org.AgendaCheck;
 
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.jfree.chart.JFreeChart;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -76,7 +81,7 @@ public class ReportWriter {
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
-    public void writeStoreSheet() {
+    public void writeStoreSheet() throws IOException {
         createReportSheet("Sklep");
         XSSFSheet reportSheet = report.getSheet("Sklep");
 
@@ -87,6 +92,7 @@ public class ReportWriter {
         writeThirdColumnShareOfTurnOver(reportSheet);
         writeSixthColumnPerfectHours(reportSheet);
         writeSeventhColumnDifferenceInHours(reportSheet);
+        addChartToSheet(reportSheet);
     }
 
     private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle, XSSFSheet reportSheet) {
@@ -163,7 +169,7 @@ public class ReportWriter {
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
-    private void writeSingleDepartmentSheet(String departmentName, XSSFSheet reportSheet) {
+    private void writeSingleDepartmentSheet(String departmentName, XSSFSheet reportSheet) throws IOException {
 
         writeFirstColumnDays( reportSheet);
         writeSecondDepartmentColumn(departmentName, reportSheet);
@@ -172,9 +178,10 @@ public class ReportWriter {
         writeFifthDepartmentColumnHoursShare(departmentName, reportSheet);
         writeSixthDepartmentColumnPerfectHours(departmentName, reportSheet);
         writeSeventhDepartmentColumnDifferenceInHours(departmentName, reportSheet);
+        //add chart
     }
 
-    public void writeAllDepartmentsSheets(){
+    public void writeAllDepartmentsSheets() throws IOException {
         Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
         Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
 
@@ -192,6 +199,45 @@ public class ReportWriter {
             writeSingleDepartmentSheet(departmentName, report.getSheet(departmentName));
         }
 
+    }
+    private JFreeChart sheetChart() throws IOException {
+        JFreeChart chart = ChartCreator.createChart(dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
+
+        return chart;
+    }
+
+
+    private void addChartToSheet(XSSFSheet reportSheet) throws IOException {
+        JFreeChart chart = ChartCreator.createChart(dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
+
+        //FileInputStream obtains input bytes from the image file
+        ByteArrayOutputStream chartOut = new ByteArrayOutputStream();
+        BufferedImage chartImage = chart.createBufferedImage(800, 400);
+        ImageIO.write(chartImage, "png", chartOut);
+        chartOut.flush();
+        //Get the contents of an InputStream as a byte[].
+        byte[] bytes = chartOut.toByteArray();
+        //Adds a picture to the workbook
+        int pictureIdx = report.addPicture(bytes, Workbook.PICTURE_TYPE_PNG);
+        //close the input stream
+        chartOut.close();
+
+        //Returns an object that handles instantiating concrete classes
+        CreationHelper helper = report.getCreationHelper();
+
+        //Creates the top-level drawing patriarch.
+        Drawing drawing = reportSheet.createDrawingPatriarch();
+
+        //Create an anchor that is attached to the worksheet
+        ClientAnchor anchor = helper.createClientAnchor();
+        //set top-left corner for the image
+        anchor.setCol1(8);
+        anchor.setRow1(1);
+
+        //Creates a picture
+        Picture pict = drawing.createPicture(anchor, pictureIdx);
+        //Reset the image to the original size
+        pict.resize();
     }
 
 
