@@ -1,5 +1,10 @@
 *.xlsx
 *.xlsx#
 !SampleOutputReport.xlsx
-/.idea/
-/target/
+target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
