@@ -1,4 +1,4 @@
-package org.AgendaCheck;
+package org.AgendaCheck.ReportToXLSX;
 
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
@@ -9,14 +9,12 @@ import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
 
 public class ChartCreator {
 
     public static JFreeChart createChart(List<Double> hoursShare, List<Double> turnoverShare) {
-
 
         // Create Category plot
         CategoryPlot plot = new CategoryPlot();
@@ -47,7 +45,6 @@ public class ChartCreator {
         chart.setTitle("Rozkład godzin i obrotu");
 
         return chart;
-        //ChartUtilities.saveChartAsJPEG(new File("chart.jpeg"), chart, 800, 400);
     }
 
     private static DefaultCategoryDataset createDataSet(List<Double> hoursShare, String label) {
@@ -56,8 +53,6 @@ public class ChartCreator {
         for (int i = 0; i < hoursShare.size() - 1; i++) {
             int day = i + 1;
             String rowValue = String.valueOf(day);
-
-            DecimalFormat df = new DecimalFormat("##.#%");
             double value = hoursShare.get(i);
 
             dataset.addValue(value, label, (rowValue));

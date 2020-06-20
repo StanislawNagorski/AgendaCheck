@@ -1,5 +1,9 @@
 package org.AgendaCheck;
 
+import org.AgendaCheck.Data.DataBank;
+import org.AgendaCheck.Forecast.ForecastReader;
+import org.AgendaCheck.ReportToXLSX.ReportWriter;
+import org.AgendaCheck.Schedule.ScheduleReader;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -13,11 +17,11 @@ public class App {
 
         long start = System.nanoTime();
 
-        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInputFiles/godzinyCzerwiec.xlsx"));
+        OPCPackage scheduleInput = OPCPackage.open(new File("src/main/SampleInputFiles/godzinyCzerwiec.xlsx"));
         XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
         scheduleInput.close();
 
-        OPCPackage forecastInput = OPCPackage.open(new File("SampleInputFiles/643_Gessef 2020.xlsx"));
+        OPCPackage forecastInput = OPCPackage.open(new File("src/main/SampleInputFiles/643_Gessef 2020.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
 

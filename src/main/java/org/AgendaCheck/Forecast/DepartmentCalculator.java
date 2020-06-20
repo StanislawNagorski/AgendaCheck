@@ -1,4 +1,4 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Forecast;
 
 import java.util.ArrayList;
 import java.util.List;

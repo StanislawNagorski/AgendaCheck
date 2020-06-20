@@ -1,5 +1,9 @@
-package org.AgendaCheck;
+package org.AgendaCheck.ReportToXLSX;
 
+import org.AgendaCheck.Data.DataBank;
+import org.AgendaCheck.Data.DepartmentNameChecker;
+import org.AgendaCheck.Data.PotentialHoursCalculator;
+import org.AgendaCheck.Forecast.DepartmentCalculator;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFShape;
@@ -87,8 +91,8 @@ public class ReportWriter {
     }
 
     public void writeStoreSheet() throws IOException {
-        createReportSheet("Sklep");
-        XSSFSheet reportSheet = report.getSheet("Sklep");
+        createReportSheet("Total");
+        XSSFSheet reportSheet = report.getSheet("Total");
 
         writeFirstColumnDays(reportSheet);
         writeSecondColumnTurnOverForecast(reportSheet);

@@ -1,4 +1,4 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Schedule;
 
 
 import org.apache.poi.xssf.usermodel.XSSFRow;

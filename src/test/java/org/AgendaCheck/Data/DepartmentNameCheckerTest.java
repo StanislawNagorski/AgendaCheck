@@ -1,5 +1,7 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Data;
 
+import org.AgendaCheck.Forecast.ForecastReader;
+import org.AgendaCheck.Schedule.ScheduleReader;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
@@ -104,6 +106,8 @@ public class DepartmentNameCheckerTest {
         DepartmentNameChecker.changeDepartmentNamesFromScheduleToThoseFromForecast(turnover, hours);
 
         //Then
+        System.out.println(hours.keySet());
+        System.out.println(turnover.keySet());
         Assertions.assertTrue(hours.keySet().containsAll(turnover.keySet()));
     }
 
