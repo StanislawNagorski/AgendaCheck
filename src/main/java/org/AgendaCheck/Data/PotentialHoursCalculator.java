@@ -1,4 +1,4 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Data;
 
 import java.util.ArrayList;
 import java.util.List;

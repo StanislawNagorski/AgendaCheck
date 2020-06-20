@@ -1,4 +1,8 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Data;
+
+import org.AgendaCheck.Forecast.ForecastReader;
+import org.AgendaCheck.Schedule.MonthChecker;
+import org.AgendaCheck.Schedule.ScheduleReader;
 
 import java.util.List;
 import java.util.Map;

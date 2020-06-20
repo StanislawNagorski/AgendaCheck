@@ -25,10 +25,13 @@ It takes data from to .xlsx files and creates new report.
 - proper naming matters, or You will lose it,
 - class should be dedicated to specific actions
 - mind-mapping helps to keep track of classes connections, 
-- I get my first ever out of memory Java heap space error with 10M+ objects (infinity loop was to blame)
+- working with debugger, (when I got my first out of memory Java heap space error with 10M+ objects :)
+- Swing ()
 
 # To do
 
 - FileInput check
+- drag files input
+- hours for cashtills
 - cellStyles from map to geters
-- user interface 
+

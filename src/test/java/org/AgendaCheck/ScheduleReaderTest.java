@@ -1,5 +1,6 @@
 package org.AgendaCheck;
 
+import org.AgendaCheck.Schedule.ScheduleReader;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
 import org.junit.Before;

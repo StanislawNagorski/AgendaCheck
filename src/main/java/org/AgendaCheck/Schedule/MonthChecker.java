@@ -1,4 +1,4 @@
-package org.AgendaCheck;
+package org.AgendaCheck.Schedule;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
