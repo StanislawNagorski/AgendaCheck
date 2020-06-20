@@ -34,3 +34,4 @@ It takes data from to .xlsx files and creates new report.
 - drag files input
 - hours for cashtills
 - cellStyles from map to geters
+
