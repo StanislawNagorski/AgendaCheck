@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PotentialHoursCalculator {
 
-    private static List<Double> createShareConsideringCloseDaysList(List<Double> dayTurnOverShare, List<Double> hoursInMonth) {
+    private static List<Double> createTurnoverShareConsideringCloseDaysList(List<Double> dayTurnOverShare, List<Double> hoursInMonth) {
         List<Double> shareWithCloseDays = new ArrayList<>();
 
         double closeDaysTotalShare = 0;
@@ -33,7 +33,7 @@ public class PotentialHoursCalculator {
         double monthlyHours = hoursByDay.get(hoursByDay.size() - 1);
         double monthlyHoursCheck = 0;
 
-        List<Double> shareWithCloseDays = createShareConsideringCloseDaysList(turnOverShareByDay, hoursByDay);
+        List<Double> shareWithCloseDays = createTurnoverShareConsideringCloseDaysList(turnOverShareByDay, hoursByDay);
 
 
         for (int i = 0; i < shareWithCloseDays.size() -1; i++) {
@@ -56,6 +56,25 @@ public class PotentialHoursCalculator {
         differenceHours.set(perfectHours.size()-1, 0.0);
 
         return differenceHours;
+    }
+
+    public static List<Double> createHoursDeterminedByProductivityTargetList(double productivityTarget,
+                                                                         List<Double> turnOverByDay,
+                                                                         List<Double> turnOverShareByDay,
+                                                                         List<Double> hoursInMonth){
+
+        double totalMonthTurnover = turnOverByDay.get(turnOverByDay.size()-1);
+        double amountOfHoursToMetProductivityTarget = totalMonthTurnover/productivityTarget;
+        List<Double> brickTurnOverShareByDay  = createTurnoverShareConsideringCloseDaysList(turnOverShareByDay, hoursInMonth);
+
+        List<Double> dailyHoursToMetProductivityTarget = new ArrayList<>();
+
+        for (Double dailyTurnoverShare : brickTurnOverShareByDay) {
+            double amountHoursForThisDay = dailyTurnoverShare * amountOfHoursToMetProductivityTarget;
+            dailyHoursToMetProductivityTarget.add(amountHoursForThisDay);
+        }
+
+        return dailyHoursToMetProductivityTarget;
     }
 
 }

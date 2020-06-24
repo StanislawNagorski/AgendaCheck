@@ -100,10 +100,7 @@ public class ScheduleReader {
         for (int i = 0; i < departmentsCount; i++) {
             dailyHoursMap.put(departmentNames.get(i), dailyScheduledHours.get(i));
         }
-
         return dailyHoursMap;
     }
-
-
 
 }

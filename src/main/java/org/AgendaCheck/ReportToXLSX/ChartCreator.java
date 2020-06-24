@@ -42,7 +42,7 @@ public class ChartCreator {
         plot.setRangeAxis(hoursAxis);
 
         JFreeChart chart = new JFreeChart(plot);
-        chart.setTitle("Rozkład godzin i obrotu");
+        chart.setTitle("Obecny rozkład godzin i obrotu");
 
         return chart;
     }

@@ -77,13 +77,20 @@ public class ReportWriter {
     private void writeSixthColumnPerfectHours(XSSFSheet reportSheet) {
         List<Double> perfectStoreHoursByDay = dataBank.getPerfectStoreHoursByDay();
         int columnNrToWrite = 5;
-        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+        writeColumn("Godziny wg obrotu", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
     private void writeSeventhColumnDifferenceInHours(XSSFSheet reportSheet) {
         List<Double> dailyDifferenceInHoursToPerfectOnes = dataBank.getDifferenceBetweenPerfectAndActualHours();
         int columnNrToWrite = 6;
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+    }
+
+    private void writeEightColumnHoursByProductivityTarget(XSSFSheet reportSheet){
+        List<Double> dailyHoursToMetProductivityTarget = dataBank.getDailyHoursToMetProductivityTarget();
+        int columnNrToWrite = 7;
+        String columnName = "Godziny wg celu produktywności: " + dataBank.getProductivityTarget();
+        writeColumn(columnName, columnNrToWrite, dailyHoursToMetProductivityTarget, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
     private void addStoreChart(XSSFSheet reportSheet) throws IOException {
@@ -101,6 +108,7 @@ public class ReportWriter {
         writeFifthColumnHoursShare(reportSheet);
         writeSixthColumnPerfectHours(reportSheet);
         writeSeventhColumnDifferenceInHours(reportSheet);
+        writeEightColumnHoursByProductivityTarget(reportSheet);
         addStoreChart(reportSheet);
     }
 
@@ -134,7 +142,7 @@ public class ReportWriter {
         List<Double> perfectStoreHoursByDay =
                 PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
         int columnNrToWrite = 5;
-        writeColumn("\"Idealne\" godziny", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+        writeColumn("Godziny wg obrotu", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
     private void writeSeventhDepartmentColumnDifferenceInHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
@@ -146,6 +154,12 @@ public class ReportWriter {
         List<Double> dailyDifferenceInHoursToPerfectOnes = PotentialHoursCalculator.createDifferenceInHoursList(perfectDepartmentHoursByDay, departmentHoursByDay);
         int columnNrToWrite = 6;
         writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+    }
+
+    private void writeEightDepartmentColumnHoursByProductivityTarger(){
+        //TODO dzienne godziny sklepu do celu produktywnosci
+        //TODO minus administracja i pok
+        //TODO przez udział w obrocie sklepu
     }
 
     private void addDepartmentChart(XSSFSheet reportSheet, String departmentName) throws IOException {
@@ -235,7 +249,7 @@ public class ReportWriter {
         Drawing<XSSFShape> drawing = reportSheet.createDrawingPatriarch();
 
         ClientAnchor anchor = helper.createClientAnchor();
-        anchor.setCol1(8);
+        anchor.setCol1(9);
         anchor.setRow1(1);
 
         Picture pict = drawing.createPicture(anchor, pictureIdx);

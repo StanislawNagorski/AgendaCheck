@@ -26,7 +26,8 @@ It takes data from to .xlsx files and creates new report.
 - class should be dedicated to specific actions
 - mind-mapping helps to keep track of classes connections, 
 - working with debugger, (when I got my first out of memory Java heap space error with 10M+ objects :)
-- Swing ()
+- awt & Swing,
+ 
 
 # To do
 
