@@ -23,7 +23,13 @@ public class DataBank {
    private final Map<String, List<Double>> dailyDepartmentHoursByName;
    private final List<Double> perfectStoreHoursByDay;
    private final List<Double> differenceBetweenPerfectAndActualHours;
+   private double productivityTarget;
+   private final List<Double> dailyHoursToMetProductivityTarget;
 
+   public double getProductivityTarget(){
+       productivityTarget = 800;
+       return productivityTarget;
+   }
 
     public DataBank(ScheduleReader scheduleReader, ForecastReader forecastReader) {
         this.scheduleReader = scheduleReader;
@@ -40,6 +46,8 @@ public class DataBank {
         dailyDepartmentHoursByName = scheduleReader.createMapOfScheduleDailyHoursByDepartment();
         perfectStoreHoursByDay = PotentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, dailyStoreHours);
         differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.createDifferenceInHoursList(perfectStoreHoursByDay, dailyStoreHours);
+        dailyHoursToMetProductivityTarget = PotentialHoursCalculator.createHoursDeterminedByProductivityTargetList
+                (getProductivityTarget(), dailyStoreTurnOver, dailyStoreTurnOverShare, dailyStoreHours);
     }
 
     public int getNumberOFDepartmentSheets() {
@@ -89,4 +97,6 @@ public class DataBank {
     public List<Double> getDifferenceBetweenPerfectAndActualHours() {
         return differenceBetweenPerfectAndActualHours;
     }
+
+    public List<Double> getDailyHoursToMetProductivityTarget() {return dailyHoursToMetProductivityTarget;}
 }

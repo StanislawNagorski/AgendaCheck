@@ -26,8 +26,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="project clean: packages addes, .gitignore updated">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="git">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SampleInputFiles/Group &amp; Forum Rules_2020.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ChartCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,6 +274,9 @@
       <workItem from="1592043202028" duration="513000" />
       <workItem from="1592045432338" duration="89000" />
       <workItem from="1592661720641" duration="1374000" />
+      <workItem from="1592663150351" duration="353000" />
+      <workItem from="1592914746250" duration="201000" />
+      <workItem from="1593027402399" duration="5381000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -567,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592662858893</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="project clean: packages addes, .gitignore updated">
+      <created>1592663385475</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1592663385475</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,25 +692,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1592663095245">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1593034926166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592663095245" />
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1592663095245">
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1593034926166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592663095245" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1592663095245">
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1593034926166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592663095245" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1592663095245">
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1593034926166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592663095245" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
