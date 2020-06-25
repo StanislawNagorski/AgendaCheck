@@ -36,7 +36,7 @@ public class PotentialHoursCalculator {
         List<Double> shareWithCloseDays = createTurnoverShareConsideringCloseDaysList(turnOverShareByDay, hoursByDay);
 
 
-        for (int i = 0; i < shareWithCloseDays.size() -1; i++) {
+        for (int i = 0; i < shareWithCloseDays.size() - 1; i++) {
             double dailyPerfectHours = shareWithCloseDays.get(i) * monthlyHours;
             perfectHours.add(dailyPerfectHours);
             monthlyHoursCheck += dailyPerfectHours;
@@ -46,26 +46,25 @@ public class PotentialHoursCalculator {
     }
 
 
-    public static List<Double> createDifferenceInHoursList(List<Double> perfectHours, List<Double> hoursInMonth) {
+    public static List<Double> substractColumnsValues(List<Double> hours, List<Double> hoursToSubtract) {
         List<Double> differenceHours = new ArrayList<>();
 
-        for (int i = 0; i < perfectHours.size(); i++) {
-            double dailyDiff =hoursInMonth.get(i) - perfectHours.get(i);
+        for (int i = 0; i < hoursToSubtract.size(); i++) {
+            double dailyDiff = hours.get(i) - hoursToSubtract.get(i);
             differenceHours.add(dailyDiff);
         }
-        differenceHours.set(perfectHours.size()-1, 0.0);
 
         return differenceHours;
     }
 
-    public static List<Double> createHoursDeterminedByProductivityTargetList(double productivityTarget,
-                                                                         List<Double> turnOverByDay,
-                                                                         List<Double> turnOverShareByDay,
-                                                                         List<Double> hoursInMonth){
+    public static List<Double> createStoreHoursDeterminedByProductivityTargetList(double productivityTarget,
+                                                                                  List<Double> turnOverByDay,
+                                                                                  List<Double> turnOverShareByDay,
+                                                                                  List<Double> hoursInMonth) {
 
-        double totalMonthTurnover = turnOverByDay.get(turnOverByDay.size()-1);
-        double amountOfHoursToMetProductivityTarget = totalMonthTurnover/productivityTarget;
-        List<Double> brickTurnOverShareByDay  = createTurnoverShareConsideringCloseDaysList(turnOverShareByDay, hoursInMonth);
+        double totalMonthTurnover = turnOverByDay.get(turnOverByDay.size() - 1);
+        double amountOfHoursToMetProductivityTarget = totalMonthTurnover / productivityTarget;
+        List<Double> brickTurnOverShareByDay = createTurnoverShareConsideringCloseDaysList(turnOverShareByDay, hoursInMonth);
 
         List<Double> dailyHoursToMetProductivityTarget = new ArrayList<>();
 
@@ -75,6 +74,20 @@ public class PotentialHoursCalculator {
         }
 
         return dailyHoursToMetProductivityTarget;
+    }
+
+    public static List<Double> createDailyDepartmentHoursToMetProductivityTarget(double storeTotalTurnOverAsSumOfDepartments,
+                                                                                 double departmentTurnover,
+                                                                                 List<Double> dailyRetailStoreHoursToMetProductivityTarget) {
+
+        double departmentTurnoverShare = departmentTurnover / storeTotalTurnOverAsSumOfDepartments;
+
+        List<Double> dailyDepartmentHoursToMetProductivityTarget = new ArrayList<>();
+        for (int i = 0; i < dailyRetailStoreHoursToMetProductivityTarget.size(); i++) {
+            double hoursForThisDay = dailyRetailStoreHoursToMetProductivityTarget.get(i) * departmentTurnoverShare;
+            dailyDepartmentHoursToMetProductivityTarget.add(hoursForThisDay);
+        }
+        return dailyDepartmentHoursToMetProductivityTarget;
     }
 
 }

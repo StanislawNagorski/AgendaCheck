@@ -97,13 +97,14 @@ public class DepartmentNameCheckerTest {
         forecastInput.close();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        double productivityTargetUserInput = 800;
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
 
         Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
         Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
 
         //When
-        DepartmentNameChecker.changeDepartmentNamesFromScheduleToThoseFromForecast(turnover, hours);
+        DepartmentNameChecker.changeDepartmentNamesInScheduleToThoseFromForecast(turnover, hours);
 
         //Then
         System.out.println(hours.keySet());
@@ -123,14 +124,15 @@ public class DepartmentNameCheckerTest {
         forecastInput.close();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        double productivityTargetUserInput = 800;
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
 
         Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
         Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
 
         //When
         System.out.println(hours.keySet());
-        DepartmentNameChecker.changeDepartmentNamesFromScheduleToThoseFromForecast(turnover, hours);
+        DepartmentNameChecker.changeDepartmentNamesInScheduleToThoseFromForecast(turnover, hours);
 
         //Then
         System.out.println(turnover.keySet());

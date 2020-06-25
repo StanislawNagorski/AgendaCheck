@@ -65,7 +65,7 @@ public class DepartmentNameChecker {
         return false;
     }
 
-    public static void changeDepartmentNamesFromScheduleToThoseFromForecast
+    public static void changeDepartmentNamesInScheduleToThoseFromForecast
             (Map<String, Double> monthTurnoverByDepartment, Map<String, List<Double>> dailyHoursByDepartment) {
 
         Set<Map.Entry<String, Double>> turnoverSet = monthTurnoverByDepartment.entrySet();
@@ -88,8 +88,6 @@ public class DepartmentNameChecker {
         }
 
         dailyHoursByDepartment.putAll(tempMap);
-
-
     }
 
 

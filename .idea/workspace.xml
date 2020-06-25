@@ -26,17 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="git">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="change: column with diffrence beetwen hours,&#10;some logic repairs">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SampleInputFiles/Group &amp; Forum Rules_2020.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ChartCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ChartCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,18 +136,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.shouldCreateReportForJuneForStore1064" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.Schedule.*" />
+          <option name="PATTERN" value="org.AgendaCheck.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck" />
       <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.AppTest" />
-      <option name="METHOD_NAME" value="shouldCreateReportForJuneForStore1064" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
@@ -220,10 +212,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.ForecastReaderTest" />
+        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
         <item itemvalue="JUnit.ForecastReaderTest.shouldReturnTrueForJuneFor729" />
-        <item itemvalue="JUnit.AppTest.shouldCreateReportForJuneForStore1064" />
       </list>
     </recent_temporary>
   </component>
@@ -277,6 +269,8 @@
       <workItem from="1592663150351" duration="353000" />
       <workItem from="1592914746250" duration="201000" />
       <workItem from="1593027402399" duration="5381000" />
+      <workItem from="1593034943478" duration="4014000" />
+      <workItem from="1593081078305" duration="22992000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -586,7 +580,42 @@
       <option name="project" value="LOCAL" />
       <updated>1592663385475</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="aded: daily hours to met productivity target column">
+      <created>1593035004075</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1593035004075</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added: method to calculate none retail department hours">
+      <created>1593088600672</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1593088600672</updated>
+    </task>
+    <task id="LOCAL-00047" summary="added: list of daily non retail hours by day">
+      <created>1593090853354</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1593090853354</updated>
+    </task>
+    <task id="LOCAL-00048" summary="added: 8 column for departments with hours to met store productivity target">
+      <created>1593094793873</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1593094793873</updated>
+    </task>
+    <task id="LOCAL-00049" summary="change: column with diffrence beetwen hours,&#10;some logic repairs">
+      <created>1593105437999</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1593105437999</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,11 +647,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added" />
-    <MESSAGE value="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added &#10;method to calc and write daily share in monthly turn over added." />
-    <MESSAGE value="code MASSIVE cleanUP" />
-    <MESSAGE value="PerfectHours column added" />
-    <MESSAGE value="PerfectHours column added, considering close days" />
     <MESSAGE value="Difference in hours column added, considering close days" />
     <MESSAGE value="Tests end-to-end added" />
     <MESSAGE value="added method to create list of department names for ScheduleReader" />
@@ -643,7 +667,12 @@
     <MESSAGE value="added class and methods to write CHART in report" />
     <MESSAGE value="charts added" />
     <MESSAGE value="project clean: packages addes, .gitignore updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="project clean: packages addes, .gitignore updated" />
+    <MESSAGE value="aded: daily hours to met productivity target column" />
+    <MESSAGE value="added: method to calculate none retail department hours" />
+    <MESSAGE value="added: list of daily non retail hours by day" />
+    <MESSAGE value="added: 8 column for departments with hours to met store productivity target" />
+    <MESSAGE value="change: column with diffrence beetwen hours,&#10;some logic repairs" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: column with diffrence beetwen hours,&#10;some logic repairs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -662,10 +691,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591880405211" />
-    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1591300253113">
+    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593094003866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591300253113" />
+    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593094003866" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591183291677">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -692,25 +721,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1593034926166">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1593105470514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593105470514" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1593034926166">
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1593105470514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593105470514" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1593034926166">
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1593105470514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593105470514" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1593034926166">
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1593105470514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593034926166" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593105470514" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
