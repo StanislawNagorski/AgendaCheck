@@ -26,7 +26,7 @@ public class DataBank {
     private final List<Double> perfectStoreHoursByDay;
     private final List<Double> differenceBetweenPerfectAndActualHours;
     private final double productivityTarget;
-    private final List<Double> dailyHoursToMetProductivityTarget;
+    private final List<Double> dailyStoreHoursToMetProductivityTarget;
     private final List<Double> dailyRetailHoursToMetProductivityTarget;
 
 
@@ -49,10 +49,10 @@ public class DataBank {
         dailyNoneRetailDepartmentHours = crateNonRetailDepartmentsHoursMap();
         dailySumOfNonRetailHours = calcDailySumOfNonRetailDepartment();
         perfectStoreHoursByDay = PotentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, dailyStoreHours);
-        differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.createDifferenceInHoursList(perfectStoreHoursByDay, dailyStoreHours);
-        dailyHoursToMetProductivityTarget = PotentialHoursCalculator.createHoursDeterminedByProductivityTargetList
+        dailyStoreHoursToMetProductivityTarget = PotentialHoursCalculator.createStoreHoursDeterminedByProductivityTargetList
                 (productivityTarget, dailyStoreTurnOver, dailyStoreTurnOverShare, dailyStoreHours);
         dailyRetailHoursToMetProductivityTarget = createDailyRetailHoursToMetProductivityTarget();
+        differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.substractColumnsValues(dailyStoreHoursToMetProductivityTarget, dailyStoreHours);
     }
 
     public double getProductivityTarget() {
@@ -107,8 +107,8 @@ public class DataBank {
         return differenceBetweenPerfectAndActualHours;
     }
 
-    public List<Double> getDailyHoursToMetProductivityTarget() {
-        return dailyHoursToMetProductivityTarget;
+    public List<Double> getDailyStoreHoursToMetProductivityTarget() {
+        return dailyStoreHoursToMetProductivityTarget;
     }
 
     private void matchNamesInScheduleToThoseFromForecast() {

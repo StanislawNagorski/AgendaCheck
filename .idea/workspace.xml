@@ -26,12 +26,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: list of daily non retail hours by day">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: 8 column for departments with hours to met store productivity target">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/DataBank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Data/PotentialHoursCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/AgendaCheck/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/AgendaCheck/App.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +274,7 @@
       <workItem from="1592914746250" duration="201000" />
       <workItem from="1593027402399" duration="5381000" />
       <workItem from="1593034943478" duration="4014000" />
-      <workItem from="1593081078305" duration="13353000" />
+      <workItem from="1593081078305" duration="22322000" />
     </task>
     <task id="LOCAL-00001" summary="creation of project">
       <created>1590492160838</created>
@@ -603,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593090853354</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added: 8 column for departments with hours to met store productivity target">
+      <created>1593094793873</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1593094793873</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="PerfectHours column added" />
     <MESSAGE value="PerfectHours column added, considering close days" />
     <MESSAGE value="Difference in hours column added, considering close days" />
     <MESSAGE value="Tests end-to-end added" />
@@ -660,7 +668,8 @@
     <MESSAGE value="aded: daily hours to met productivity target column" />
     <MESSAGE value="added: method to calculate none retail department hours" />
     <MESSAGE value="added: list of daily non retail hours by day" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: list of daily non retail hours by day" />
+    <MESSAGE value="added: 8 column for departments with hours to met store productivity target" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: 8 column for departments with hours to met store productivity target" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -709,25 +718,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1593094288984">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1593105067955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593094288984" />
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593105067955" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1593094288984">
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1593105067955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593094288984" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593105067955" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1593094288984">
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1593105067954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593094288984" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593105067954" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1593094288984">
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1593105067955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593094288984" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593105067955" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
