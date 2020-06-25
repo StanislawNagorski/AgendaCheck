@@ -32,7 +32,6 @@ It takes data from to .xlsx files and creates new report.
 # To do
 
 - FileInput check
-- drag files input
-- hours for cashtills
-- cellStyles from map to geters
+- GUI
+- publish
 
