@@ -4,31 +4,28 @@ import org.AgendaCheck.Forecast.ForecastReader;
 import org.AgendaCheck.Schedule.MonthChecker;
 import org.AgendaCheck.Schedule.ScheduleReader;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class DataBank {
 
-   ScheduleReader scheduleReader;
-   ForecastReader forecastReader;
-   private final int numberOFDepartmentSheets;
-   private final List<String> datesColumn;
-   private final int[] yearMonthOfReport;
-   private final int[] rangeOfDays;
-   private final List<Double> dailyStoreTurnOver;
-   private final List<Double> dailyStoreTurnOverShare;
-   private final Map<String, Double> monthlyDepartmentTurnOver;
-   private final List<Double> dailyStoreHours;
-   private final List<Double> dailyStoreHoursShare;
-   private final Map<String, List<Double>> dailyDepartmentHoursByName;
-   private final Map<String, List<Double>> dailyNoneRetailDepartmentHours;
-   private final double sumOfNonRetailHours;
-   private final List<Double> perfectStoreHoursByDay;
-   private final List<Double> differenceBetweenPerfectAndActualHours;
-   private final double productivityTarget;
-   private final List<Double> dailyHoursToMetProductivityTarget;
+    ScheduleReader scheduleReader;
+    ForecastReader forecastReader;
+    private final int numberOFDepartmentSheets;
+    private final List<String> datesColumn;
+    private final int[] yearMonthOfReport;
+    private final int[] rangeOfDays;
+    private final List<Double> dailyStoreTurnOver;
+    private final List<Double> dailyStoreTurnOverShare;
+    private final Map<String, Double> monthlyDepartmentTurnOver;
+    private final List<Double> dailyStoreHours;
+    private final List<Double> dailyStoreHoursShare;
+    private final Map<String, List<Double>> dailyDepartmentHoursByName;
+    private final Map<String, List<Double>> dailyNoneRetailDepartmentHours;
+    private final List<Double> sumOfDailyNonRetailHours;
+    private final List<Double> perfectStoreHoursByDay;
+    private final List<Double> differenceBetweenPerfectAndActualHours;
+    private final double productivityTarget;
+    private final List<Double> dailyHoursToMetProductivityTarget;
 
 
     public DataBank(ScheduleReader scheduleReader, ForecastReader forecastReader, double productivityTarget) {
@@ -47,7 +44,7 @@ public class DataBank {
         dailyDepartmentHoursByName = scheduleReader.createMapOfScheduleDailyHoursByDepartment();
         matchNamesInScheduleToThoseFromForecast();
         dailyNoneRetailDepartmentHours = crateNonRetailDepartmentsHoursMap();
-        sumOfNonRetailHours = calcNonRetailDepartmentSum();
+        sumOfDailyNonRetailHours = calcDailySumOfNonRetailDepartment();
         perfectStoreHoursByDay = PotentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, dailyStoreHours);
         differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.createDifferenceInHoursList(perfectStoreHoursByDay, dailyStoreHours);
         dailyHoursToMetProductivityTarget = PotentialHoursCalculator.createHoursDeterminedByProductivityTargetList
@@ -106,44 +103,58 @@ public class DataBank {
         return differenceBetweenPerfectAndActualHours;
     }
 
-    public List<Double> getDailyHoursToMetProductivityTarget() {return dailyHoursToMetProductivityTarget;}
+    public List<Double> getDailyHoursToMetProductivityTarget() {
+        return dailyHoursToMetProductivityTarget;
+    }
 
-    private void matchNamesInScheduleToThoseFromForecast(){
+    private void matchNamesInScheduleToThoseFromForecast() {
         DepartmentNameChecker
                 .changeDepartmentNamesInScheduleToThoseFromForecast(monthlyDepartmentTurnOver, dailyDepartmentHoursByName);
     }
 
-    private Map<String, List<Double>> crateNonRetailDepartmentsHoursMap (){
+    private Map<String, List<Double>> crateNonRetailDepartmentsHoursMap() {
         Map<String, List<Double>> noneRetailDepartmentHoursByDay = new LinkedHashMap<>();
 
         Set<String> departmentNamesFromSchedule = dailyDepartmentHoursByName.keySet();
 
         for (String departmentName : departmentNamesFromSchedule) {
 
-            if (!monthlyDepartmentTurnOver.containsKey(departmentName)){
+            if (!monthlyDepartmentTurnOver.containsKey(departmentName)) {
                 noneRetailDepartmentHoursByDay.put(departmentName, dailyDepartmentHoursByName.get(departmentName));
             }
         }
         return noneRetailDepartmentHoursByDay;
     }
 
-    private double calcNonRetailDepartmentSum(){
+    private List<Double> calcDailySumOfNonRetailDepartment() {
+        List<Double> sumOfDailyNonRetailHours = new ArrayList<>();
+        for (int i = 0; i < dailyStoreHours.size(); i++) {
+            sumOfDailyNonRetailHours.add(0.0);
+        }
+
         Set<String> noneRetailDepartmentNames = dailyNoneRetailDepartmentHours.keySet();
-        double sumOfNonRetailHours = 0;
 
         for (String noneRetailDepartmentName : noneRetailDepartmentNames) {
-            List<Double> dailyHours = dailyNoneRetailDepartmentHours.get(noneRetailDepartmentName);
-            Double sumOfDepartmentMonthlyHours = dailyHours.get(dailyHours.size() - 1);
-            sumOfNonRetailHours += sumOfDepartmentMonthlyHours;
+
+            List<Double> singleDepartmentList = dailyDepartmentHoursByName.get(noneRetailDepartmentName);
+            int daysNumber = sumOfDailyNonRetailHours.size();
+
+            for (int i = 0; i < daysNumber; i++) {
+
+                double dailyHours = singleDepartmentList.get(i);
+                double presentDailyHours = sumOfDailyNonRetailHours.get(i);
+                double newDailyHours = presentDailyHours + dailyHours;
+                sumOfDailyNonRetailHours.set(i, newDailyHours);
+            }
         }
-        return sumOfNonRetailHours;
+        return sumOfDailyNonRetailHours;
     }
 
     public Map<String, List<Double>> getDailyNoneRetailDepartmentHours() {
         return dailyNoneRetailDepartmentHours;
     }
 
-    public double getSumOfNonRetailHours() {
-        return sumOfNonRetailHours;
+    public List<Double> getDailySumOfNonRetailHours() {
+        return sumOfDailyNonRetailHours;
     }
 }
