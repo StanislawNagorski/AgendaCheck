@@ -77,4 +77,17 @@ public class PotentialHoursCalculator {
         return dailyHoursToMetProductivityTarget;
     }
 
+    public static List<Double> createDailyDepartmentHoursToMetProductivityTarget(double departmentTurnover,
+                                                                                 List<Double> dailyRetailStoreHoursToMetProductivityTarget){
+        double storeTotalTurnOverAsSumOfDepartments = 1.1;
+        double departmentTurnoverShare = departmentTurnover/storeTotalTurnOverAsSumOfDepartments;
+
+        List<Double> dailyDepartmentHoursToMetProductivityTarget = new ArrayList<>();
+        for (int i = 0; i < dailyRetailStoreHoursToMetProductivityTarget.size(); i++) {
+            double hoursForThisDay = dailyRetailStoreHoursToMetProductivityTarget.get(i) * departmentTurnoverShare;
+            dailyDepartmentHoursToMetProductivityTarget.add(hoursForThisDay);
+        }
+        return dailyDepartmentHoursToMetProductivityTarget;
+    }
+
 }

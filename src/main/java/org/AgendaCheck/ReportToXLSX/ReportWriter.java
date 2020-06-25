@@ -4,10 +4,7 @@ import org.AgendaCheck.Data.DataBank;
 import org.AgendaCheck.Data.PotentialHoursCalculator;
 import org.AgendaCheck.Forecast.DepartmentCalculator;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFShape;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.*;
 import org.jfree.chart.JFreeChart;
 
 import javax.imageio.ImageIO;
@@ -119,13 +116,15 @@ public class ReportWriter {
         List<Double> dailyDepartmentTurnOverList =
                 DepartmentCalculator.createDailyDepartmentTurnOverList(departmentMonthTurnOver, dataBank.getDailyStoreTurnOverShare());
         int columnNrToWrite = 1;
-        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyDepartmentTurnOverList, stylesForCell.get("polishZlotyStyle"), reportSheet);
+        writeColumn("Pilotaż obrotu", columnNrToWrite, dailyDepartmentTurnOverList,
+                stylesForCell.get("polishZlotyStyle"), reportSheet);
     }
 
     private void writeForthDepartmentColumnHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
         List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentNameFromSchedule);
         int columnNrToWrite = 3;
-        writeColumn("Suma godzin", columnNrToWrite, departmentHoursByDay, stylesForCell.get("defaultDoubleCellStyle") , reportSheet);
+        writeColumn("Suma godzin", columnNrToWrite, departmentHoursByDay,
+                stylesForCell.get("defaultDoubleCellStyle") , reportSheet);
     }
 
     private void writeFifthDepartmentColumnHoursShare(String departmentNameFromSchedule, XSSFSheet reportSheet) {
@@ -142,7 +141,8 @@ public class ReportWriter {
         List<Double> perfectStoreHoursByDay =
                 PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
         int columnNrToWrite = 5;
-        writeColumn("Godziny wg obrotu", columnNrToWrite, perfectStoreHoursByDay, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+        writeColumn("Godziny wg obrotu", columnNrToWrite, perfectStoreHoursByDay,
+                stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
     private void writeSeventhDepartmentColumnDifferenceInHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
@@ -150,16 +150,25 @@ public class ReportWriter {
         List<Double> perfectDepartmentHoursByDay =
                 PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
 
-
-        List<Double> dailyDifferenceInHoursToPerfectOnes = PotentialHoursCalculator.createDifferenceInHoursList(perfectDepartmentHoursByDay, departmentHoursByDay);
+        List<Double> dailyDifferenceInHoursToPerfectOnes = PotentialHoursCalculator.createDifferenceInHoursList
+                (perfectDepartmentHoursByDay, departmentHoursByDay);
         int columnNrToWrite = 6;
-        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes, stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+        writeColumn("Różnica godzin", columnNrToWrite, dailyDifferenceInHoursToPerfectOnes,
+                stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
-    private void writeEightDepartmentColumnHoursByProductivityTarger(){
-        //TODO dzienne godziny sklepu do celu produktywnosci
-        //TODO minus administracja i pok
-        //TODO przez udział w obrocie sklepu
+    private void writeEightDepartmentColumnHoursByProductivityTarget(String departmentNameFromSchedule, XSSFSheet reportSheet){
+
+        double departmentTurnover = dataBank.getMonthlyDepartmentTurnOver().get(departmentNameFromSchedule);
+        double departmentTurnoverShare = departmentTurnover/ dataBank.getStoreForcastedByDepartmentsTurnOver();
+        List<Double> storeRetailDailyHours = dataBank.getDailyRetailHoursToMetProductivityTarget();
+
+        List<Double> dailyDepartmentHoursToMetProductivityTarget =
+                PotentialHoursCalculator.createDailyDepartmentHoursToMetProductivityTarget(departmentTurnoverShare, storeRetailDailyHours);
+        int columnNrToWrite = 7;
+        writeColumn("Godziny wg celu produktywności", columnNrToWrite, dailyDepartmentHoursToMetProductivityTarget,
+                stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
+
     }
 
     private void addDepartmentChart(XSSFSheet reportSheet, String departmentName) throws IOException {
@@ -178,6 +187,7 @@ public class ReportWriter {
         writeFifthDepartmentColumnHoursShare(departmentName, reportSheet);
         writeSixthDepartmentColumnPerfectHours(departmentName, reportSheet);
         writeSeventhDepartmentColumnDifferenceInHours(departmentName, reportSheet);
+        writeEightDepartmentColumnHoursByProductivityTarget(departmentName, reportSheet);
         addDepartmentChart(reportSheet, departmentName);
     }
     public void writeAllDepartmentsSheets() throws IOException {
@@ -203,9 +213,9 @@ public class ReportWriter {
             return;
         }
 
-        XSSFCell titleOfTurnOverColumn = reportSheet.getRow(1).createCell(columnNr);
-        titleOfTurnOverColumn.setCellValue(columnName);
-        titleOfTurnOverColumn.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
+        XSSFCell titleColumnCell = reportSheet.getRow(1).createCell(columnNr);
+        titleColumnCell.setCellValue(columnName);
+        titleColumnCell.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
 
         int rowToStartData = 3;
         for (int i = 0; i < dataList.size(); i++) {

@@ -17,15 +17,17 @@ public class DataBank {
     private final List<Double> dailyStoreTurnOver;
     private final List<Double> dailyStoreTurnOverShare;
     private final Map<String, Double> monthlyDepartmentTurnOver;
+    private final double storeForcastedByDepartmentsTurnOver;
     private final List<Double> dailyStoreHours;
     private final List<Double> dailyStoreHoursShare;
     private final Map<String, List<Double>> dailyDepartmentHoursByName;
     private final Map<String, List<Double>> dailyNoneRetailDepartmentHours;
-    private final List<Double> sumOfDailyNonRetailHours;
+    private final List<Double> dailySumOfNonRetailHours;
     private final List<Double> perfectStoreHoursByDay;
     private final List<Double> differenceBetweenPerfectAndActualHours;
     private final double productivityTarget;
     private final List<Double> dailyHoursToMetProductivityTarget;
+    private final List<Double> dailyRetailHoursToMetProductivityTarget;
 
 
     public DataBank(ScheduleReader scheduleReader, ForecastReader forecastReader, double productivityTarget) {
@@ -39,16 +41,18 @@ public class DataBank {
         dailyStoreTurnOver = forecastReader.createStoreForecastedTurnOverList(rangeOfDays);
         dailyStoreTurnOverShare = forecastReader.createDailyTurnOverShareList(dailyStoreTurnOver);
         monthlyDepartmentTurnOver = forecastReader.createDepartmentsMonthlyTurnOverMap(yearMonthOfReport[1]);
+        storeForcastedByDepartmentsTurnOver = sumOfForecastedTuroverByDepartmets();
         dailyStoreHours = scheduleReader.createStoreDailyHoursList();
         dailyStoreHoursShare = scheduleReader.createStoreShareOfHoursByDayList();
         dailyDepartmentHoursByName = scheduleReader.createMapOfScheduleDailyHoursByDepartment();
         matchNamesInScheduleToThoseFromForecast();
         dailyNoneRetailDepartmentHours = crateNonRetailDepartmentsHoursMap();
-        sumOfDailyNonRetailHours = calcDailySumOfNonRetailDepartment();
+        dailySumOfNonRetailHours = calcDailySumOfNonRetailDepartment();
         perfectStoreHoursByDay = PotentialHoursCalculator.createPerfectHoursList(dailyStoreTurnOverShare, dailyStoreHours);
         differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.createDifferenceInHoursList(perfectStoreHoursByDay, dailyStoreHours);
         dailyHoursToMetProductivityTarget = PotentialHoursCalculator.createHoursDeterminedByProductivityTargetList
                 (productivityTarget, dailyStoreTurnOver, dailyStoreTurnOverShare, dailyStoreHours);
+        dailyRetailHoursToMetProductivityTarget = createDailyRetailHoursToMetProductivityTarget();
     }
 
     public double getProductivityTarget() {
@@ -155,6 +159,36 @@ public class DataBank {
     }
 
     public List<Double> getDailySumOfNonRetailHours() {
-        return sumOfDailyNonRetailHours;
+        return dailySumOfNonRetailHours;
+    }
+
+    private List<Double> createDailyRetailHoursToMetProductivityTarget() {
+        List<Double> dailyRetailHoursToMetProductivityTarget = new ArrayList<>();
+
+        for (int i = 0; i < dailySumOfNonRetailHours.size(); i++) {
+            double dailySumStoreHours = dailyStoreHours.get(i);
+            double dailySumNoneRetailHours = dailySumOfNonRetailHours.get(i);
+            dailyRetailHoursToMetProductivityTarget.add(dailySumStoreHours-dailySumNoneRetailHours);
+        }
+        return dailyRetailHoursToMetProductivityTarget;
+    }
+
+    public List<Double> getDailyRetailHoursToMetProductivityTarget() {
+        return dailyRetailHoursToMetProductivityTarget;
+    }
+
+    private double sumOfForecastedTuroverByDepartmets(){
+        double sum = 0;
+
+        Set<String> deparmentsNames = monthlyDepartmentTurnOver.keySet();
+        for (String deparmentsName : deparmentsNames) {
+            Double departmentTurnover = monthlyDepartmentTurnOver.get(deparmentsName);
+            sum += departmentTurnover;
+        }
+        return sum;
+    }
+
+    public double getStoreForcastedByDepartmentsTurnOver() {
+        return storeForcastedByDepartmentsTurnOver;
     }
 }
