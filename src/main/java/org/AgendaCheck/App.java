@@ -25,10 +25,12 @@ public class App {
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
 
+        double productivityTargetUserInput = 800.0;
+
         XSSFWorkbook report = new XSSFWorkbook();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeStoreSheet();

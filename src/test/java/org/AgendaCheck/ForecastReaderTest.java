@@ -18,8 +18,8 @@ public class ForecastReaderTest {
 
     @Before
     public void setUp() throws IOException {
-        XSSFWorkbook forecast643 = new XSSFWorkbook(new FileInputStream("SampleInputFiles/643_Gessef 2020.xlsx"));
-        XSSFWorkbook forecast729 = new XSSFWorkbook(new FileInputStream("SampleInputFiles/729 Gessef 2020.xlsx"));
+        XSSFWorkbook forecast643 = new XSSFWorkbook(new FileInputStream("src/main/SampleInputFiles/643_Gessef 2020.xlsx"));
+        XSSFWorkbook forecast729 = new XSSFWorkbook(new FileInputStream("src/main/SampleInputFiles/729 Gessef 2020.xlsx"));
         forecastReader643 = new ForecastReader(forecast643);
         forecastReader729 = new ForecastReader(forecast729);
     }

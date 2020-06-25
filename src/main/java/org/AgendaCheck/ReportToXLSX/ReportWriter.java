@@ -1,7 +1,6 @@
 package org.AgendaCheck.ReportToXLSX;
 
 import org.AgendaCheck.Data.DataBank;
-import org.AgendaCheck.Data.DepartmentNameChecker;
 import org.AgendaCheck.Data.PotentialHoursCalculator;
 import org.AgendaCheck.Forecast.DepartmentCalculator;
 import org.apache.poi.ss.usermodel.*;
@@ -23,6 +22,7 @@ public class ReportWriter {
     private final XSSFWorkbook report;
     private final DataBank dataBank;
     private final Map<String, CellStyle> stylesForCell;
+    private double noneRetailDepartmentsHoursSum;
 
 
     public ReportWriter(XSSFWorkbook report, DataBank dataBank) {
@@ -184,10 +184,9 @@ public class ReportWriter {
         Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
         Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
 
-        DepartmentNameChecker.changeDepartmentNamesFromScheduleToThoseFromForecast(turnover, hours);
-
         Set<String> departmentNames = turnover.keySet();
 
+        //TODO when moving to different output format you can create Map<Sting,<Map<String, List<Double>>>>
         for (String departmentName : departmentNames) {
 
             if (!hours.containsKey(departmentName)){
@@ -197,9 +196,7 @@ public class ReportWriter {
             createReportSheet(departmentName);
             writeSingleDepartmentSheet(departmentName, report.getSheet(departmentName));
         }
-
     }
-
 
     private <T> void writeColumn(String columnName, int columnNr, List<T> dataList, CellStyle mainStyle, XSSFSheet reportSheet) {
         if (dataList.isEmpty()){
