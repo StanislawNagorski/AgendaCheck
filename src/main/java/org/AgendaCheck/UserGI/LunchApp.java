@@ -17,8 +17,8 @@ public class LunchApp extends Application {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/MainView.fxml"));
         StackPane stackPane = loader.load();
         Scene scene = new Scene(stackPane);
-        stage.setScene(scene);
         stage.setTitle("eStah ;)");
+        stage.setScene(scene);
         stage.show();
     }
 }
