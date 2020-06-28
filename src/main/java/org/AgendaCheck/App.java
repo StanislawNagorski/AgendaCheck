@@ -17,11 +17,11 @@ public class App {
 
         long start = System.nanoTime();
 
-        OPCPackage scheduleInput = OPCPackage.open(new File("src/main/SampleInputFiles/godzinyLipiec643.xlsx"));
+        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInput/godzinyLipiec643.xlsx"));
         XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
         scheduleInput.close();
 
-        OPCPackage forecastInput = OPCPackage.open(new File("src/main/SampleInputFiles/643_Gessef 2020.xlsx"));
+        OPCPackage forecastInput = OPCPackage.open(new File("SampleInput/643_Gessef 2020.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
 
