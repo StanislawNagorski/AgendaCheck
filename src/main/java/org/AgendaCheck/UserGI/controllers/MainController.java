@@ -18,7 +18,7 @@ public class MainController {
     }
 
     public void loadStartScreen(){
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/StartView.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/FXMLs/StartView.fxml"));
         Pane pane = null;
 
         try {
