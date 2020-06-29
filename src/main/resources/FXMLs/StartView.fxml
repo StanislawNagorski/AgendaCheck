@@ -30,8 +30,8 @@
                </graphic></Label>
          </children>
       </Pane>
-      <Label layoutX="61.0" layoutY="223.0" text="Podaj cel produktywności" />
-      <TextField fx:id="userTarget" layoutX="208.0" layoutY="219.0" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="84.0" promptText="np. 934" />
+      <Label layoutX="36.0" layoutY="225.0" text="Podaj cel produktywności" />
+      <TextField fx:id="userTarget" layoutX="179.0" layoutY="221.0" prefHeight="25.0" prefWidth="135.0" promptText="np. 934 (puste = 1000)" />
       <Button fx:id="goToChart" layoutX="104.0" layoutY="261.0" mnemonicParsing="false" onAction="#goToReport" prefHeight="25.0" prefWidth="144.0" text="Przejdź do raportu" />
    </children>
 </Pane>

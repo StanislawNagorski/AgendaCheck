@@ -30,11 +30,14 @@ public class MainController {
         StartViewController startViewController = loader.getController();
         startViewController.setMainController(this);
         setScreen(pane);
+
     }
 
     public void setScreen(Pane pane){
         mainPane.getChildren().clear();
         mainPane.getChildren().add(pane);
+
+
     }
 
 }

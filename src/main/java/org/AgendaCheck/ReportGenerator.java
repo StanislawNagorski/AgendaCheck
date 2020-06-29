@@ -12,25 +12,41 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class App {
-    public static void main(String[] args) throws IOException, InvalidFormatException {
+public class ReportGenerator {
 
+    private File forecastFile;
+    private File scheduleFile;
+    private double productivityTarget;
+
+    public void setScheduleFile(File scheduleFile) {
+        this.scheduleFile = scheduleFile;
+    }
+
+    public void setForecastFile(File forecastFile) {
+        this.forecastFile = forecastFile;
+    }
+
+    public void setProductivityTarget(double productivityTarget) {
+        this.productivityTarget = productivityTarget;
+    }
+
+    public void createFullReport() throws IOException, InvalidFormatException {
         long start = System.nanoTime();
 
-        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInput/godzinyLipiec643.xlsx"));
-        XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
-        scheduleInput.close();
-
-        OPCPackage forecastInput = OPCPackage.open(new File("SampleInput/643_Gessef 2020.xlsx"));
+        OPCPackage forecastInput = OPCPackage.open(forecastFile);
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
 
-        double productivityTargetUserInput = 867.0;
+        OPCPackage scheduleInput = OPCPackage.open(scheduleFile);
+        XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
+        scheduleInput.close();
+
+
 
         XSSFWorkbook report = new XSSFWorkbook();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);
         ForecastReader forecastReader = new ForecastReader(forecast);
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
+        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 
         reportWriter.writeStoreSheet();
