@@ -26,18 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: text input restriction method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: data transfer from GUI to operations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/LunchApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/LunchApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/AgendaCheck/App.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,14 +252,7 @@
       <workItem from="1593034943478" duration="4014000" />
       <workItem from="1593081078305" duration="22992000" />
       <workItem from="1593335777496" duration="19311000" />
-      <workItem from="1593419798750" duration="6370000" />
-    </task>
-    <task id="LOCAL-00004" summary="styles added">
-      <created>1590859494475</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1590859494475</updated>
+      <workItem from="1593419798750" duration="9052000" />
     </task>
     <task id="LOCAL-00005" summary="wydzielenie z klasy ScheduleReader funkcji związanych z zapisem do ReportWriter">
       <created>1590863371828</created>
@@ -605,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593375082832</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="added: data transfer from GUI to operations">
+      <created>1593437037387</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1593437037387</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +629,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to create LList of Department names and daily hours by department" />
     <MESSAGE value="StylesForCell class separated from ReportWriter class.&#10;Styles are kept in HashMap" />
     <MESSAGE value="added method to map department name and monthly forecast in ForecastReader" />
     <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
@@ -662,7 +653,8 @@
     <MESSAGE value="added: styling for drop area" />
     <MESSAGE value="added: file drop and check method" />
     <MESSAGE value="added: text input restriction method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: text input restriction method" />
+    <MESSAGE value="added: data transfer from GUI to operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: data transfer from GUI to operations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -719,25 +711,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1593436683449">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1593439183614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593436683449" />
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1593436683448">
+    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1593439183614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593436683448" />
+    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1593436683448">
+    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1593439183614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593436683448" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1593436683449">
+    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1593439183614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593436683449" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />

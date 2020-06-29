@@ -4,6 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -42,11 +43,19 @@ public class StartViewController {
 
     private File[] correctFiles = new File[2];
 
+    private double userInputSafeInCaseOfEmptyString() {
+        String userTargetInput = userTarget.getText();
+        if (userTargetInput.isBlank()) {
+            return 1000;
+        }
+        return Double.parseDouble(userTargetInput);
+    }
+
+
     private void sendDataToReportGenerator() {
         reportGenerator.setForecastFile(correctFiles[0]);
         reportGenerator.setScheduleFile(correctFiles[1]);
-        String userTargetInput = userTarget.getText();
-        reportGenerator.setProductivityTarget(Double.parseDouble(userTargetInput));
+        reportGenerator.setProductivityTarget(userInputSafeInCaseOfEmptyString());
     }
 
     public void setMainController(MainController mainController) {
@@ -118,21 +127,36 @@ public class StartViewController {
         return false;
     }
 
+    public void showAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Program nie wykrył plików");
+        alert.setHeaderText("Sprawdź czy nazwa pliku spełnia poniższe wymagania: ");
+        alert.setContentText("1. Plik Gessefa powinien w swojej nazwie mieć \"gessef\"\n" +
+                "2. Raport WTMs może mieć niezmienioną nazwę lub zawierać np. \"godziny\" \n" +
+                "3. Oba pliki powinny być w formacie .xlsx");
+        alert.showAndWait();
+    }
+
+    private boolean areThereFiles(){
+        return correctFiles[0] == null || correctFiles[1] == null;
+    }
+
     @FXML
     void goToReport() {
-        //TODO niepozwól urzytkownikowi przejść dalej jeśli nie podał wszystkich danych
-        sendDataToReportGenerator();
-        try {
-            reportGenerator.createFullReport();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
-        }
 
-        loadChartScreen();
-        for (File inputFile : correctFiles) {
-            System.out.println("nazwa pliku: " + inputFile.getName());
+        if (areThereFiles()) {
+            showAlert();
+        } else {
+            sendDataToReportGenerator();
+            loadChartScreen();
+            try {
+                reportGenerator.createFullReport();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InvalidFormatException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -149,7 +173,8 @@ public class StartViewController {
         });
     }
 
-    public void loadChartScreen() {
+
+    private void loadChartScreen() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/FXMLs/ReportView.fxml"));
         Pane pane = null;
 
