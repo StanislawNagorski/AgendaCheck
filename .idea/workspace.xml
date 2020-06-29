@@ -26,10 +26,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: data transfer from GUI to operations">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: alertbox">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/AppBackgraund.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/ChartBackgraund.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/bar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +52,7 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -95,6 +101,7 @@
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/../../External Libs" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/org/AgendaCheck" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projekty JAVA/ApachePlay" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -252,14 +259,7 @@
       <workItem from="1593034943478" duration="4014000" />
       <workItem from="1593081078305" duration="22992000" />
       <workItem from="1593335777496" duration="19311000" />
-      <workItem from="1593419798750" duration="9052000" />
-    </task>
-    <task id="LOCAL-00005" summary="wydzielenie z klasy ScheduleReader funkcji związanych z zapisem do ReportWriter">
-      <created>1590863371828</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1590863371828</updated>
+      <workItem from="1593419798750" duration="18304000" />
     </task>
     <task id="LOCAL-00006" summary="added percentage format">
       <created>1590924929079</created>
@@ -597,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593437037387</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="added: alertbox">
+      <created>1593439599465</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1593439599465</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="StylesForCell class separated from ReportWriter class.&#10;Styles are kept in HashMap" />
     <MESSAGE value="added method to map department name and monthly forecast in ForecastReader" />
     <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
     <MESSAGE value="added tests for ForecastReader hours mapping" />
@@ -654,7 +660,8 @@
     <MESSAGE value="added: file drop and check method" />
     <MESSAGE value="added: text input restriction method" />
     <MESSAGE value="added: data transfer from GUI to operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: data transfer from GUI to operations" />
+    <MESSAGE value="added: alertbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: alertbox" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -711,25 +718,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1593439183614">
+    <state width="916" height="297" key="GridCell.Tab.0.bottom" timestamp="1593474952414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
+    <state width="916" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1593439183614">
+    <state width="916" height="297" key="GridCell.Tab.0.center" timestamp="1593474952414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
+    <state width="916" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1593439183614">
+    <state width="916" height="297" key="GridCell.Tab.0.left" timestamp="1593474952413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
+    <state width="916" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952413" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1593439183614">
+    <state width="916" height="297" key="GridCell.Tab.0.right" timestamp="1593474952414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593439183614" />
+    <state width="916" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -799,10 +806,10 @@
     </state>
     <state x="243" y="226" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1592043694742" />
     <state x="302" y="256" width="1372" height="592" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1590836967816" />
-    <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1591527496022">
+    <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1593468120259">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591527496022" />
+    <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593468120259" />
     <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1591030763809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

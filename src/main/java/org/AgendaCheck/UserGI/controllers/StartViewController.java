@@ -17,7 +17,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.AgendaCheck.ReportGenerator;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -63,14 +62,15 @@ public class StartViewController {
     }
 
     private void changeFrame() {
-        fileDropPane.setStyle("-fx-border-color: rgba(3,158,211,1); -fx-border-radius: 25;" +
+        fileDropPane.setStyle("-fx-border-color: rgba(3,158,211,1);" +
                 " -fx-border-width: 2px; -fx-border-style: solid inside;" +
                 "-fx-effect: dropshadow(three-pass-box, rgba(3,158,211,1), 5, 0, 0, 0);");
     }
 
     @FXML
     void onDragExit() {
-        fileDropPane.setStyle("-fx-border-color: gray; -fx-border-radius: 25");
+        fileDropPane.setStyle("-fx-border-color: black;");
+
     }
 
     @FXML
@@ -149,13 +149,13 @@ public class StartViewController {
         } else {
             sendDataToReportGenerator();
             loadChartScreen();
-            try {
-                reportGenerator.createFullReport();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InvalidFormatException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                reportGenerator.createFullReport();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } catch (InvalidFormatException e) {
+//                e.printStackTrace();
+//            }
 
         }
     }
@@ -163,6 +163,7 @@ public class StartViewController {
 
     @FXML
     void initialize() {
+
         userTarget.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
