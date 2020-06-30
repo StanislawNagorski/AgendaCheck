@@ -26,15 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: alertbox">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/AppBackgraund.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/ChartBackgraund.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Graphics/bar.png" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: visual effects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/SampleOutputReport.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,14 +256,9 @@
       <workItem from="1593034943478" duration="4014000" />
       <workItem from="1593081078305" duration="22992000" />
       <workItem from="1593335777496" duration="19311000" />
-      <workItem from="1593419798750" duration="18304000" />
-    </task>
-    <task id="LOCAL-00006" summary="added percentage format">
-      <created>1590924929079</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1590924929079</updated>
+      <workItem from="1593419798750" duration="18335000" />
+      <workItem from="1593475048319" duration="149000" />
+      <workItem from="1593506577613" duration="4703000" />
     </task>
     <task id="LOCAL-00007" summary=".gitignore creation">
       <created>1590927789094</created>
@@ -604,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593439599465</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="added: visual effects">
+      <created>1593475020104</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1593475020104</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to map department name and monthly forecast in ForecastReader" />
     <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
     <MESSAGE value="added tests for ForecastReader hours mapping" />
     <MESSAGE value="added new class DepartmentNameChecker, which will compare names from forecast and schedule" />
@@ -661,7 +659,8 @@
     <MESSAGE value="added: text input restriction method" />
     <MESSAGE value="added: data transfer from GUI to operations" />
     <MESSAGE value="added: alertbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: alertbox" />
+    <MESSAGE value="added: visual effects" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: visual effects" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -680,10 +679,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591880405211" />
-    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593435720197">
+    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593509683712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593435720197" />
+    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593509683712" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591183291677">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -718,25 +717,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="916" height="297" key="GridCell.Tab.0.bottom" timestamp="1593474952414">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1593510940291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="916" height="297" key="GridCell.Tab.0.center" timestamp="1593474952414">
+    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1593510940291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
+    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="916" height="297" key="GridCell.Tab.0.left" timestamp="1593474952413">
+    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1593510940290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952413" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940290" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="916" height="297" key="GridCell.Tab.0.right" timestamp="1593474952414">
+    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1593510940291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593474952414" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -810,10 +809,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="397" width="621" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593468120259" />
-    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1591030763809">
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1593509994369">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591030763809" />
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593509994369" />
     <state x="657" y="253" key="run.anything.popup" timestamp="1590836988408">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

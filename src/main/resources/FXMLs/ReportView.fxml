@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.ReportViewController">
+<Pane fx:id="reportViewMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.ReportViewController">
    <children>
       <ImageView fitHeight="350.0" fitWidth="600.0">
          <image>
@@ -30,6 +30,6 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Button layoutX="203.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Pobierz pełen raport" />
+      <Button fx:id="reportButton" layoutX="203.0" layoutY="309.0" mnemonicParsing="false" onAction="#actionOnReportButton" prefHeight="25.0" prefWidth="174.0" text="Pobierz pełen raport" />
    </children>
 </Pane>

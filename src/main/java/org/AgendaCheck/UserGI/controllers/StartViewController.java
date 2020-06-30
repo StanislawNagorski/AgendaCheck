@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.AgendaCheck.ReportGenerator;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -127,7 +128,7 @@ public class StartViewController {
         return false;
     }
 
-    public void showAlert() {
+    private void showAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Program nie wykrył plików");
         alert.setHeaderText("Sprawdź czy nazwa pliku spełnia poniższe wymagania: ");
@@ -148,14 +149,15 @@ public class StartViewController {
             showAlert();
         } else {
             sendDataToReportGenerator();
+
             loadChartScreen();
-//            try {
-//                reportGenerator.createFullReport();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            } catch (InvalidFormatException e) {
-//                e.printStackTrace();
-//            }
+            try {
+                reportGenerator.generateFullReport();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InvalidFormatException e) {
+                e.printStackTrace();
+            }
 
         }
     }
@@ -188,5 +190,7 @@ public class StartViewController {
         ReportViewController reportViewController = loader.getController();
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
+
+        reportViewController.setReportGenerator(reportGenerator);
     }
 }
