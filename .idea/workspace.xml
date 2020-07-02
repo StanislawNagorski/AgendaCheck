@@ -26,12 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: visual effects">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="added: method for user to choose file destination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -258,14 +258,9 @@
       <workItem from="1593335777496" duration="19311000" />
       <workItem from="1593419798750" duration="18335000" />
       <workItem from="1593475048319" duration="149000" />
-      <workItem from="1593506577613" duration="4703000" />
-    </task>
-    <task id="LOCAL-00007" summary=".gitignore creation">
-      <created>1590927789094</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1590927789094</updated>
+      <workItem from="1593506577613" duration="7341000" />
+      <workItem from="1593594861007" duration="2773000" />
+      <workItem from="1593597766311" duration="6591000" />
     </task>
     <task id="LOCAL-00008" summary=".gitignore creation">
       <created>1590927889390</created>
@@ -603,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593475020104</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="added: method for user to choose file destination">
+      <created>1593511463664</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1593511463664</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added unitTests for ScheduleReader hours mapping" />
     <MESSAGE value="added tests for ForecastReader hours mapping" />
     <MESSAGE value="added new class DepartmentNameChecker, which will compare names from forecast and schedule" />
     <MESSAGE value="added method to create department sheet, and two columns&#10;added method to calculate daily department turnover" />
@@ -660,7 +661,8 @@
     <MESSAGE value="added: data transfer from GUI to operations" />
     <MESSAGE value="added: alertbox" />
     <MESSAGE value="added: visual effects" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: visual effects" />
+    <MESSAGE value="added: method for user to choose file destination" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: method for user to choose file destination" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -679,10 +681,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591880405211" />
-    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593509683712">
+    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593596108266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593509683712" />
+    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593596108266" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591183291677">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -717,25 +719,25 @@
     </state>
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1593510940291">
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1593687161489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593687161489" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1593510940291">
+    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1593687161488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
+    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593687161488" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1593510940290">
+    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1593687161488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940290" />
+    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593687161488" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1593510940291">
+    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1593687161488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593510940291" />
+    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593687161488" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -757,6 +759,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590773183700" />
+    <state x="775" y="454" key="ReplaceDuplicatesPrompt" timestamp="1593687295861">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="775" y="454" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1593687295861" />
     <state x="413" y="169" width="1062" height="708" key="SettingsEditor" timestamp="1591527497220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -792,10 +798,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591388190758" />
-    <state x="690" y="281" key="extract.method.dialog" timestamp="1593364696572">
+    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog" timestamp="1593687286735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593364696572" />
+    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593687286735" />
     <state x="627" y="346" width="723" height="413" key="git4idea.merge.GitPullDialog" timestamp="1590492055790">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

@@ -4,10 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
@@ -26,8 +23,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class StartViewController {
-
     private MainController mainController;
+
     ReportGenerator reportGenerator = new ReportGenerator();
 
     @FXML
@@ -40,8 +37,24 @@ public class StartViewController {
     private Label gessefLabel;
     @FXML
     private Label planQLabel;
+    @FXML
+    private  ProgressIndicator progresPie;
 
     private File[] correctFiles = new File[2];
+
+    @FXML
+    void initialize() {
+        //progresPie.progressProperty().bind(reportGenerator.reportCreationTask.progressProperty());
+
+        userTarget.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,4}")) {
+                    userTarget.setText(oldValue);
+                }
+            }
+        });
+    }
 
     private double userInputSafeInCaseOfEmptyString() {
         String userTargetInput = userTarget.getText();
@@ -66,6 +79,11 @@ public class StartViewController {
         fileDropPane.setStyle("-fx-border-color: rgba(3,158,211,1);" +
                 " -fx-border-width: 2px; -fx-border-style: solid inside;" +
                 "-fx-effect: dropshadow(three-pass-box, rgba(3,158,211,1), 5, 0, 0, 0);");
+    }
+
+    public void addProgress(double progress) {
+        double newProgress = progresPie.getProgress() + progress;
+        progresPie.setProgress(newProgress);
     }
 
     @FXML
@@ -149,8 +167,8 @@ public class StartViewController {
             showAlert();
         } else {
             sendDataToReportGenerator();
-
             loadChartScreen();
+
             try {
                 reportGenerator.generateFullReport();
             } catch (IOException e) {
@@ -162,19 +180,6 @@ public class StartViewController {
         }
     }
 
-
-    @FXML
-    void initialize() {
-
-        userTarget.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d{0,4}")) {
-                    userTarget.setText(oldValue);
-                }
-            }
-        });
-    }
 
 
     private void loadChartScreen() {
