@@ -2,14 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.StartViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" style="-fx-background-image: url(&quot;/Graphics/AppBackgraund.png&quot;); -fx-background-repeat: stretch;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.StartViewController">
    <children>
-      <Pane fx:id="fileDropPane" layoutX="13.0" layoutY="20.0" onDragDropped="#onDragDropped" onDragExited="#onDragExit" onDragOver="#onDragOver" prefHeight="186.0" prefWidth="326.0" style="-fx-border-color: grey; -fx-border-radius: 25;">
+      <ImageView fitHeight="350.0" fitWidth="607.0">
+         <image>
+            <Image url="@../Graphics/AppBackgraund.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="fileDropPane" layoutX="126.0" layoutY="43.0" onDragDropped="#onDragDropped" onDragExited="#onDragExit" onDragOver="#onDragOver" prefHeight="199.0" prefWidth="356.0" style="-fx-border-color: black;">
          <children>
             <Label layoutX="14.0" layoutY="14.0" text="Tutaj przeciągnij pliki" textFill="#757575" />
             <Label fx:id="gessefLabel" layoutX="14.0" layoutY="56.0" text="1. Gessefa w formacie .xlsx" textFill="#757575">
@@ -30,8 +36,9 @@
                </graphic></Label>
          </children>
       </Pane>
-      <Label layoutX="61.0" layoutY="223.0" text="Podaj cel produktywności" />
-      <TextField fx:id="userTarget" layoutX="208.0" layoutY="219.0" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="84.0" promptText="np. 934" />
-      <Button fx:id="goToChart" layoutX="104.0" layoutY="261.0" mnemonicParsing="false" onAction="#goToReport" prefHeight="25.0" prefWidth="144.0" text="Przejdź do raportu" />
+      <Label layoutX="164.0" layoutY="277.0" text="Podaj cel produktywności" />
+      <TextField fx:id="userTarget" layoutX="309.0" layoutY="273.0" prefHeight="25.0" prefWidth="135.0" promptText="np. 934 (puste = 1000)" />
+      <Button fx:id="goToChart" layoutX="232.0" layoutY="311.0" mnemonicParsing="false" onAction="#goToReport" prefHeight="25.0" prefWidth="144.0" text="Przejdź do raportu" />
+      <ProgressIndicator fx:id="progresPie" layoutX="383.0" layoutY="304.0" progress="0.0" />
    </children>
 </Pane>

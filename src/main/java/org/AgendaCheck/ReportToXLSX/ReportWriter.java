@@ -3,6 +3,7 @@ package org.AgendaCheck.ReportToXLSX;
 import org.AgendaCheck.Data.DataBank;
 import org.AgendaCheck.Data.PotentialHoursCalculator;
 import org.AgendaCheck.Forecast.DepartmentCalculator;
+import org.apache.poi.xssf.usermodel.XSSFComment;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 import org.jfree.chart.JFreeChart;
@@ -118,6 +119,7 @@ public class ReportWriter {
         writeSeventhColumnHoursByProductivityTarget(reportSheet);
         writeEightColumnDifferenceInHours(reportSheet);
         addStoreChart(reportSheet);
+        addCellsWithStoreProductivity(reportSheet);
     }
 
 
@@ -152,7 +154,7 @@ public class ReportWriter {
         List<Double> perfectStoreHoursByDay =
                 PotentialHoursCalculator.createPerfectHoursList(dataBank.getDailyStoreTurnOverShare(), departmentHoursByDay);
         int columnNrToWrite = 5;
-        String targetInfo = "Godziny proporcjonalnie";
+        String targetInfo = "Godziny rozłożone";
         addExtraTopCell(targetInfo,columnNrToWrite,reportSheet);
         writeColumn("wg dziennego obrotu", columnNrToWrite, perfectStoreHoursByDay,
                 stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
@@ -171,10 +173,11 @@ public class ReportWriter {
 
         String extraInfo = "Cel produktywności: " + dataBank.getProductivityTarget();
 
-        addExtraTopCell("Godziny aby zrealizować",columnNrToWrite,reportSheet);
+        addExtraTopCell("Godziny aby zrealizować SKLEPOWY",columnNrToWrite,reportSheet);
         writeColumn(extraInfo, columnNrToWrite, dailyDepartmentHoursToMetProductivityTarget,
                 stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
         addExtraBotCell("godziny wg udziału w TO sklepu", columnNrToWrite, reportSheet);
+        columnGExplanation(reportSheet);
     }
 
     private void writeEightDepartmentColumnDifferenceInHours(String departmentNameFromSchedule, XSSFSheet reportSheet) {
@@ -215,6 +218,7 @@ public class ReportWriter {
         writeSeventhDepartmentColumnHoursByProductivityTarget(departmentName, reportSheet);
         writeEightDepartmentColumnDifferenceInHours(departmentName, reportSheet);
         addDepartmentChart(reportSheet, departmentName);
+        addCellsWithDepartmentProductivity(reportSheet, departmentName);
     }
 
     public void writeAllDepartmentsSheets() throws IOException {
@@ -270,11 +274,75 @@ public class ReportWriter {
         titleColumnCell.setCellStyle(stylesForCell.get("boldedDoubleWithTopBorder"));
     }
     private void addExtraBotCell(String text, int columnNr, XSSFSheet reportSheet) {
-        int spareRows = 14;
+        int spareRows = 13;
         int lastRowNum = reportSheet.getLastRowNum()-spareRows;
         XSSFCell titleColumnCell = reportSheet.getRow(lastRowNum).createCell(columnNr);
         titleColumnCell.setCellValue(text);
         titleColumnCell.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
+    }
+
+    private void columnGExplanation(XSSFSheet reportSheet) {
+
+        int columnGNumber = 6;
+        XSSFCell cellToComment  = reportSheet.getRow(1).getCell(columnGNumber);
+        XSSFDrawing hpt = reportSheet.createDrawingPatriarch();
+        XSSFComment comment = hpt.createCellComment(new XSSFClientAnchor(0, 0, 0, 0, (short) 4, 1, (short) 6, 5));
+
+        String commentString = "Sposób liczenia: \n " +
+                "Dzienne godziny sklepu potrzebne do osiągnięcia celu produktywności" +
+                "\n minus  godziny działów niehandlowych z tego dnia. " +
+                "\n To podzielone przez " +
+                "udział w obrocie danego sektora. " +
+                "\nKolumna pokazuje ile dany sektor powinien miec godzin wg jego obrotu w sklepie. Gdzie przeinwestowaliśmy a gdzie niedoinwestowaliśmy.";
+
+        comment.setString(commentString);
+        cellToComment.setCellComment(comment);
+    }
+
+
+
+    private void addCellsWithStoreProductivity(XSSFSheet reportSheet){
+
+        int columnNumber = 2;
+        int spareRows = 13;
+        int lastRowNum = reportSheet.getLastRowNum()-spareRows;
+
+        XSSFCell storeProductivityCellTitle= reportSheet.getRow(lastRowNum).createCell(columnNumber);
+        storeProductivityCellTitle.setCellValue("Pilotowana produktywność");
+        storeProductivityCellTitle.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
+
+        List<Double> dailyStoreTurnOver = dataBank.getDailyStoreTurnOver();
+        double forcastedStoreTurnOver = dailyStoreTurnOver.get(dailyStoreTurnOver.size() - 1);
+
+        List<Double> dailyStoreHours = dataBank.getDailyStoreHours();
+        double monthlyHours = dailyStoreHours.get(dailyStoreHours.size() - 1);
+
+        double currentProductivity = forcastedStoreTurnOver /  monthlyHours;
+
+        XSSFCell storeProductivityCellValue= reportSheet.getRow(lastRowNum+1).createCell(columnNumber);
+        storeProductivityCellValue.setCellValue(currentProductivity);
+        storeProductivityCellValue.setCellStyle(stylesForCell.get("defaultDoubleCellStyle"));
+    }
+
+    private void addCellsWithDepartmentProductivity(XSSFSheet reportSheet, String departmentName){
+        int columnNumber = 2;
+        int spareRows = 13;
+        int lastRowNum = reportSheet.getLastRowNum()-spareRows;
+
+        XSSFCell storeProductivityCellTitle= reportSheet.getRow(lastRowNum).createCell(columnNumber);
+        storeProductivityCellTitle.setCellValue("Pilotowana produktywność");
+        storeProductivityCellTitle.setCellStyle(stylesForCell.get("titleBoldedWithBotBorder"));
+
+        Double forcastedDepartmentTurnOver = dataBank.getMonthlyDepartmentTurnOver().get(departmentName);
+
+        List<Double> hoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentName);
+        double monthlyHours = hoursByDay.get(hoursByDay.size() - 1);
+
+        double currentProductivity = forcastedDepartmentTurnOver /  monthlyHours;
+
+        XSSFCell storeProductivityCellValue= reportSheet.getRow(lastRowNum+1).createCell(columnNumber);
+        storeProductivityCellValue.setCellValue(currentProductivity);
+        storeProductivityCellValue.setCellStyle(stylesForCell.get("defaultDoubleCellStyle"));
     }
 
     private void createChartToSheet(XSSFSheet reportSheet, List<Double> hoursShare, List<Double> turnoverShare) throws IOException {
