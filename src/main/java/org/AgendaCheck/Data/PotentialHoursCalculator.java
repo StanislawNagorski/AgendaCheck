@@ -90,4 +90,25 @@ public class PotentialHoursCalculator {
         return dailyDepartmentHoursToMetProductivityTarget;
     }
 
+
+    public static List<Double> createDailyTurnoverMissingToMetProductivityTarget(double productivityTarget,
+                                                                                 List<Double> dailyTurnOver,
+                                                                                 List<Double> dailyTurnOverShare,
+                                                                                 List<Double> dailyStoreHours){
+        List<Double> dailyTurnoverMissing = new ArrayList<>();
+        double totalStoreHours = dailyStoreHours.get(dailyStoreHours.size()-1);
+        double totalTurnOverToMetProductivity = totalStoreHours * productivityTarget;
+
+        for (int i = 0; i < dailyTurnOver.size(); i++) {
+            double dailyTOShare = dailyTurnOverShare.get(i);
+            double dailyTO = dailyTurnOver.get(i);
+            double dailyTurnoverToMetProductivity = dailyTOShare * totalTurnOverToMetProductivity;
+
+            double missingTurnover = dailyTO - dailyTurnoverToMetProductivity;
+            dailyTurnoverMissing.add(missingTurnover);
+        }
+
+        return dailyTurnoverMissing;
+    }
+
 }

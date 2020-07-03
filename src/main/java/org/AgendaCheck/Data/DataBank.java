@@ -28,6 +28,7 @@ public class DataBank {
     private final double productivityTarget;
     private final List<Double> dailyStoreHoursToMetProductivityTarget;
     private final List<Double> dailyRetailHoursToMetProductivityTarget;
+    private final List<Double> dailyMissingTurnoverToMetProductivityTarget;
 
 
     public DataBank(ScheduleReader scheduleReader, ForecastReader forecastReader, double productivityTarget) {
@@ -53,6 +54,8 @@ public class DataBank {
                 (productivityTarget, dailyStoreTurnOver, dailyStoreTurnOverShare, dailyStoreHours);
         dailyRetailHoursToMetProductivityTarget = createDailyRetailHoursToMetProductivityTarget();
         differenceBetweenPerfectAndActualHours = PotentialHoursCalculator.substractColumnsValues(dailyStoreHoursToMetProductivityTarget, dailyStoreHours);
+        dailyMissingTurnoverToMetProductivityTarget = PotentialHoursCalculator.createDailyTurnoverMissingToMetProductivityTarget(productivityTarget,
+                dailyStoreTurnOver,dailyStoreTurnOverShare, dailyStoreHours);
     }
 
     public double getProductivityTarget() {
@@ -190,5 +193,9 @@ public class DataBank {
 
     public double getStoreForcastedByDepartmentsTurnOver() {
         return storeForcastedByDepartmentsTurnOver;
+    }
+
+    public List<Double> getDailyMissingTurnoverToMetProductivityTarget() {
+        return dailyMissingTurnoverToMetProductivityTarget;
     }
 }
