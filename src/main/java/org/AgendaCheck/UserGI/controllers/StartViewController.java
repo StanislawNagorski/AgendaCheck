@@ -171,18 +171,17 @@ public class StartViewController {
     private void loadChartScreen() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/FXMLs/ReportView.fxml"));
         Pane pane = null;
-
+        ReportViewController reportViewController = new ReportViewController(reportGenerator);
+        loader.setController(reportViewController);
         try {
             pane = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        ReportViewController reportViewController = loader.getController();
-        reportViewController.setReportGenerator(reportGenerator);
+        //        loader.getController();
+        //reportViewController.setReportGenerator(reportGenerator);
 
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
-
     }
 }

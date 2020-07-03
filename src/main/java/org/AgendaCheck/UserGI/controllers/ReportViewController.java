@@ -2,9 +2,11 @@ package org.AgendaCheck.UserGI.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -14,18 +16,25 @@ import org.AgendaCheck.ReportGenerator;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class ReportViewController {
+public class ReportViewController implements Initializable {
 
     private MainController mainController;
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
-
     private ReportGenerator reportGenerator;
+
+    public ReportViewController(ReportGenerator reportGenerator) {
+        this.reportGenerator = reportGenerator;
+    }
 
     public void setReportGenerator(ReportGenerator reportGenerator) {
         this.reportGenerator = reportGenerator;
+    }
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
     }
 
     @FXML
@@ -35,30 +44,51 @@ public class ReportViewController {
     @FXML
     BarChart barChart;
     @FXML
-    CategoryAxis barCategoryX;
+    CategoryAxis xAxis;
     @FXML
-    NumberAxis barNumberY;
+    NumberAxis yAxis;
 
 
-    @FXML
-    void initialize(){
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(reportGenerator.getDataBank().getDailyStoreTurnOverShare());
         createStoreChart();
     }
 
-    private void createStoreChart(){
-        System.out.println(reportGenerator.getDataBank().getDailyStoreTurnOverShare());
+    private void createStoreChart() {
+
+        xAxis = new CategoryAxis();
+        xAxis.setLabel("Dzień");
+
+        yAxis = new NumberAxis();
+        yAxis.setLabel("Udział dnia");
+
+        barChart = new BarChart(xAxis, yAxis);
+        barChart.setLegendVisible(false);
+        barChart.getData().add(barSeries());
     }
 
+    private XYChart.Series<String, Number> barSeries() {
+        XYChart.Series<String, Number> turnoverShareSeries = new XYChart.Series<>();
+        List<Double> dailyTurnover = reportGenerator.getDataBank().getDailyStoreTurnOverShare();
+
+        for (int i = 0; i < dailyTurnover.size(); i++) {
+            int day = i + 1;
+            double turnover = dailyTurnover.get(i);
+            turnoverShareSeries.getData().add(new XYChart.Data<>(String.valueOf(day), turnover));
+        }
+        return turnoverShareSeries;
+    }
 
     @FXML
-    void actionOnReportButton(){
+    void actionOnReportButton() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Window window = reportViewMainPane.getScene().getWindow();
 
         File file = directoryChooser.showDialog(window);
         String pathToWrite = file.getAbsolutePath();
 
-        if (file != null){
+        if (file != null) {
             try {
                 reportGenerator.generateFullReport();
                 reportGenerator.writeFullReport(pathToWrite);
@@ -92,7 +122,7 @@ public class ReportViewController {
         alert.showAndWait();
     }
 
-    private void goBackToStartView(){
+    private void goBackToStartView() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/FXMLs/StartView.fxml"));
         Pane pane = null;
 

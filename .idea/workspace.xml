@@ -26,14 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="rewrite of RaportGeneretor">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/chart.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportToXLSX/ReportWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -124,6 +122,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck\src\main\resources" />
       <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck\src\main\resources\FXMLs" />
       <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck" />
       <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck\src\main" />
@@ -263,13 +262,6 @@
       <workItem from="1593594861007" duration="2773000" />
       <workItem from="1593597766311" duration="6591000" />
       <workItem from="1593769006025" duration="6217000" />
-    </task>
-    <task id="LOCAL-00009" summary="added ForecastReader, and method to write it to report.&#10;It is bugged.">
-      <created>1590935435111</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1590935435111</updated>
     </task>
     <task id="LOCAL-00010" summary="added ForecastReader, and method to write it to report.&#10;It is bugged.">
       <created>1590935440997</created>
@@ -607,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593775349899</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="rewrite of RaportGeneretor">
+      <created>1593803093136</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1593803093136</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added new class DepartmentNameChecker, which will compare names from forecast and schedule" />
     <MESSAGE value="added method to create department sheet, and two columns&#10;added method to calculate daily department turnover" />
     <MESSAGE value="creation of Project Structure.jpg&#10;Class DataBank separated from ReportWriter" />
     <MESSAGE value="added method to write more department colums, when hited memory heap exp." />
@@ -664,7 +662,8 @@
     <MESSAGE value="added: visual effects" />
     <MESSAGE value="added: method for user to choose file destination" />
     <MESSAGE value="added: ninth column missing turnover to met productivity target" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: ninth column missing turnover to met productivity target" />
+    <MESSAGE value="rewrite of RaportGeneretor" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite of RaportGeneretor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -683,11 +682,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591880405211" />
-    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593800845198">
+    <state x="761" y="241" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1593807983933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="507" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1593772377627" />
-    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593800845198" />
+    <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593807983933" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591183291677">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -725,46 +724,46 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1593803042314">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1593809487163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593803042314" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593809487163" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1593803042314">
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1593809487163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593803042314" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593809487163" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1593803042314">
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1593809487163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593803042314" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593809487163" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1593803042314">
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1593809487163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593803042314" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593809487163" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
+    <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591390026639" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1591390026639">
+    <state width="1877" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141944" />
+    <state width="1877" height="367" key="GridCell.Tab.1.center" timestamp="1593806141943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591390026639" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1591390026639">
+    <state width="1877" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
+    <state width="1877" height="367" key="GridCell.Tab.1.left" timestamp="1593806141943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591390026639" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1591390026639">
+    <state width="1877" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
+    <state width="1877" height="367" key="GridCell.Tab.1.right" timestamp="1593806141943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591390026639" />
+    <state width="1877" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
