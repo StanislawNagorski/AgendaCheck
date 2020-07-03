@@ -2,6 +2,9 @@ package org.AgendaCheck.UserGI.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -27,9 +30,25 @@ public class ReportViewController {
 
     @FXML
     Pane reportViewMainPane;
-
     @FXML
     Button reportButton;
+    @FXML
+    BarChart barChart;
+    @FXML
+    CategoryAxis barCategoryX;
+    @FXML
+    NumberAxis barNumberY;
+
+
+    @FXML
+    void initialize(){
+        createStoreChart();
+    }
+
+    private void createStoreChart(){
+
+    }
+
 
     @FXML
     void actionOnReportButton(){
