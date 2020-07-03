@@ -20,8 +20,6 @@ public class ReportWriter {
     private final XSSFWorkbook report;
     private final DataBank dataBank;
     private final Map<String, CellStyle> stylesForCell;
-    private double noneRetailDepartmentsHoursSum;
-
 
     public ReportWriter(XSSFWorkbook report, DataBank dataBank) {
         this.report = report;
@@ -102,6 +100,16 @@ public class ReportWriter {
 
     }
 
+    private void  writeNinthColumnMissingTurnover(XSSFSheet reportSheet){
+        List<Double> missingDailyTurnover = dataBank.getDailyMissingTurnoverToMetProductivityTarget();
+
+        int columnNrToWrite = 8;
+        addExtraTopCell("Różnica obrótu do celu", columnNrToWrite, reportSheet);
+        writeColumn("przy zaplanowanych godzinach ", columnNrToWrite, missingDailyTurnover,
+                stylesForCell.get("polishZlotyStyle"), reportSheet);
+
+    }
+
     private void addStoreChart(XSSFSheet reportSheet) throws IOException {
         createChartToSheet(reportSheet, dataBank.getDailyStoreHoursShare(), dataBank.getDailyStoreTurnOverShare());
     }
@@ -118,6 +126,7 @@ public class ReportWriter {
         writeSixthColumnPerfectHours(reportSheet);
         writeSeventhColumnHoursByProductivityTarget(reportSheet);
         writeEightColumnDifferenceInHours(reportSheet);
+        writeNinthColumnMissingTurnover(reportSheet);
         addStoreChart(reportSheet);
         addCellsWithStoreProductivity(reportSheet);
     }
@@ -200,6 +209,25 @@ public class ReportWriter {
                 stylesForCell.get("defaultDoubleCellStyle"), reportSheet);
     }
 
+    private void writeNinthDepartmentColumnMissingTurnover(String departmentName, XSSFSheet reportSheet){
+        double productivityTarget = dataBank.getProductivityTarget();
+        double departmentMonthTurnOver = dataBank.getMonthlyDepartmentTurnOver().get(departmentName);
+        List<Double> dailyDepartmentTurnOver =
+                DepartmentCalculator.createDailyDepartmentTurnOverList(departmentMonthTurnOver, dataBank.getDailyStoreTurnOverShare());
+        List<Double> dailyTurnoverShare = dataBank.getDailyStoreTurnOverShare();
+        List<Double> dailyDepartmentHours = dataBank.getDailyDepartmentHoursByName().get(departmentName);
+
+
+        List<Double> missingDailyTurnover = PotentialHoursCalculator.createDailyTurnoverMissingToMetProductivityTarget(productivityTarget,
+                dailyDepartmentTurnOver, dailyTurnoverShare, dailyDepartmentHours);
+
+        int columnNrToWrite = 8;
+        addExtraTopCell("Różnica obrótu do celu", columnNrToWrite, reportSheet);
+        writeColumn("przy zaplanowanych godzinach ", columnNrToWrite, missingDailyTurnover,
+                stylesForCell.get("polishZlotyStyle"), reportSheet);
+
+    }
+
     private void addDepartmentChart(XSSFSheet reportSheet, String departmentName) throws IOException {
         List<Double> departmentHoursByDay = dataBank.getDailyDepartmentHoursByName().get(departmentName);
         List<Double> shareOfHours = DepartmentCalculator.createDailyDepartmentHoursShareList(departmentHoursByDay);
@@ -217,6 +245,7 @@ public class ReportWriter {
         writeSixthDepartmentColumnPerfectHours(departmentName, reportSheet);
         writeSeventhDepartmentColumnHoursByProductivityTarget(departmentName, reportSheet);
         writeEightDepartmentColumnDifferenceInHours(departmentName, reportSheet);
+        writeNinthDepartmentColumnMissingTurnover(departmentName, reportSheet);
         addDepartmentChart(reportSheet, departmentName);
         addCellsWithDepartmentProductivity(reportSheet, departmentName);
     }
@@ -363,7 +392,7 @@ public class ReportWriter {
         Drawing<XSSFShape> drawing = reportSheet.createDrawingPatriarch();
 
         ClientAnchor anchor = helper.createClientAnchor();
-        anchor.setCol1(9);
+        anchor.setCol1(10);
         anchor.setRow1(1);
 
         Picture pict = drawing.createPicture(anchor, pictureIdx);

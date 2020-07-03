@@ -30,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
+    
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +260,15 @@
       <workItem from="1593506577613" duration="7341000" />
       <workItem from="1593594861007" duration="2773000" />
       <workItem from="1593597766311" duration="6591000" />
-      <workItem from="1593769006025" duration="7439000" />
+      <workItem from="1593769006025" duration="6217000" />
+    </task>
+    <task id="LOCAL-00008" summary=".gitignore creation">
+      <created>1590927889390</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590927889390</updated>
+
     </task>
     <task id="LOCAL-00009" summary="added ForecastReader, and method to write it to report.&#10;It is bugged.">
       <created>1590935435111</created>
@@ -744,6 +753,7 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
+
     <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593687161488" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591390026639">
