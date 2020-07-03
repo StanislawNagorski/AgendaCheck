@@ -104,7 +104,7 @@ public class ReportWriter {
         List<Double> missingDailyTurnover = dataBank.getDailyMissingTurnoverToMetProductivityTarget();
 
         int columnNrToWrite = 8;
-        addExtraTopCell("Różnica obrótu do celu", columnNrToWrite, reportSheet);
+        addExtraTopCell("Różnica obrotu do celu", columnNrToWrite, reportSheet);
         writeColumn("przy zaplanowanych godzinach ", columnNrToWrite, missingDailyTurnover,
                 stylesForCell.get("polishZlotyStyle"), reportSheet);
 
@@ -222,7 +222,7 @@ public class ReportWriter {
                 dailyDepartmentTurnOver, dailyTurnoverShare, dailyDepartmentHours);
 
         int columnNrToWrite = 8;
-        addExtraTopCell("Różnica obrótu do celu", columnNrToWrite, reportSheet);
+        addExtraTopCell("Różnica obrotu do celu", columnNrToWrite, reportSheet);
         writeColumn("przy zaplanowanych godzinach ", columnNrToWrite, missingDailyTurnover,
                 stylesForCell.get("polishZlotyStyle"), reportSheet);
 

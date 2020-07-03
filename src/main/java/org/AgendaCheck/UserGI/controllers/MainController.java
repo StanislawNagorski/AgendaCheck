@@ -36,8 +36,6 @@ public class MainController {
     public void setScreen(Pane pane){
         mainPane.getChildren().clear();
         mainPane.getChildren().add(pane);
-
-
     }
 
 }

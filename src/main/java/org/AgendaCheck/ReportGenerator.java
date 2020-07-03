@@ -21,75 +21,23 @@ public class ReportGenerator {
     private double productivityTarget;
     private XSSFWorkbook report;
     private double durationInSec;
+    ScheduleReader scheduleReader;
+    ForecastReader forecastReader;
+    DataBank dataBank;
 
-
-    public double getDurationInSec() {
-        return durationInSec;
-    }
-
-    public void setScheduleFile(File scheduleFile) {
-        this.scheduleFile = scheduleFile;
-    }
-
-    public void setForecastFile(File forecastFile) {
+    public ReportGenerator(File forecastFile, File scheduleFile, double productivityTarget){
         this.forecastFile = forecastFile;
-    }
-
-    public void setProductivityTarget(double productivityTarget) {
+        this.scheduleFile = scheduleFile;
         this.productivityTarget = productivityTarget;
+        try {
+            setUpReaders();
+        } catch (IOException | InvalidFormatException e) {
+            e.printStackTrace();
+        }
+        dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
     }
 
-
-//    public Task<Parent> reportCreationTask = new Task<Parent>() {
-//
-//            @Override
-//            protected Parent call() throws Exception {
-//                long start = System.nanoTime();
-//                report = new XSSFWorkbook();
-//                updateProgress(10, 100);
-//
-//                OPCPackage forecastInput = OPCPackage.open(forecastFile);
-//                XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
-//                forecastInput.close();
-//                updateProgress(30,100);
-//                OPCPackage scheduleInput = OPCPackage.open(scheduleFile);
-//                XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
-//                scheduleInput.close();
-//                updateProgress(70,100);
-//
-//                ScheduleReader scheduleReader = new ScheduleReader(schedule);
-//                ForecastReader forecastReader = new ForecastReader(forecast);
-//                DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
-//                updateProgress(80,100);
-//
-//                ReportWriter reportWriter = new ReportWriter(report, dataBank);
-//
-//                reportWriter.writeStoreSheet();
-//                updateProgress(90,100);
-//                reportWriter.writeAllDepartmentsSheets();
-//                updateProgress(100,100);
-//
-//                long end = System.nanoTime();
-//                long duration = (end - start);
-//                durationInSec = (double) duration / 1000000000;
-//                System.out.printf("Program ended in: %.4f seconds", durationInSec);
-//
-//                return null;
-//            }
-//        };
-
-
-
-    public void generateFullReport() throws IOException, InvalidFormatException {
-
-//        Thread loadingThread = new Thread(reportCreationTask);
-//        loadingThread.start();
-
-
-
-        long start = System.nanoTime();
-        report = new XSSFWorkbook();
-
+    private void setUpReaders() throws IOException, InvalidFormatException {
         OPCPackage forecastInput = OPCPackage.open(forecastFile);
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
@@ -98,10 +46,22 @@ public class ReportGenerator {
         XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
         scheduleInput.close();
 
-        ScheduleReader scheduleReader = new ScheduleReader(schedule);
-        ForecastReader forecastReader = new ForecastReader(forecast);
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
+        scheduleReader = new ScheduleReader(schedule);
+        forecastReader = new ForecastReader(forecast);
+    }
 
+    public double getDurationInSec() {
+        return durationInSec;
+    }
+
+    public DataBank getDataBank() {
+        return dataBank;
+    }
+
+    public void generateFullReport() throws IOException {
+
+        long start = System.nanoTime();
+        report = new XSSFWorkbook();
 
         ReportWriter reportWriter = new ReportWriter(report, dataBank);
 

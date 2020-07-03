@@ -38,7 +38,7 @@
       </Pane>
       <Label layoutX="164.0" layoutY="277.0" text="Podaj cel produktywności" />
       <TextField fx:id="userTarget" layoutX="309.0" layoutY="273.0" prefHeight="25.0" prefWidth="135.0" promptText="np. 934 (puste = 1000)" />
-      <Button fx:id="goToChart" layoutX="232.0" layoutY="311.0" mnemonicParsing="false" onAction="#goToReport" prefHeight="25.0" prefWidth="144.0" text="Przejdź do raportu" />
+      <Button fx:id="goToChart" layoutX="232.0" layoutY="311.0" mnemonicParsing="false" onAction="#goToReport" prefHeight="25.0" prefWidth="144.0" text="Wczytaj pliki" />
       <ProgressIndicator fx:id="progresPie" layoutX="383.0" layoutY="304.0" progress="0.0" />
    </children>
 </Pane>

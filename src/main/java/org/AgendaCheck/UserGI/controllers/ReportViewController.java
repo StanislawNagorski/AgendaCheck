@@ -46,7 +46,7 @@ public class ReportViewController {
     }
 
     private void createStoreChart(){
-
+        System.out.println(reportGenerator.getDataBank().getDailyStoreTurnOverShare());
     }
 
 
@@ -60,6 +60,7 @@ public class ReportViewController {
 
         if (file != null){
             try {
+                reportGenerator.generateFullReport();
                 reportGenerator.writeFullReport(pathToWrite);
                 succesWriteMessage(pathToWrite);
                 goBackToStartView();

@@ -14,7 +14,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.AgendaCheck.ReportGenerator;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,8 +23,7 @@ import java.util.List;
 
 public class StartViewController {
     private MainController mainController;
-
-    ReportGenerator reportGenerator = new ReportGenerator();
+    private ReportGenerator reportGenerator;
 
     @FXML
     private Pane fileDropPane;
@@ -38,13 +36,12 @@ public class StartViewController {
     @FXML
     private Label planQLabel;
     @FXML
-    private  ProgressIndicator progresPie;
+    private ProgressIndicator progresPie;
 
     private File[] correctFiles = new File[2];
 
     @FXML
     void initialize() {
-        //progresPie.progressProperty().bind(reportGenerator.reportCreationTask.progressProperty());
 
         userTarget.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -64,12 +61,6 @@ public class StartViewController {
         return Double.parseDouble(userTargetInput);
     }
 
-
-    private void sendDataToReportGenerator() {
-        reportGenerator.setForecastFile(correctFiles[0]);
-        reportGenerator.setScheduleFile(correctFiles[1]);
-        reportGenerator.setProductivityTarget(userInputSafeInCaseOfEmptyString());
-    }
 
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
@@ -156,9 +147,10 @@ public class StartViewController {
         alert.showAndWait();
     }
 
-    private boolean areThereFiles(){
+    private boolean areThereFiles() {
         return correctFiles[0] == null || correctFiles[1] == null;
     }
+
 
     @FXML
     void goToReport() {
@@ -166,20 +158,14 @@ public class StartViewController {
         if (areThereFiles()) {
             showAlert();
         } else {
-            sendDataToReportGenerator();
+            File forecastFile = correctFiles[0];
+            File scheduleFile = correctFiles[1];
+            double productivityTarget = userInputSafeInCaseOfEmptyString();
+            reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+
             loadChartScreen();
-
-            try {
-                reportGenerator.generateFullReport();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InvalidFormatException e) {
-                e.printStackTrace();
-            }
-
         }
     }
-
 
 
     private void loadChartScreen() {
@@ -193,9 +179,10 @@ public class StartViewController {
         }
 
         ReportViewController reportViewController = loader.getController();
+        reportViewController.setReportGenerator(reportGenerator);
+
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
 
-        reportViewController.setReportGenerator(reportGenerator);
     }
 }
