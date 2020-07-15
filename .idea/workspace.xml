@@ -26,11 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="line and bar charts added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="line and bar charts added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,13 +256,6 @@
       <workItem from="1593594861007" duration="2773000" />
       <workItem from="1593597766311" duration="6591000" />
       <workItem from="1593769006025" duration="6217000" />
-    </task>
-    <task id="LOCAL-00012" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.">
-      <created>1591029250605</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1591029250605</updated>
     </task>
     <task id="LOCAL-00013" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver">
       <created>1591030460037</created>
@@ -604,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594851029983</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="line and bar charts added">
+      <created>1594852327459</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1594852327459</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,29 +718,29 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594851343832">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594852381412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594851343832" />
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594851343832">
+    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594852381412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594851343832" />
+    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594851343832">
+    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594852381411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594851343832" />
+    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381411" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594851343832">
+    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594852381412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594851343832" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
