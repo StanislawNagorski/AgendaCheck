@@ -3,10 +3,7 @@ package org.AgendaCheck.UserGI.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -43,6 +40,14 @@ public class ReportViewController implements Initializable {
     CategoryAxis xAxis;
     @FXML
     NumberAxis yAxis;
+    @FXML
+    private LineChart lineChart;
+
+    @FXML
+    private CategoryAxis lineCategory;
+
+    @FXML
+    private NumberAxis numberValue;
 
 
     @Override
@@ -55,14 +60,25 @@ public class ReportViewController implements Initializable {
         xAxis.setLabel("Dzień");
         yAxis.setLabel("Udział dnia");
 
-        barChart.setLegendVisible(false);
         barChart.getData().add(barSeries());
+        lineChart.getData().add(lineSeries());
     }
 
     private XYChart.Series<String, Number> barSeries() {
         XYChart.Series<String, Number> turnoverShareSeries = new XYChart.Series<>();
         List<Double> dailyTurnover = reportGenerator.getDataBank().getDailyStoreTurnOverShare();
 
+        return getStringNumberSeries(turnoverShareSeries, dailyTurnover);
+    }
+
+    private XYChart.Series<String, Number> lineSeries() {
+        XYChart.Series<String, Number> hoursShareSeries = new XYChart.Series<>();
+        List<Double> dailyStoreHoursShare = reportGenerator.getDataBank().getDailyStoreHoursShare();
+
+        return getStringNumberSeries(hoursShareSeries, dailyStoreHoursShare);
+    }
+
+    private XYChart.Series<String, Number> getStringNumberSeries(XYChart.Series<String, Number> turnoverShareSeries, List<Double> dailyTurnover) {
         for (int i = 0; i < dailyTurnover.size()-1; i++) {
             int day = i + 1;
             double turnover = dailyTurnover.get(i);

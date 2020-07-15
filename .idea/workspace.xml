@@ -26,7 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="rewrite of RaportGeneretor">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="quickView of barChar works">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/css/lineChart.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/ReportView.fxml" afterDir="false" />
@@ -260,13 +261,6 @@
       <workItem from="1593594861007" duration="2773000" />
       <workItem from="1593597766311" duration="6591000" />
       <workItem from="1593769006025" duration="6217000" />
-    </task>
-    <task id="LOCAL-00010" summary="added ForecastReader, and method to write it to report.&#10;It is bugged.">
-      <created>1590935440997</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1590935440997</updated>
     </task>
     <task id="LOCAL-00011" summary="nullPointer Ex in ForecastReader was taken care of.">
       <created>1591018858670</created>
@@ -604,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593803093136</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="quickView of barChar works">
+      <created>1594845355764</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1594845355765</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to create department sheet, and two columns&#10;added method to calculate daily department turnover" />
     <MESSAGE value="creation of Project Structure.jpg&#10;Class DataBank separated from ReportWriter" />
     <MESSAGE value="added method to write more department colums, when hited memory heap exp." />
     <MESSAGE value="change FileInput to new File, to win heap space... problem is elsewere" />
@@ -661,7 +661,8 @@
     <MESSAGE value="added: method for user to choose file destination" />
     <MESSAGE value="added: ninth column missing turnover to met productivity target" />
     <MESSAGE value="rewrite of RaportGeneretor" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrite of RaportGeneretor" />
+    <MESSAGE value="quickView of barChar works" />
+    <option name="LAST_COMMIT_MESSAGE" value="quickView of barChar works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -722,29 +723,29 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594845163957">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594850662730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594845163957" />
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594850662730" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594845163956">
+    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594850662730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594845163956" />
+    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594850662730" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594845163956">
+    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594850662730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594845163956" />
+    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594850662730" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594845163957">
+    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594850662730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594845163957" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594850662730" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -806,10 +807,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591388190758" />
-    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog" timestamp="1593687286735">
+    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog" timestamp="1594847094140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593687286735" />
+    <state x="1006" y="296" width="540" height="496" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594847094140" />
     <state x="627" y="346" width="723" height="413" key="git4idea.merge.GitPullDialog" timestamp="1590492055790">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
