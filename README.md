@@ -8,6 +8,7 @@ It takes data from to .xlsx files and creates new report.
 - Maven
 - Apache POI
 - JFreeChart
+- JavaFX
 
 # Problems solved by program
 
@@ -17,21 +18,15 @@ It takes data from to .xlsx files and creates new report.
 - names of department often vary in files (for exemple "Mountains" in one file can be "hiking" in another), program matches them.
 - program sugest changes in schedule to better fit forecasted turnover,
 
-# What I have learn so far, in this project
+# What I have learned  so far, in this project
 
 - Apache POI,
 - that dates are counted as days since 01.01.1900,
 - testing by printing ends while project grows,
 - proper naming matters, or You will lose it,
 - class should be dedicated to specific actions
-- mind-mapping helps to keep track of classes connections, 
+- mind-mapping helps to keep track of classes connections,
+- but good-packages are better! 
 - working with debugger, (when I got my first out of memory Java heap space error with 10M+ objects :)
-- awt & Swing,
+- awt & Swing, JavaFX.
  
-
-# To do
-
-- FileInput check
-- GUI
-- publish
-
