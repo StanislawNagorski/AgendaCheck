@@ -23,13 +23,9 @@ import java.util.ResourceBundle;
 public class ReportViewController implements Initializable {
 
     private MainController mainController;
-    private ReportGenerator reportGenerator;
+    private final ReportGenerator reportGenerator;
 
     public ReportViewController(ReportGenerator reportGenerator) {
-        this.reportGenerator = reportGenerator;
-    }
-
-    public void setReportGenerator(ReportGenerator reportGenerator) {
         this.reportGenerator = reportGenerator;
     }
 
@@ -51,19 +47,14 @@ public class ReportViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println(reportGenerator.getDataBank().getDailyStoreTurnOverShare());
         createStoreChart();
     }
 
     private void createStoreChart() {
 
-        xAxis = new CategoryAxis();
         xAxis.setLabel("Dzień");
-
-        yAxis = new NumberAxis();
         yAxis.setLabel("Udział dnia");
 
-        barChart = new BarChart(xAxis, yAxis);
         barChart.setLegendVisible(false);
         barChart.getData().add(barSeries());
     }
@@ -72,7 +63,7 @@ public class ReportViewController implements Initializable {
         XYChart.Series<String, Number> turnoverShareSeries = new XYChart.Series<>();
         List<Double> dailyTurnover = reportGenerator.getDataBank().getDailyStoreTurnOverShare();
 
-        for (int i = 0; i < dailyTurnover.size(); i++) {
+        for (int i = 0; i < dailyTurnover.size()-1; i++) {
             int day = i + 1;
             double turnover = dailyTurnover.get(i);
             turnoverShareSeries.getData().add(new XYChart.Data<>(String.valueOf(day), turnover));
