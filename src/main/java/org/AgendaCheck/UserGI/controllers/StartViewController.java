@@ -1,7 +1,5 @@
 package org.AgendaCheck.UserGI.controllers;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -43,12 +41,9 @@ public class StartViewController {
     @FXML
     void initialize() {
 
-        userTarget.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d{0,4}")) {
-                    userTarget.setText(oldValue);
-                }
+        userTarget.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d{0,4}")) {
+                userTarget.setText(oldValue);
             }
         });
     }
@@ -178,8 +173,6 @@ public class StartViewController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //        loader.getController();
-        //reportViewController.setReportGenerator(reportGenerator);
 
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);

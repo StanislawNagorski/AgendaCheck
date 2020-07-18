@@ -26,7 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="line and bar charts added" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="code clean-up">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +93,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/../../External Libs" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/org/AgendaCheck" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projekty JAVA/ApachePlay" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projekty JAVA/CwiczeniaSDA/zaawansowane" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -256,13 +259,11 @@
       <workItem from="1593594861007" duration="2773000" />
       <workItem from="1593597766311" duration="6591000" />
       <workItem from="1593769006025" duration="6217000" />
-    </task>
-    <task id="LOCAL-00013" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver">
-      <created>1591030460037</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1591030460037</updated>
+      <workItem from="1594852518195" duration="105000" />
+      <workItem from="1594894448304" duration="174000" />
+      <workItem from="1594977153211" duration="43000" />
+      <workItem from="1594977270831" duration="160000" />
+      <workItem from="1595099109845" duration="389000" />
     </task>
     <task id="LOCAL-00014" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added">
       <created>1591032399400</created>
@@ -600,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594852327459</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="README update">
+      <created>1594852552882</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1594852552882</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,8 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to write more department colums, when hited memory heap exp." />
-    <MESSAGE value="change FileInput to new File, to win heap space... problem is elsewere" />
     <MESSAGE value="fixed out of memory -&gt; there was typo causing infinity loop" />
     <MESSAGE value="added department sheet creation method" />
     <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
@@ -657,7 +663,9 @@
     <MESSAGE value="rewrite of RaportGeneretor" />
     <MESSAGE value="quickView of barChar works" />
     <MESSAGE value="line and bar charts added" />
-    <option name="LAST_COMMIT_MESSAGE" value="line and bar charts added" />
+    <MESSAGE value="README update" />
+    <MESSAGE value="code clean-up" />
+    <option name="LAST_COMMIT_MESSAGE" value="code clean-up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -682,10 +690,10 @@
     <state x="507" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1593772377627" />
     <state x="761" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593807983933" />
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590932115421" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591183291677">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594977188482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591183291677" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594977188482" />
     <state x="495" y="254" width="432" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593773650557">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -712,35 +720,35 @@
     </state>
     <state x="320" y="65" width="740" height="550" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593775348952" />
     <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590935440941" />
-    <state x="379" y="174" width="735" height="513" key="FileChooserDialogImpl" timestamp="1593770395367">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="568" y="266" width="735" height="513" key="FileChooserDialogImpl" timestamp="1594977420073">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
-    <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591729511907" />
+    <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594852381412">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1594939693512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594939693512" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594852381412">
+    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1594939693512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
+    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594939693512" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594852381411">
+    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1594939693512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381411" />
+    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594939693512" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594852381412">
+    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1594939693512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594852381412" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594939693512" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
