@@ -85,41 +85,15 @@ public class DepartmentNameCheckerTest {
         Assertions.assertTrue(result);
     }
 
-    @Test
-    public void hoursSetShouldContainAllSheetsFromForecastFor643() throws Exception {
-        //Given
-        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInputFiles/godzinyCzerwiec.xlsx"));
-        XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
-        scheduleInput.close();
-
-        OPCPackage forecastInput = OPCPackage.open(new File("SampleInputFiles/643_Gessef 2020.xlsx"));
-        XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
-        forecastInput.close();
-        ScheduleReader scheduleReader = new ScheduleReader(schedule);
-        ForecastReader forecastReader = new ForecastReader(forecast);
-        double productivityTargetUserInput = 800;
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
-
-        Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
-        Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
-
-        //When
-        DepartmentNameChecker.changeDepartmentNamesInScheduleToThoseFromForecast(turnover, hours);
-
-        //Then
-        System.out.println(hours.keySet());
-        System.out.println(turnover.keySet());
-        Assertions.assertTrue(hours.keySet().containsAll(turnover.keySet()));
-    }
 
     @Test
     public void hoursSetShouldContainAllSheetsFromForecastFor729() throws Exception {
         //Given
-        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInputFiles/godzinyCzerwiec729.xlsx"));
+        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInput/godzinyCzerwiec729.xlsx"));
         XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
         scheduleInput.close();
 
-        OPCPackage forecastInput = OPCPackage.open(new File("SampleInputFiles/729 Gessef 2020.xlsx"));
+        OPCPackage forecastInput = OPCPackage.open(new File("SampleInput/729 Gessef 2020.xlsx"));
         XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
         forecastInput.close();
         ScheduleReader scheduleReader = new ScheduleReader(schedule);

@@ -1,5 +1,4 @@
 *.xlsx
 *.xlsx#
-!SampleOutputReport.xlsx
 /target
 /.idea
