@@ -27,8 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="code clean-up">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,14 +262,7 @@
       <workItem from="1594894448304" duration="174000" />
       <workItem from="1594977153211" duration="43000" />
       <workItem from="1594977270831" duration="160000" />
-      <workItem from="1595099109845" duration="389000" />
-    </task>
-    <task id="LOCAL-00014" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added">
-      <created>1591032399400</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1591032399400</updated>
+      <workItem from="1595099109845" duration="692000" />
     </task>
     <task id="LOCAL-00015" summary="class MonthChecker added, which check which month is to be reported.&#10;ReportWriter now write only forecasted Turn Over from desired month.&#10;added monthly TurnOver&#10;cell formats added &#10;method to calc and write daily share in monthly turn over added.">
       <created>1591033285272</created>
@@ -608,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594852552882</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="code clean-up">
+      <created>1595099635464</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1595099635464</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
