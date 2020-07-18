@@ -26,14 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="code clean-up">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="lunch set-up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleOutputReport.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,14 +289,8 @@
       <workItem from="1594894448304" duration="174000" />
       <workItem from="1594977153211" duration="43000" />
       <workItem from="1594977270831" duration="160000" />
-      <workItem from="1595099109845" duration="7558000" />
-    </task>
-    <task id="LOCAL-00017" summary="code MASSIVE cleanUP">
-      <created>1591105063044</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1591105063044</updated>
+      <workItem from="1595099109845" duration="7720000" />
+      <workItem from="1595110742610" duration="331000" />
     </task>
     <task id="LOCAL-00018" summary="PerfectHours column added">
       <created>1591113810147</created>
@@ -639,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595101353837</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="lunch set-up">
+      <created>1595110586388</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1595110586388</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +667,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed out of memory -&gt; there was typo causing infinity loop" />
     <MESSAGE value="added department sheet creation method" />
     <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
     <MESSAGE value="added method to write ALL retail departments" />
@@ -696,7 +691,8 @@
     <MESSAGE value="line and bar charts added" />
     <MESSAGE value="README update" />
     <MESSAGE value="code clean-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="code clean-up" />
+    <MESSAGE value="lunch set-up" />
+    <option name="LAST_COMMIT_MESSAGE" value="lunch set-up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -757,29 +753,29 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1595110471279">
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1595110720636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595110471279" />
+    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1595110471279">
+    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1595110720635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595110471279" />
+    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1595110471279">
+    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1595110720635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595110471279" />
+    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1595110471279">
+    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1595110720636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595110471279" />
+    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
