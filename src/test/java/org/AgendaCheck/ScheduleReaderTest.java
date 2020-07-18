@@ -18,9 +18,9 @@ public class ScheduleReaderTest {
 
     @Before
     public void setUp() throws IOException {
-        XSSFWorkbook scheduleJune = new XSSFWorkbook(new FileInputStream("godzinyCzerwiec.xlsx"));
+        XSSFWorkbook scheduleJune = new XSSFWorkbook(new FileInputStream("SampleInput/godzinyCzerwiec.xlsx"));
         scheduleReaderJune = new ScheduleReader(scheduleJune);
-        XSSFWorkbook scheduleMay = new XSSFWorkbook(new FileInputStream("godzinyMaj.xlsx"));
+        XSSFWorkbook scheduleMay = new XSSFWorkbook(new FileInputStream("SampleInput/godzinyMaj.xlsx"));
         scheduleReaderMay = new ScheduleReader(scheduleMay);
     }
 
