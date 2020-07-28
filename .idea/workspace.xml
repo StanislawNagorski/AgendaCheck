@@ -31,13 +31,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="execable jar succes!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="Exeptions handling added (close files)&#10;Info pop up alerts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,14 +301,7 @@
       <workItem from="1595665698123" duration="171000" />
       <workItem from="1595666495796" duration="45000" />
       <workItem from="1595929010198" duration="1862000" />
-      <workItem from="1595931180358" duration="2123000" />
-    </task>
-    <task id="LOCAL-00021" summary="Tests end-to-end added">
-      <created>1591120040822</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1591120040822</updated>
+      <workItem from="1595931180358" duration="2428000" />
     </task>
     <task id="LOCAL-00022" summary="added method to create list of department names for ScheduleReader">
       <created>1591124868509</created>
@@ -652,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595449287090</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Exeptions handling added (close files)&#10;Info pop up alerts">
+      <created>1595934535972</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1595934535972</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
     <MESSAGE value="added method to write ALL retail departments" />
     <MESSAGE value="added class and methods to write CHART in report" />
     <MESSAGE value="charts added" />
@@ -709,7 +702,8 @@
     <MESSAGE value="code clean-up" />
     <MESSAGE value="lunch set-up" />
     <MESSAGE value="execable jar succes!" />
-    <option name="LAST_COMMIT_MESSAGE" value="execable jar succes!" />
+    <MESSAGE value="Exeptions handling added (close files)&#10;Info pop up alerts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exeptions handling added (close files)&#10;Info pop up alerts" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -774,29 +768,29 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595665834848" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1595934331591">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1595934541657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595934331591" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595934541657" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1595934331591">
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1595934541657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595934331591" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595934541657" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1595934331591">
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1595934541656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595934331591" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595934541656" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1595934331591">
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1595934541657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595934331591" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595934541657" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
