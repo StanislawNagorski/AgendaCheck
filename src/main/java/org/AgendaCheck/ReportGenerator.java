@@ -25,15 +25,13 @@ public class ReportGenerator {
     ForecastReader forecastReader;
     DataBank dataBank;
 
-    public ReportGenerator(File forecastFile, File scheduleFile, double productivityTarget){
+    public ReportGenerator(File forecastFile, File scheduleFile, double productivityTarget) throws IOException, InvalidFormatException {
         this.forecastFile = forecastFile;
         this.scheduleFile = scheduleFile;
         this.productivityTarget = productivityTarget;
-        try {
-            setUpReaders();
-        } catch (IOException | InvalidFormatException e) {
-            e.printStackTrace();
-        }
+
+        setUpReaders();
+
         dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
     }
 

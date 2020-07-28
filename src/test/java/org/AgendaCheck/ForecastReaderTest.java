@@ -4,12 +4,14 @@ import org.AgendaCheck.Forecast.ForecastReader;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
+@Ignore
 public class ForecastReaderTest {
 
     private ForecastReader forecastReader643;

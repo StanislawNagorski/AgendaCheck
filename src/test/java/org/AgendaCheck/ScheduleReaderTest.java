@@ -4,6 +4,7 @@ import org.AgendaCheck.Schedule.ScheduleReader;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -12,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+@Ignore
 public class ScheduleReaderTest {
     private ScheduleReader scheduleReaderJune;
 

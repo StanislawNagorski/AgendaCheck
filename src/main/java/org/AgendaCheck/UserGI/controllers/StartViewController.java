@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.AgendaCheck.ReportGenerator;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -142,6 +143,15 @@ public class StartViewController {
         alert.showAndWait();
     }
 
+    private void showAlertClosePrograms() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Program nie uzyskał dostępu do plików");
+        alert.setHeaderText("Program nie uzyskał dostępu do plików");
+        alert.setContentText("" +
+                "Zamknij pliki, z których chcesz zrobić raport ");
+        alert.showAndWait();
+    }
+
     private boolean areThereFiles() {
         return correctFiles[0] == null || correctFiles[1] == null;
     }
@@ -156,9 +166,15 @@ public class StartViewController {
             File forecastFile = correctFiles[0];
             File scheduleFile = correctFiles[1];
             double productivityTarget = userInputSafeInCaseOfEmptyString();
-            reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+            try {
+                reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+                loadChartScreen();
 
-            loadChartScreen();
+            } catch (IOException | InvalidFormatException e) {
+                showAlertClosePrograms();
+                resetView();
+            }
+
         }
     }
 
@@ -176,5 +192,9 @@ public class StartViewController {
 
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
+    }
+
+    private void resetView() {
+        mainController.loadStartScreen();
     }
 }
