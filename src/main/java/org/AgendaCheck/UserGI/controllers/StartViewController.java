@@ -1,7 +1,9 @@
 package org.AgendaCheck.UserGI.controllers;
 
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,6 +26,8 @@ public class StartViewController {
     private MainController mainController;
     private ReportGenerator reportGenerator;
 
+    @FXML
+    private Pane mainPane;
     @FXML
     private Pane fileDropPane;
     @FXML
@@ -144,7 +148,6 @@ public class StartViewController {
     }
 
 
-
     @FXML
     void goToReport() {
 
@@ -154,16 +157,50 @@ public class StartViewController {
             File forecastFile = correctFiles[0];
             File scheduleFile = correctFiles[1];
             double productivityTarget = userInputSafeInCaseOfEmptyString();
-            try {
-                reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
-                loadChartScreen();
-            } catch (IOException | InvalidFormatException e) {
-                alertClosePrograms();
-                resetView();
-            }
+
+            //reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+            createReportGeneratorFromDroppedFiles(forecastFile, scheduleFile, productivityTarget);
+            loadChartScreen();
+
+
+//            catch (IOException | InvalidFormatException e) {
+//                alertClosePrograms();
+//                resetView();
+//            }
 
         }
     }
+
+    private synchronized void createReportGeneratorFromDroppedFiles(File forecastFile, File scheduleFile, double productivityTarget) {
+
+        //mainPane.getScene().setCursor(Cursor.WAIT);
+        Task<Void> task = new Task<Void>() {
+            @Override
+            public Void call() {
+
+                try {
+                    reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+                } catch (IOException | InvalidFormatException e) {
+                    alertClosePrograms();
+                    resetView();
+                }
+                return null;
+            }
+        };
+        Thread reportGeneratorThread = new Thread(task);
+        task.setOnRunning(workerStateEvent -> mainPane.getScene().setCursor(Cursor.WAIT));
+        task.setOnSucceeded(e -> mainPane.getScene().setCursor(Cursor.DEFAULT));
+        reportGeneratorThread.start();
+
+        try {
+            reportGeneratorThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //mainPane.getScene().setCursor(Cursor.DEFAULT);
+    }
+
+    //https://stackoverflow.com/questions/33711925/javafx-why-wait-cursor-needs-a-new-thread
 
 
     private void loadChartScreen() {
@@ -176,6 +213,7 @@ public class StartViewController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
