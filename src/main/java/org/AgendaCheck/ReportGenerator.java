@@ -25,15 +25,12 @@ public class ReportGenerator {
     ForecastReader forecastReader;
     DataBank dataBank;
 
-    public ReportGenerator(File forecastFile, File scheduleFile, double productivityTarget){
+    public ReportGenerator(File forecastFile, File scheduleFile, double productivityTarget) throws IOException, InvalidFormatException {
         this.forecastFile = forecastFile;
         this.scheduleFile = scheduleFile;
         this.productivityTarget = productivityTarget;
-        try {
-            setUpReaders();
-        } catch (IOException | InvalidFormatException e) {
-            e.printStackTrace();
-        }
+
+        setUpReaders();
         dataBank = new DataBank(scheduleReader, forecastReader, productivityTarget);
     }
 
@@ -71,17 +68,16 @@ public class ReportGenerator {
         long end = System.nanoTime();
         long duration = (end - start);
         durationInSec = (double) duration / 1000000000;
-        System.out.printf("Program ended in: %.4f seconds", durationInSec);
     }
 
     public void writeFullReport(String path) throws IOException {
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter dt = DateTimeFormatter.ofPattern("uuuu-MM-dd HH.mm.ss");
 
-        String storeNumber = forecastFile.getName().substring(0,4);
-        String fileName = "\\" + storeNumber + " Raport z " + date.format(dt) +".xlsx";
+        String storeNumber = forecastFile.getName().substring(0, 4);
+        String fileName = "\\" + storeNumber + " Raport z " + date.format(dt) + ".xlsx";
 
-        report.write(new FileOutputStream(path+fileName));
+        report.write(new FileOutputStream(path + fileName));
         report.close();
     }
 

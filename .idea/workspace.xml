@@ -21,20 +21,18 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/stableBranch" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="rewrite of RaportGeneretor">
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="stableBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -323,6 +321,7 @@
       <workItem from="1595143794769" duration="182000" />
       <workItem from="1595144481163" duration="1339000" />
       <workItem from="1595145845901" duration="6135000" />
+      <workItem from="1596022034329" duration="749000" />
     </task>
     <task id="LOCAL-00018" summary="PerfectHours column added">
       <created>1591113810147</created>
@@ -684,7 +683,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/stableBranch" />
                       </list>
                     </value>
                   </entry>
@@ -789,29 +788,29 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1595166261046">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1596022576926">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596022576926" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1595166261045">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1596022576925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595166261045" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596022576925" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1595166261044">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1596022576925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595166261044" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596022576925" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1595166261046">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1596022576925">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596022576925" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -860,10 +859,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590923713888" />
-    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595109406634">
+    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596022002306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595109406634" />
+    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596022002306" />
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590492012204" />
     <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591529923053">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -881,6 +880,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="627" y="346" width="723" height="413" key="git4idea.merge.GitPullDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590492055790" />
+    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1596021986775">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596021986775" />
     <state x="162" y="148" width="915" height="471" key="new project wizard" timestamp="1595162638314">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
