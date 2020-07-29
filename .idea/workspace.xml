@@ -26,9 +26,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="lunch set-up">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="rewrite of RaportGeneretor">
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/DepartmentNameCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ForecastReaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/ScheduleReaderTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +91,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
@@ -106,7 +113,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.38850576" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -126,7 +133,20 @@
       <recent name="D:\Projekty\Projekty Decathlon\AgendaCheck\SampleInputFiles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScheduleReaderTest">
+  <component name="RunManager" selected="Application.LunchApp">
+    <configuration name="LunchApp" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.UserGI.LunchApp" />
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.UserGI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DepartmentNameCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
@@ -216,13 +236,21 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.LunchApp" />
+      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
+      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
+      <item itemvalue="JUnit.ForecastReaderTest" />
+      <item itemvalue="JUnit.ScheduleReaderTest" />
+      <item itemvalue="JUnit.DepartmentNameCheckerTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
         <item itemvalue="JUnit.ScheduleReaderTest" />
         <item itemvalue="JUnit.ForecastReaderTest" />
         <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
         <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -291,6 +319,10 @@
       <workItem from="1594977270831" duration="160000" />
       <workItem from="1595099109845" duration="7720000" />
       <workItem from="1595110742610" duration="331000" />
+      <workItem from="1595142654384" duration="1126000" />
+      <workItem from="1595143794769" duration="182000" />
+      <workItem from="1595144481163" duration="1339000" />
+      <workItem from="1595145845901" duration="6135000" />
     </task>
     <task id="LOCAL-00018" summary="PerfectHours column added">
       <created>1591113810147</created>
@@ -703,6 +735,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="191" y="135" key="#Live_Templates/0.0.1920.1040@0.0.1920.1040" timestamp="1591192262533" />
+    <state x="351" y="0" key="#LunchApp" timestamp="1595143074542">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="351" y="0" key="#LunchApp/0.0.1280.680@0.0.1280.680" timestamp="1595143074542" />
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1591119033458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -742,10 +778,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="364" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1591122588493" />
-    <state x="320" y="65" width="740" height="550" key="CommitChangelistDialog2" timestamp="1593775348952">
+    <state x="320" y="65" width="740" height="550" key="CommitChangelistDialog2" timestamp="1595166256929">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="320" y="65" width="740" height="550" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593775348952" />
+    <state x="320" y="65" width="740" height="550" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1595166256929" />
     <state x="530" y="127" width="916" height="851" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590935440941" />
     <state x="568" y="266" width="735" height="513" key="FileChooserDialogImpl" timestamp="1594977420073">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -753,28 +789,28 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="276" key="GridCell.Tab.0.bottom" timestamp="1595110720636">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1595166261046">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
     <state width="1877" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.center" timestamp="1595110720635">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1595166261045">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595166261045" />
     <state width="1877" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.left" timestamp="1595110720635">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1595166261044">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595166261044" />
     <state width="1877" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720635" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="276" key="GridCell.Tab.0.right" timestamp="1595110720636">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1595166261046">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593775354114" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
     <state width="1877" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595110720636" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
     <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
@@ -801,10 +837,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="775" y="454" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1593687295861" />
-    <state x="275" y="0" width="914" height="680" key="SettingsEditor" timestamp="1593770400685">
+    <state x="242" y="0" width="914" height="680" key="SettingsEditor" timestamp="1595142928970">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="275" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1593770400685" />
+    <state x="242" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1595142928970" />
     <state x="413" y="169" width="1062" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591527497220" />
     <state x="290" y="105" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1590841244815" />
     <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591898929169">
@@ -845,9 +881,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="627" y="346" width="723" height="413" key="git4idea.merge.GitPullDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590492055790" />
-    <state x="243" y="226" width="1372" height="592" key="new project wizard" timestamp="1592043694742">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="162" y="148" width="915" height="471" key="new project wizard" timestamp="1595162638314">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="162" y="148" width="915" height="471" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1595162638314" />
     <state x="243" y="226" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1592043694742" />
     <state x="302" y="256" width="1372" height="592" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1590836967816" />
     <state x="478" y="260" width="619" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1593770398121">

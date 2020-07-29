@@ -1,15 +1,7 @@
 package org.AgendaCheck.Data;
 
-import org.AgendaCheck.Forecast.ForecastReader;
-import org.AgendaCheck.Schedule.ScheduleReader;
-import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-
-import java.io.File;
-import java.util.List;
-import java.util.Map;
 
 public class DepartmentNameCheckerTest {
 
@@ -85,35 +77,35 @@ public class DepartmentNameCheckerTest {
         Assertions.assertTrue(result);
     }
 
-
-    @Test
-    public void hoursSetShouldContainAllSheetsFromForecastFor729() throws Exception {
-        //Given
-        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInput/godzinyCzerwiec729.xlsx"));
-        XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
-        scheduleInput.close();
-
-        OPCPackage forecastInput = OPCPackage.open(new File("SampleInput/729 Gessef 2020.xlsx"));
-        XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
-        forecastInput.close();
-        ScheduleReader scheduleReader = new ScheduleReader(schedule);
-        ForecastReader forecastReader = new ForecastReader(forecast);
-        double productivityTargetUserInput = 800;
-        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
-
-        Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
-        Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
-
-        //When
-        System.out.println(hours.keySet());
-        DepartmentNameChecker.changeDepartmentNamesInScheduleToThoseFromForecast(turnover, hours);
-
-        //Then
-        System.out.println(turnover.keySet());
-        System.out.println(hours.keySet());
-
-        Assertions.assertTrue(hours.keySet().containsAll(turnover.keySet()));
-    }
+//
+//    @Test
+//    public void hoursSetShouldContainAllSheetsFromForecastFor729() throws Exception {
+//        //Given
+//        OPCPackage scheduleInput = OPCPackage.open(new File("SampleInput/godzinyCzerwiec729.xlsx"));
+//        XSSFWorkbook schedule = new XSSFWorkbook(scheduleInput);
+//        scheduleInput.close();
+//
+//        OPCPackage forecastInput = OPCPackage.open(new File("SampleInput/729 Gessef 2020.xlsx"));
+//        XSSFWorkbook forecast = new XSSFWorkbook(forecastInput);
+//        forecastInput.close();
+//        ScheduleReader scheduleReader = new ScheduleReader(schedule);
+//        ForecastReader forecastReader = new ForecastReader(forecast);
+//        double productivityTargetUserInput = 800;
+//        DataBank dataBank = new DataBank(scheduleReader, forecastReader, productivityTargetUserInput);
+//
+//        Map<String, Double> turnover = dataBank.getMonthlyDepartmentTurnOver();
+//        Map<String, List<Double>> hours = dataBank.getDailyDepartmentHoursByName();
+//
+//        //When
+//        System.out.println(hours.keySet());
+//        DepartmentNameChecker.changeDepartmentNamesInScheduleToThoseFromForecast(turnover, hours);
+//
+//        //Then
+//        System.out.println(turnover.keySet());
+//        System.out.println(hours.keySet());
+//
+//        Assertions.assertTrue(hours.keySet().containsAll(turnover.keySet()));
+//    }
 
 
 }

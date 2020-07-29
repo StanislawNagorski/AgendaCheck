@@ -67,10 +67,6 @@ public class StartViewController {
                 "-fx-effect: dropshadow(three-pass-box, rgba(3,158,211,1), 5, 0, 0, 0);");
     }
 
-    public void addProgress(double progress) {
-        double newProgress = progresPie.getProgress() + progress;
-        progresPie.setProgress(newProgress);
-    }
 
     @FXML
     void onDragExit() {
