@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.AgendaCheck.ReportGenerator;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -143,6 +144,7 @@ public class StartViewController {
     }
 
 
+
     @FXML
     void goToReport() {
 
@@ -152,9 +154,14 @@ public class StartViewController {
             File forecastFile = correctFiles[0];
             File scheduleFile = correctFiles[1];
             double productivityTarget = userInputSafeInCaseOfEmptyString();
-            reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+            try {
+                reportGenerator = new ReportGenerator(forecastFile, scheduleFile, productivityTarget);
+                loadChartScreen();
+            } catch (IOException | InvalidFormatException e) {
+                alertClosePrograms();
+                resetView();
+            }
 
-            loadChartScreen();
         }
     }
 
@@ -173,4 +180,19 @@ public class StartViewController {
         reportViewController.setMainController(mainController);
         mainController.setScreen(pane);
     }
+
+    private void alertClosePrograms() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Brak dostępu do plików");
+        alert.setHeaderText("Program nie może uzyskać dostępu do plików ");
+        alert.setContentText("Zamknij wszystkie programy w których otwarty jest plik \n" +
+                "(np. Exel lub LibreOfficeCalc)");
+        alert.showAndWait();
+    }
+
+    private void resetView() {
+        mainController.loadStartScreen();
+    }
+
+
 }
