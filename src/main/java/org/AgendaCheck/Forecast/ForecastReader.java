@@ -27,7 +27,7 @@ public class ForecastReader {
         XSSFSheet forecastSheet = forecast.getSheet("DZIEN DZIEN 2020");
 
         int dateColumnNr = 3;
-        int readiedColumnNr = 5;
+        int columnWithDailyTurnOver = 5;
         int dataStartRow = 4;
 
         int monthStartsAt = range[0];
@@ -36,15 +36,26 @@ public class ForecastReader {
         int FORECAST_SHEET_SIZE = 450;
         for (int i = 0; i < FORECAST_SHEET_SIZE - 5; i++) {
 
-            if ((forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr).getCellType() == CellType.NUMERIC) ||
-                    (forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr).getCellType() == CellType.FORMULA)) {
+            XSSFCell dateCell = forecastSheet.getRow(i + dataStartRow).getCell(dateColumnNr);
 
-                int numericValueOfDate = (int) forecastSheet.getRow(i + dataStartRow)
-                        .getCell(dateColumnNr).getNumericCellValue();
+            boolean isItNumericOrFormula = (dateCell.getCellType() == CellType.NUMERIC) ||
+                    (dateCell.getCellType() == CellType.FORMULA);
 
-                if (numericValueOfDate >= monthStartsAt && numericValueOfDate <= monthEndsAt) {
-                    double dayTO = forecastSheet.getRow(i + dataStartRow)
-                            .getCell(readiedColumnNr).getNumericCellValue();
+            if (isItNumericOrFormula) {
+                int numericValueOfDate = (int) dateCell.getNumericCellValue();
+
+                boolean cellIsInReportedMonthRange = numericValueOfDate >= monthStartsAt && numericValueOfDate <= monthEndsAt;
+                if (cellIsInReportedMonthRange) {
+                    XSSFCell dailyTurnoverCell = forecastSheet.getRow(i + dataStartRow)
+                            .getCell(columnWithDailyTurnOver);
+                    double dayTO;
+                    CellType cachedFormulaResultType = dailyTurnoverCell.getCachedFormulaResultType();
+
+                    if (cachedFormulaResultType == CellType.STRING) {
+                        dayTO = 0;
+                    } else {
+                        dayTO = dailyTurnoverCell.getNumericCellValue();
+                    }
 
                     monthlyTurnOver += dayTO;
                     foreList.add(dayTO);
@@ -76,7 +87,7 @@ public class ForecastReader {
 
     private boolean isItRetailDepartmentSheetCheck(XSSFSheet sheet, int monthToCheckIfThereIsTurnOver) {
         int columnToCheck = calculateMonthColumnNr(monthToCheckIfThereIsTurnOver);
-        if (sheet.getRow(2).getLastCellNum() < columnToCheck){
+        if (sheet.getRow(2).getLastCellNum() < columnToCheck) {
             return false;
         }
 
@@ -96,8 +107,7 @@ public class ForecastReader {
         } else if (cellNumericValueShouldBeGreaterThen0.getCellType().equals(CellType.FORMULA)) {
             double rawValue = Double.parseDouble(cellNumericValueShouldBeGreaterThen0.getRawValue());
             isThereTurnover = rawValue > 0;
-        }
-        else {
+        } else {
             isThereTurnover = false;
         }
 
@@ -120,7 +130,7 @@ public class ForecastReader {
                 double departmentForecastedTurnOver;
 
                 if (cell.getCellType().equals(CellType.FORMULA)) {
-                departmentForecastedTurnOver = Double.parseDouble(cell.getRawValue());
+                    departmentForecastedTurnOver = Double.parseDouble(cell.getRawValue());
                 } else {
                     departmentForecastedTurnOver = cell.getNumericCellValue();
                 }
@@ -132,7 +142,6 @@ public class ForecastReader {
         }
         return monthlyTurnOverByDepartment;
     }
-
 
 
 }

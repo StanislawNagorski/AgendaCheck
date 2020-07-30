@@ -26,11 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="expection to popup errors: close program that use file, added">
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="tread struggle">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/BackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/ScheduleReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/ReportViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLs/StartView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Forecast/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Forecast/ForecastReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -143,7 +144,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentNameCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForAugust" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -152,31 +153,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="hoursSetShouldContainAllSheetsFromForecastFor643" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForAugust" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -185,41 +170,60 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="hoursSetShouldContainAllSheetsFromForecastFor729" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMay" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ForecastReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMayForJune" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ForecastReaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMayForJune" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMayForStore729" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ScheduleReaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMayForStore729" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.ScheduleReaderTest" />
+      <option name="METHOD_NAME" value="shouldReturnTrueForGivenKeyForJune" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
@@ -234,19 +238,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.LunchApp" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
-      <item itemvalue="JUnit.ForecastReaderTest" />
-      <item itemvalue="JUnit.ScheduleReaderTest" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMay" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForStore729" />
+      <item itemvalue="JUnit.ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForJune" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForAugust" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
-        <item itemvalue="JUnit.ScheduleReaderTest" />
-        <item itemvalue="JUnit.ForecastReaderTest" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForAugust" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForJune" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForStore729" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMay" />
+        <item itemvalue="JUnit.ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" />
       </list>
     </recent_temporary>
   </component>
@@ -319,14 +323,7 @@
       <workItem from="1595143794769" duration="182000" />
       <workItem from="1595144481163" duration="1339000" />
       <workItem from="1595145845901" duration="6135000" />
-      <workItem from="1596022034329" duration="5303000" />
-    </task>
-    <task id="LOCAL-00020" summary="Difference in hours column added, considering close days">
-      <created>1591117902658</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1591117902658</updated>
+      <workItem from="1596022034329" duration="12062000" />
     </task>
     <task id="LOCAL-00021" summary="Tests end-to-end added">
       <created>1591120040822</created>
@@ -664,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596022988512</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="tread struggle">
+      <created>1596028447145</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1596028447145</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,7 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
     <MESSAGE value="added method to write ALL retail departments" />
     <MESSAGE value="added class and methods to write CHART in report" />
     <MESSAGE value="charts added" />
@@ -721,7 +724,8 @@
     <MESSAGE value="code clean-up" />
     <MESSAGE value="lunch set-up" />
     <MESSAGE value="expection to popup errors: close program that use file, added" />
-    <option name="LAST_COMMIT_MESSAGE" value="expection to popup errors: close program that use file, added" />
+    <MESSAGE value="tread struggle" />
+    <option name="LAST_COMMIT_MESSAGE" value="tread struggle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -786,46 +790,46 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1596028095824">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596028095824" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1596028095824">
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595166261045" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596028095824" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1596028095824">
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595166261044" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596028095824" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1596028095824">
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596028095824" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141944" />
-    <state width="1877" height="367" key="GridCell.Tab.1.center" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.center" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
-    <state width="1877" height="367" key="GridCell.Tab.1.left" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.left" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
-    <state width="1877" height="367" key="GridCell.Tab.1.right" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
