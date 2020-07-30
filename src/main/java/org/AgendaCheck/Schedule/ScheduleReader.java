@@ -64,7 +64,8 @@ public class ScheduleReader {
 
         for (int i = columnOnWhichDataStarts; i < startRow.getLastCellNum(); i++) {
             if (!startRow.getCell(i).getStringCellValue().isBlank()) {
-                listOfDepartmentNames.add(startRow.getCell(i).getStringCellValue());
+                String departmentName = startRow.getCell(i).getStringCellValue();
+                listOfDepartmentNames.add(departmentName);
             }
         }
         return listOfDepartmentNames;

@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" style="-fx-background-image: url(&quot;/Graphics/AppBackgraund.png&quot;); -fx-background-repeat: stretch;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.StartViewController">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" style="-fx-background-image: url(&quot;/Graphics/AppBackgraund.png&quot;); -fx-background-repeat: stretch;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.AgendaCheck.UserGI.controllers.StartViewController">
    <children>
       <ImageView fitHeight="350.0" fitWidth="607.0">
          <image>

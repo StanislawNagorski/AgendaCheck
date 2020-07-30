@@ -26,13 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="rewrite of RaportGeneretor">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="bd81cc02-9d72-4169-af69-0eea4a1bc4f4" name="Default Changelist" comment="tread struggle">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/BackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/AgendaCheck/Data/ScheduleReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/ReportGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/UserGI/controllers/StartViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Forecast/ForecastReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Forecast/ForecastReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/AgendaCheck/Schedule/ScheduleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -145,7 +144,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentNameCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForAugust" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -154,31 +153,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AgendaCheck" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="hoursSetShouldContainAllSheetsFromForecastFor643" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForAugust" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
@@ -187,41 +170,60 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.DepartmentNameCheckerTest" />
-      <option name="METHOD_NAME" value="hoursSetShouldContainAllSheetsFromForecastFor729" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMay" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ForecastReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMayForJune" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ForecastReaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMayForJune" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackTest.shouldCreateReportForMayForStore729" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AgendaCheck" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.AgendaCheck.*" />
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.AgendaCheck" />
-      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.ScheduleReaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.BackTest" />
+      <option name="METHOD_NAME" value="shouldCreateReportForMayForStore729" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AgendaCheck" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.AgendaCheck.Data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.AgendaCheck.Data" />
+      <option name="MAIN_CLASS_NAME" value="org.AgendaCheck.Data.ScheduleReaderTest" />
+      <option name="METHOD_NAME" value="shouldReturnTrueForGivenKeyForJune" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BSP.BeforeRunTask" enabled="true" />
@@ -236,19 +238,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.LunchApp" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
-      <item itemvalue="JUnit.ForecastReaderTest" />
-      <item itemvalue="JUnit.ScheduleReaderTest" />
-      <item itemvalue="JUnit.DepartmentNameCheckerTest" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMay" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForStore729" />
+      <item itemvalue="JUnit.ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForJune" />
+      <item itemvalue="JUnit.BackTest.shouldCreateReportForAugust" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DepartmentNameCheckerTest" />
-        <item itemvalue="JUnit.ScheduleReaderTest" />
-        <item itemvalue="JUnit.ForecastReaderTest" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor729" />
-        <item itemvalue="JUnit.DepartmentNameCheckerTest.hoursSetShouldContainAllSheetsFromForecastFor643" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForAugust" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForJune" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMayForStore729" />
+        <item itemvalue="JUnit.BackTest.shouldCreateReportForMay" />
+        <item itemvalue="JUnit.ScheduleReaderTest.shouldReturnTrueForGivenKeyForJune" />
       </list>
     </recent_temporary>
   </component>
@@ -321,28 +323,7 @@
       <workItem from="1595143794769" duration="182000" />
       <workItem from="1595144481163" duration="1339000" />
       <workItem from="1595145845901" duration="6135000" />
-      <workItem from="1596022034329" duration="749000" />
-    </task>
-    <task id="LOCAL-00018" summary="PerfectHours column added">
-      <created>1591113810147</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1591113810147</updated>
-    </task>
-    <task id="LOCAL-00019" summary="PerfectHours column added, considering close days">
-      <created>1591116606041</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1591116606041</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Difference in hours column added, considering close days">
-      <created>1591117902658</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1591117902658</updated>
+      <workItem from="1596022034329" duration="12062000" />
     </task>
     <task id="LOCAL-00021" summary="Tests end-to-end added">
       <created>1591120040822</created>
@@ -666,7 +647,28 @@
       <option name="project" value="LOCAL" />
       <updated>1595110586388</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="expection to popup errors: close program that use file, added">
+      <created>1596022916561</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1596022916561</updated>
+    </task>
+    <task id="LOCAL-00068" summary="expection to popup errors: close program that use file, added">
+      <created>1596022988512</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1596022988512</updated>
+    </task>
+    <task id="LOCAL-00069" summary="tread struggle">
+      <created>1596028447145</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1596028447145</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,8 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added department sheet creation method" />
-    <MESSAGE value="added method to rewirte schedule map to match keyNames with forecast" />
     <MESSAGE value="added method to write ALL retail departments" />
     <MESSAGE value="added class and methods to write CHART in report" />
     <MESSAGE value="charts added" />
@@ -723,7 +723,9 @@
     <MESSAGE value="README update" />
     <MESSAGE value="code clean-up" />
     <MESSAGE value="lunch set-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="lunch set-up" />
+    <MESSAGE value="expection to popup errors: close program that use file, added" />
+    <MESSAGE value="tread struggle" />
+    <option name="LAST_COMMIT_MESSAGE" value="tread struggle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1590773170349">
@@ -788,46 +790,46 @@
     <state x="379" y="174" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593770395367" />
     <state x="568" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594977420073" />
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590840864084" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1596022825498">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596022825498" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1596022825498">
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595166261045" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596022825498" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1596022825498">
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595166261044" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596022825498" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1596022825498">
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1596138543482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595166261046" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596022825498" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596138543482" />
     <state width="1807" height="154" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590935469166" />
-    <state width="1877" height="367" key="GridCell.Tab.1.bottom" timestamp="1593806141944">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141944" />
-    <state width="1877" height="367" key="GridCell.Tab.1.center" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.center" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
-    <state width="1877" height="367" key="GridCell.Tab.1.left" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.left" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
-    <state width="1877" height="367" key="GridCell.Tab.1.right" timestamp="1593806141943">
+    <state width="1877" height="355" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right" timestamp="1596135684994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593806141943" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596135684994" />
     <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1590773183700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -842,10 +844,10 @@
     <state x="242" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1595142928970" />
     <state x="413" y="169" width="1062" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591527497220" />
     <state x="290" y="105" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1590841244815" />
-    <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591898929169">
+    <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1596023018213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591898929169" />
+    <state x="540" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596023018213" />
     <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590935460425" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1591387738106">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -859,10 +861,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590923713888" />
-    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596022002306">
+    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596023162120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596022002306" />
+    <state x="719" y="440" width="471" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596023162120" />
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1590492012204" />
     <state x="731" y="270" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591529923053">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -880,10 +882,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="627" y="346" width="723" height="413" key="git4idea.merge.GitPullDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590492055790" />
-    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1596021986775">
+    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1596022998336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596021986775" />
+    <state x="730" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596022998336" />
     <state x="162" y="148" width="915" height="471" key="new project wizard" timestamp="1595162638314">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
